@@ -1,0 +1,3929 @@
+
+;; Function usage (usage, funcdef_no=4209, decl_uid=31790, cgraph_uid=4210, symbol_order=4209)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:DI 82)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f6137324240 *.LC0>)) "/home/faysal/gol/main.c":15:3 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:DI 5 di)
+        (reg:DI 82)) "/home/faysal/gol/main.c":15:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f6137324240 *.LC0>)
+        (nil)))
+(insn 7 6 8 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":15:3 -1
+     (nil))
+(call_insn 8 7 9 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f613a2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":15:3 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (nil))))
+(insn 9 8 10 2 (set (reg:DI 83)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f61373242d0 *.LC1>)) "/home/faysal/gol/main.c":16:3 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 5 di)
+        (reg:DI 83)) "/home/faysal/gol/main.c":16:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f61373242d0 *.LC1>)
+        (nil)))
+(call_insn 11 10 12 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":16:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 12 11 13 2 (set (reg:DI 84)
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f6137324360 *.LC2>)) "/home/faysal/gol/main.c":17:3 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:DI 5 di)
+        (reg:DI 84)) "/home/faysal/gol/main.c":17:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f6137324360 *.LC2>)
+        (nil)))
+(call_insn 14 13 15 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":17:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 15 14 16 2 (set (reg:DI 85)
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f61373243f0 *.LC3>)) "/home/faysal/gol/main.c":18:3 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 5 di)
+        (reg:DI 85)) "/home/faysal/gol/main.c":18:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f61373243f0 *.LC3>)
+        (nil)))
+(call_insn 17 16 18 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":18:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 18 17 19 2 (set (reg:DI 86)
+        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f6137324480 *.LC4>)) "/home/faysal/gol/main.c":19:3 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:DI 5 di)
+        (reg:DI 86)) "/home/faysal/gol/main.c":19:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f6137324480 *.LC4>)
+        (nil)))
+(call_insn 20 19 21 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":19:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 21 20 22 2 (set (reg:DI 87)
+        (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f6137324510 *.LC5>)) "/home/faysal/gol/main.c":20:3 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:DI 5 di)
+        (reg:DI 87)) "/home/faysal/gol/main.c":20:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f6137324510 *.LC5>)
+        (nil)))
+(call_insn 23 22 24 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":20:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 24 23 25 2 (set (reg:DI 88)
+        (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f61373245a0 *.LC6>)) "/home/faysal/gol/main.c":21:3 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:DI 5 di)
+        (reg:DI 88)) "/home/faysal/gol/main.c":21:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f61373245a0 *.LC6>)
+        (nil)))
+(call_insn 26 25 27 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":21:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 27 26 28 2 (set (reg:DI 89)
+        (symbol_ref/f:DI ("*.LC7") [flags 0x2]  <var_decl 0x7f6137324630 *.LC7>)) "/home/faysal/gol/main.c":22:3 -1
+     (nil))
+(insn 28 27 29 2 (set (reg:DI 5 di)
+        (reg:DI 89)) "/home/faysal/gol/main.c":22:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC7") [flags 0x2]  <var_decl 0x7f6137324630 *.LC7>)
+        (nil)))
+(call_insn 29 28 30 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":22:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 30 29 31 2 (set (reg:DI 90)
+        (symbol_ref/f:DI ("*.LC8") [flags 0x2]  <var_decl 0x7f61373246c0 *.LC8>)) "/home/faysal/gol/main.c":23:3 -1
+     (nil))
+(insn 31 30 32 2 (set (reg:DI 5 di)
+        (reg:DI 90)) "/home/faysal/gol/main.c":23:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC8") [flags 0x2]  <var_decl 0x7f61373246c0 *.LC8>)
+        (nil)))
+(call_insn 32 31 0 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":23:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+
+;; Function main (main, funcdef_no=4210, decl_uid=31796, cgraph_uid=4211, symbol_order=4212)
+
+Partition 32: size 16000000 align 16
+	neighbors
+Partition 27: size 256 align 16
+	output_file
+Partition 26: size 256 align 16
+	input_file
+Partition 28: size 56 align 16
+	e
+Partition 34: size 24 align 16
+	DM	seed	peeper
+Partition 17: size 8 align 8
+	prob_163
+Partition 15: size 8 align 8
+	board_149
+Partition 7: size 8 align 8
+	renderer_107
+Partition 6: size 8 align 8
+	window_106
+Partition 25: size 4 align 4
+	maximum_height_214
+Partition 24: size 4 align 4
+	maximum_width_213
+Partition 23: size 4 align 4
+	domain_y_212
+Partition 22: size 4 align 4
+	domain_x_211
+Partition 21: size 4 align 4
+	origin_y_210
+Partition 20: size 4 align 4
+	origin_x_209
+Partition 19: size 4 align 4
+	SCREEN_HEIGHT_176
+Partition 18: size 4 align 4
+	SCREEN_WIDTH_175
+Partition 16: size 4 align 4
+	opt_160
+Partition 14: size 4 align 4
+	SCALE_147
+Partition 13: size 4 align 4
+	j_115
+Partition 12: size 4 align 4
+	i_114
+Partition 11: size 4 align 4
+	Iteration_113
+Partition 9: size 4 align 4
+	j_109
+Partition 8: size 4 align 4
+	i_108
+Partition 5: size 4 align 4
+	PEEPER_OFFSET_105
+Partition 4: size 4 align 4
+	PEEPER_SIZE_104
+Partition 3: size 4 align 4
+	EndTime_103
+Partition 0: size 4 align 4
+	TICKS_100
+Partition 31: size 4 align 4
+	window_height
+Partition 30: size 4 align 4
+	window_width
+Partition 10: size 1 align 1
+	quit_110
+Partition 2: size 1 align 1
+	SaveFile_102
+Partition 1: size 1 align 1
+	LoadFile_101
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+Selected stringop expansion strategy: libcall
+Selected stringop expansion strategy: libcall
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+;; Generating RTL for gimple basic block 20
+
+;; Generating RTL for gimple basic block 21
+
+;; Generating RTL for gimple basic block 22
+
+;; Generating RTL for gimple basic block 23
+
+;; Generating RTL for gimple basic block 24
+
+;; Generating RTL for gimple basic block 25
+
+;; Generating RTL for gimple basic block 26
+
+;; Generating RTL for gimple basic block 27
+
+;; Generating RTL for gimple basic block 28
+
+;; Generating RTL for gimple basic block 29
+
+;; Generating RTL for gimple basic block 30
+
+;; Generating RTL for gimple basic block 31
+
+;; Generating RTL for gimple basic block 32
+
+;; Generating RTL for gimple basic block 33
+
+;; Generating RTL for gimple basic block 34
+
+;; Generating RTL for gimple basic block 35
+
+;; Generating RTL for gimple basic block 36
+
+;; Generating RTL for gimple basic block 37
+
+;; Generating RTL for gimple basic block 38
+
+;; Generating RTL for gimple basic block 39
+
+;; Generating RTL for gimple basic block 40
+
+;; Generating RTL for gimple basic block 41
+
+;; Generating RTL for gimple basic block 42
+
+;; Generating RTL for gimple basic block 43
+
+;; Generating RTL for gimple basic block 44
+
+;; Generating RTL for gimple basic block 45
+
+;; Generating RTL for gimple basic block 46
+
+;; Generating RTL for gimple basic block 47
+
+;; Generating RTL for gimple basic block 48
+
+;; Generating RTL for gimple basic block 49
+
+;; Generating RTL for gimple basic block 50
+
+;; Generating RTL for gimple basic block 51
+
+;; Generating RTL for gimple basic block 52
+
+;; Generating RTL for gimple basic block 53
+
+;; Generating RTL for gimple basic block 54
+
+;; Generating RTL for gimple basic block 55
+
+;; Generating RTL for gimple basic block 56
+
+;; Generating RTL for gimple basic block 57
+
+;; Generating RTL for gimple basic block 58
+
+;; Generating RTL for gimple basic block 59
+
+;; Generating RTL for gimple basic block 60
+
+;; Generating RTL for gimple basic block 61
+
+;; Generating RTL for gimple basic block 62
+
+;; Generating RTL for gimple basic block 63
+
+;; Generating RTL for gimple basic block 64
+
+;; Generating RTL for gimple basic block 65
+
+;; Generating RTL for gimple basic block 66
+
+;; Generating RTL for gimple basic block 67
+
+;; Generating RTL for gimple basic block 68
+
+;; Generating RTL for gimple basic block 69
+
+;; Generating RTL for gimple basic block 70
+
+;; Generating RTL for gimple basic block 71
+
+;; Generating RTL for gimple basic block 72
+
+;; Generating RTL for gimple basic block 73
+
+;; Generating RTL for gimple basic block 74
+
+;; Generating RTL for gimple basic block 75
+
+;; Generating RTL for gimple basic block 76
+
+;; Generating RTL for gimple basic block 77
+
+;; Generating RTL for gimple basic block 78
+
+;; Generating RTL for gimple basic block 79
+
+;; Generating RTL for gimple basic block 80
+
+;; Generating RTL for gimple basic block 81
+
+;; Generating RTL for gimple basic block 82
+
+;; Generating RTL for gimple basic block 83
+
+;; Generating RTL for gimple basic block 84
+
+;; Generating RTL for gimple basic block 85
+
+;; Generating RTL for gimple basic block 86
+
+;; Generating RTL for gimple basic block 87
+
+;; Generating RTL for gimple basic block 88
+
+;; Generating RTL for gimple basic block 89
+
+;; Generating RTL for gimple basic block 90
+
+;; Generating RTL for gimple basic block 91
+
+;; Generating RTL for gimple basic block 92
+
+;; Generating RTL for gimple basic block 93
+
+;; Generating RTL for gimple basic block 94
+
+;; Generating RTL for gimple basic block 95
+
+;; Generating RTL for gimple basic block 96
+
+;; Generating RTL for gimple basic block 97
+
+;; Generating RTL for gimple basic block 98
+
+;; Generating RTL for gimple basic block 99
+
+;; Generating RTL for gimple basic block 100
+
+;; Generating RTL for gimple basic block 101
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 447 from 58 to 104.
+Edge 55->57 redirected to 59
+deleting block 57
+Removing jump 551.
+Redirecting jump 559 from 102 to 104.
+Merging block 102 into block 101...
+Merged blocks 101 and 102.
+Merged 101 and 102 without moving.
+Removing jump 928.
+Merging block 105 into block 104...
+Merged blocks 104 and 105.
+Merged 104 and 105 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000756 [0xffffffffff0bd90c])) [2 argc+0 S4 A32])
+        (reg:SI 5 di [ argc ])) "/home/faysal/gol/main.c":32:1 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000768 [0xffffffffff0bd900])) [46 argv+0 S8 A64])
+        (reg:DI 4 si [ argv ])) "/home/faysal/gol/main.c":32:1 -1
+     (nil))
+(note 4 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 4 8 2 (parallel [
+            (set (mem/v/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -8 [0xfffffffffffffff8])) [4 D.31956+0 S8 A64])
+                (unspec:DI [
+                        (mem/v/f:DI (const_int 40 [0x28]) [0 MEM[(<address-space-1> long unsigned int *)40B]+0 S8 A64 AS1])
+                    ] UNSPEC_SP_SET))
+            (set (scratch:DI)
+                (const_int 0 [0]))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":32:1 -1
+     (nil))
+(insn 8 5 9 2 (set (reg:SI 82 [ rank.0_1 ])
+        (mem/c:SI (symbol_ref:DI ("rank") [flags 0x2]  <var_decl 0x7f61372f6090 rank>) [2 rank+0 S4 A32])) "/home/faysal/gol/main.c":33:10 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 82 [ rank.0_1 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":33:4 -1
+     (nil))
+(jump_insn 10 9 11 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 922)
+            (pc))) "/home/faysal/gol/main.c":33:4 -1
+     (nil)
+ -> 922)
+(note 11 10 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 12 11 13 4 (set (reg:DI 183)
+        (symbol_ref/f:DI ("*.LC9") [flags 0x2]  <var_decl 0x7f6137324ea0 *.LC9>)) "/home/faysal/gol/main.c":34:3 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:DI 5 di)
+        (reg:DI 183)) "/home/faysal/gol/main.c":34:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC9") [flags 0x2]  <var_decl 0x7f6137324ea0 *.LC9>)
+        (nil)))
+(call_insn 14 13 15 4 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":34:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 15 14 16 4 (set (reg:DI 184)
+        (symbol_ref/f:DI ("*.LC10") [flags 0x2]  <var_decl 0x7f6137324f30 *.LC10>)) "/home/faysal/gol/main.c":36:3 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:DI 5 di)
+        (reg:DI 184)) "/home/faysal/gol/main.c":36:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC10") [flags 0x2]  <var_decl 0x7f6137324f30 *.LC10>)
+        (nil)))
+(call_insn 17 16 18 4 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":36:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 18 17 19 4 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000732 [0xffffffffff0bd924])) [2 TICKS+0 S4 A32])
+        (const_int 50000 [0xc350])) "/home/faysal/gol/main.c":38:7 -1
+     (nil))
+(insn 19 18 20 4 (set (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000743 [0xffffffffff0bd919])) [3 LoadFile+0 S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":39:8 -1
+     (nil))
+(insn 20 19 21 4 (set (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000742 [0xffffffffff0bd91a])) [3 SaveFile+0 S1 A16])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":39:26 -1
+     (nil))
+(insn 21 20 22 4 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000728 [0xffffffffff0bd928])) [2 EndTime+0 S4 A64])
+        (const_int -1 [0xffffffffffffffff])) "/home/faysal/gol/main.c":40:7 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:SF 185)
+        (mem/u/c:SF (symbol_ref/u:DI ("*.LC11") [flags 0x2]) [0  S4 A32])) "/home/faysal/gol/main.c":54:9 -1
+     (nil))
+(insn 23 22 24 4 (set (mem/c:SF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000696 [0xffffffffff0bd948])) [17 SCALE+0 S4 A64])
+        (reg:SF 185)) "/home/faysal/gol/main.c":54:9 -1
+     (nil))
+(insn 24 23 25 4 (set (reg:DI 5 di)
+        (const_int 16000020 [0xf42414])) "/home/faysal/gol/main.c":60:31 -1
+     (nil))
+(call_insn 25 24 26 4 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("malloc") [flags 0x41]  <function_decl 0x7f613a2dd800 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":60:31 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 26 25 27 4 (set (reg/f:DI 186)
+        (reg:DI 0 ax)) "/home/faysal/gol/main.c":60:31 -1
+     (expr_list:REG_NOALIAS (reg/f:DI 186)
+        (nil)))
+(insn 27 26 28 4 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])
+        (reg/f:DI 186)) "/home/faysal/gol/main.c":60:31 -1
+     (nil))
+(insn 28 27 29 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":61:6 -1
+     (nil))
+(jump_insn 29 28 30 4 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 42)
+            (pc))) "/home/faysal/gol/main.c":61:6 -1
+     (nil)
+ -> 42)
+(note 30 29 31 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 31 30 32 5 (set (reg/f:DI 83 [ stderr.1_2 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f613bc51d80 stderr>) [47 stderr+0 S8 A64])) "/home/faysal/gol/main.c":62:4 -1
+     (nil))
+(insn 32 31 33 5 (set (reg:DF 187)
+        (mem/u/c:DF (symbol_ref/u:DI ("*.LC12") [flags 0x2]) [0  S8 A64])) "/home/faysal/gol/main.c":62:4 -1
+     (expr_list:REG_EQUAL (const_double:DF 1.562501953125e+4 [0x0.f42414p+14])
+        (nil)))
+(insn 33 32 34 5 (set (reg:DF 20 xmm0)
+        (reg:DF 187)) "/home/faysal/gol/main.c":62:4 -1
+     (nil))
+(insn 34 33 35 5 (set (reg:DI 188)
+        (symbol_ref/f:DI ("*.LC13") [flags 0x2]  <var_decl 0x7f6137324bd0 *.LC13>)) "/home/faysal/gol/main.c":62:4 -1
+     (nil))
+(insn 35 34 36 5 (set (reg:DI 4 si)
+        (reg:DI 188)) "/home/faysal/gol/main.c":62:4 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC13") [flags 0x2]  <var_decl 0x7f6137324bd0 *.LC13>)
+        (nil)))
+(insn 36 35 37 5 (set (reg:DI 5 di)
+        (reg/f:DI 83 [ stderr.1_2 ])) "/home/faysal/gol/main.c":62:4 -1
+     (nil))
+(insn 37 36 38 5 (set (reg:QI 0 ax)
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":62:4 -1
+     (nil))
+(call_insn 38 37 39 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f613a2bab00 fprintf>) [0 __builtin_fprintf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":62:4 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:DF (use (reg:DF 20 xmm0))
+                    (nil))))))
+(insn 39 38 40 5 (set (reg:SI 5 di)
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":63:4 -1
+     (nil))
+(call_insn 40 39 41 5 (call (mem:QI (symbol_ref:DI ("exit") [flags 0x41]  <function_decl 0x7f613a2d3b00 exit>) [0 __builtin_exit S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":63:4 -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(barrier 41 40 42)
+(code_label 42 41 43 6 4 (nil) [1 uses])
+(note 43 42 44 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 44 43 45 6 (set (reg/f:DI 189)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":66:21 -1
+     (nil))
+(insn 45 44 46 6 (set (mem:SI (plus:DI (reg/f:DI 189)
+                (const_int 16000000 [0xf42400])) [2 board_149->game_state+0 S4 A32])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":66:21 -1
+     (nil))
+(insn 46 45 47 6 (set (reg/f:DI 190)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":67:21 -1
+     (nil))
+(insn 47 46 48 6 (set (mem:SI (plus:DI (reg/f:DI 190)
+                (const_int 16000012 [0xf4240c])) [2 board_149->CELL_WIDTH+0 S4 A32])
+        (const_int 4 [0x4])) "/home/faysal/gol/main.c":67:21 -1
+     (nil))
+(insn 48 47 49 6 (set (reg/f:DI 191)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":68:22 -1
+     (nil))
+(insn 49 48 50 6 (set (mem:SI (plus:DI (reg/f:DI 191)
+                (const_int 16000016 [0xf42410])) [2 board_149->CELL_HEIGHT+0 S4 A32])
+        (const_int 4 [0x4])) "/home/faysal/gol/main.c":68:22 -1
+     (nil))
+(insn 50 49 51 6 (set (reg/f:DI 192)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":69:18 -1
+     (nil))
+(insn 51 50 52 6 (set (mem:SI (plus:DI (reg/f:DI 192)
+                (const_int 16000004 [0xf42404])) [2 board_149->COL_NUM+0 S4 A32])
+        (const_int 4000 [0xfa0])) "/home/faysal/gol/main.c":69:18 -1
+     (nil))
+(insn 52 51 53 6 (set (reg/f:DI 193)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":70:18 -1
+     (nil))
+(insn 53 52 54 6 (set (mem:SI (plus:DI (reg/f:DI 193)
+                (const_int 16000008 [0xf42408])) [2 board_149->ROW_NUM+0 S4 A32])
+        (const_int 4000 [0xfa0])) "/home/faysal/gol/main.c":70:18 -1
+     (nil))
+(insn 54 53 55 6 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000716 [0xffffffffff0bd934])) [2 i+0 S4 A32])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":72:12 -1
+     (nil))
+(jump_insn 55 54 56 6 (set (pc)
+        (label_ref 81)) "/home/faysal/gol/main.c":72:3 -1
+     (nil)
+ -> 81)
+(barrier 56 55 85)
+(code_label 85 56 57 7 8 (nil) [1 uses])
+(note 57 85 58 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 58 57 59 7 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000712 [0xffffffffff0bd938])) [2 j+0 S4 A64])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":73:13 -1
+     (nil))
+(jump_insn 59 58 60 7 (set (pc)
+        (label_ref 72)) "/home/faysal/gol/main.c":73:4 -1
+     (nil)
+ -> 72)
+(barrier 60 59 76)
+(code_label 76 60 61 8 7 (nil) [1 uses])
+(note 61 76 62 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 62 61 63 8 (set (reg/f:DI 194)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":74:28 -1
+     (nil))
+(insn 63 62 64 8 (set (reg:SI 196)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000712 [0xffffffffff0bd938])) [2 j+0 S4 A64])) "/home/faysal/gol/main.c":74:28 -1
+     (nil))
+(insn 64 63 65 8 (set (reg:DI 195)
+        (sign_extend:DI (reg:SI 196))) "/home/faysal/gol/main.c":74:28 -1
+     (nil))
+(insn 65 64 66 8 (set (reg:SI 198)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000716 [0xffffffffff0bd934])) [2 i+0 S4 A32])) "/home/faysal/gol/main.c":74:28 -1
+     (nil))
+(insn 66 65 67 8 (set (reg:DI 197)
+        (sign_extend:DI (reg:SI 198))) "/home/faysal/gol/main.c":74:28 -1
+     (nil))
+(insn 67 66 68 8 (parallel [
+            (set (reg:DI 199)
+                (mult:DI (reg:DI 197)
+                    (const_int 4000 [0xfa0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":74:28 -1
+     (nil))
+(insn 68 67 69 8 (parallel [
+            (set (reg:DI 199)
+                (plus:DI (reg:DI 199)
+                    (reg/f:DI 194)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":74:28 -1
+     (nil))
+(insn 69 68 70 8 (parallel [
+            (set (reg/f:DI 200)
+                (plus:DI (reg:DI 199)
+                    (reg:DI 195)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":74:28 -1
+     (nil))
+(insn 70 69 71 8 (set (mem:QI (reg/f:DI 200) [0 board_149->cell_state[i_108][j_109]+0 S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":74:28 -1
+     (nil))
+(insn 71 70 72 8 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -16000712 [0xffffffffff0bd938])) [2 j+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16000712 [0xffffffffff0bd938])) [2 j+0 S4 A64])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":73:41 -1
+     (nil))
+(code_label 72 71 73 9 6 (nil) [1 uses])
+(note 73 72 74 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 74 73 75 9 (set (reg/f:DI 201)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":73:29 -1
+     (nil))
+(insn 75 74 77 9 (set (reg:SI 84 [ _3 ])
+        (mem:SI (plus:DI (reg/f:DI 201)
+                (const_int 16000008 [0xf42408])) [2 board_149->ROW_NUM+0 S4 A32])) "/home/faysal/gol/main.c":73:29 -1
+     (nil))
+(insn 77 75 78 9 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000712 [0xffffffffff0bd938])) [2 j+0 S4 A64])
+            (reg:SI 84 [ _3 ]))) "/home/faysal/gol/main.c":73:22 -1
+     (nil))
+(jump_insn 78 77 79 9 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 76)
+            (pc))) "/home/faysal/gol/main.c":73:22 -1
+     (nil)
+ -> 76)
+(note 79 78 80 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 80 79 81 10 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -16000716 [0xffffffffff0bd934])) [2 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16000716 [0xffffffffff0bd934])) [2 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":72:40 -1
+     (nil))
+(code_label 81 80 82 11 5 (nil) [1 uses])
+(note 82 81 83 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 83 82 84 11 (set (reg/f:DI 202)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":72:28 -1
+     (nil))
+(insn 84 83 86 11 (set (reg:SI 85 [ _4 ])
+        (mem:SI (plus:DI (reg/f:DI 202)
+                (const_int 16000004 [0xf42404])) [2 board_149->COL_NUM+0 S4 A32])) "/home/faysal/gol/main.c":72:28 -1
+     (nil))
+(insn 86 84 87 11 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000716 [0xffffffffff0bd934])) [2 i+0 S4 A32])
+            (reg:SI 85 [ _4 ]))) "/home/faysal/gol/main.c":72:21 -1
+     (nil))
+(jump_insn 87 86 88 11 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 85)
+            (pc))) "/home/faysal/gol/main.c":72:21 -1
+     (nil)
+ -> 85)
+(note 88 87 89 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 89 88 90 12 (parallel [
+            (set (reg:DI 203)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000528 [0xffffffffff0bd9f0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":77:17 -1
+     (nil))
+(insn 90 89 91 12 (set (reg:DI 204)
+        (const_int 16000000 [0xf42400])) "/home/faysal/gol/main.c":77:17 -1
+     (nil))
+(insn 91 90 92 12 (set (reg:DI 1 dx)
+        (reg:DI 204)) "/home/faysal/gol/main.c":77:17 -1
+     (nil))
+(insn 92 91 93 12 (set (reg:SI 4 si)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":77:17 -1
+     (nil))
+(insn 93 92 94 12 (set (reg:DI 5 di)
+        (reg:DI 203)) "/home/faysal/gol/main.c":77:17 -1
+     (nil))
+(call_insn 94 93 95 12 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("memset") [flags 0x41]  <function_decl 0x7f613a2b2e00 __builtin_memset>) [0 __builtin_memset S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":77:17 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (set (reg:DI 0 ax)
+            (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (expr_list:DI (use (reg:DI 1 dx))
+                    (nil))))))
+(insn 95 94 96 12 (set (reg:DI 205)
+        (reg:DI 0 ax)) "/home/faysal/gol/main.c":77:17 -1
+     (nil))
+(insn 96 95 97 12 (set (reg:DI 206)
+        (reg:DI 205)) "/home/faysal/gol/main.c":77:17 -1
+     (nil))
+(jump_insn 97 96 98 12 (set (pc)
+        (label_ref 376)) "/home/faysal/gol/main.c":82:8 -1
+     (nil)
+ -> 376)
+(barrier 98 97 387)
+(code_label 387 98 99 13 30 (nil) [1 uses])
+(note 99 387 100 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 100 99 101 13 (set (reg:SI 208)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000692 [0xffffffffff0bd94c])) [2 opt+0 S4 A32])) "/home/faysal/gol/main.c":83:4 -1
+     (nil))
+(insn 101 100 104 13 (parallel [
+            (set (reg:SI 207)
+                (plus:SI (reg:SI 208)
+                    (const_int -63 [0xffffffffffffffc1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":83:4 -1
+     (expr_list:REG_EQUAL (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000692 [0xffffffffff0bd94c])) [2 opt+0 S4 A32])
+            (const_int -63 [0xffffffffffffffc1]))
+        (nil)))
+(insn 104 101 105 13 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 207)
+            (const_int 56 [0x38]))) "/home/faysal/gol/main.c":83:4 -1
+     (nil))
+(jump_insn 105 104 939 13 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 370)
+            (pc))) "/home/faysal/gol/main.c":83:4 -1
+     (nil)
+ -> 370)
+(note 939 105 106 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 106 939 107 14 (set (reg:DI 209)
+        (zero_extend:DI (reg:SI 207))) "/home/faysal/gol/main.c":83:4 -1
+     (nil))
+(insn 107 106 108 14 (parallel [
+            (set (reg:DI 210)
+                (ashift:DI (reg:DI 209)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":83:4 -1
+     (nil))
+(insn 108 107 109 14 (set (reg:DI 211)
+        (label_ref:DI 114)) "/home/faysal/gol/main.c":83:4 -1
+     (insn_list:REG_LABEL_OPERAND 114 (nil)))
+(insn 109 108 110 14 (set (reg:SI 212)
+        (mem/u/c:SI (plus:DI (reg:DI 210)
+                (reg:DI 211)) [0  S4 A8])) "/home/faysal/gol/main.c":83:4 -1
+     (nil))
+(insn 110 109 111 14 (set (reg:DI 213)
+        (sign_extend:DI (reg:SI 212))) "/home/faysal/gol/main.c":83:4 -1
+     (nil))
+(insn 111 110 112 14 (set (reg:DI 215)
+        (label_ref:DI 114)) "/home/faysal/gol/main.c":83:4 -1
+     (insn_list:REG_LABEL_OPERAND 114 (nil)))
+(insn 112 111 113 14 (parallel [
+            (set (reg:DI 214)
+                (plus:DI (reg:DI 213)
+                    (reg:DI 215)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":83:4 -1
+     (nil))
+(jump_insn 113 112 114 14 (parallel [
+            (set (pc)
+                (reg:DI 214))
+            (use (label_ref 114))
+        ]) "/home/faysal/gol/main.c":83:4 -1
+     (nil)
+ -> 114)
+(code_label 114 113 115 12 (nil) [3 uses])
+(jump_table_data 115 114 116 (addr_diff_vec:SI (label_ref:DI 114)
+         [
+            (label_ref:DI 282)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 276)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 206)
+            (label_ref:DI 370)
+            (label_ref:DI 186)
+            (label_ref:DI 370)
+            (label_ref:DI 201)
+            (label_ref:DI 169)
+            (label_ref:DI 126)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 136)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 117)
+            (label_ref:DI 370)
+            (label_ref:DI 370)
+            (label_ref:DI 152)
+        ]
+        (const_int 0 [0])
+        (const_int 0 [0])))
+(barrier 116 115 117)
+(code_label 117 116 118 15 13 (nil) [1 uses])
+(note 118 117 119 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 119 118 120 15 (set (reg/f:DI 86 [ optarg.2_5 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":85:13 -1
+     (nil))
+(insn 120 119 121 15 (set (reg:DI 5 di)
+        (reg/f:DI 86 [ optarg.2_5 ])) "/home/faysal/gol/main.c":85:13 -1
+     (nil))
+(call_insn/i 121 120 122 15 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("atoi") [flags 0x41]  <function_decl 0x7f613a373b00 atoi>) [0 atoi S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":85:13 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 122 121 123 15 (set (reg:SI 216)
+        (reg:SI 0 ax)) "/home/faysal/gol/main.c":85:13 -1
+     (nil))
+(insn 123 122 124 15 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000732 [0xffffffffff0bd924])) [2 TICKS+0 S4 A32])
+        (reg:SI 216)) "/home/faysal/gol/main.c":85:13 -1
+     (nil))
+(jump_insn 124 123 125 15 (set (pc)
+        (label_ref 376)) "/home/faysal/gol/main.c":86:5 -1
+     (nil)
+ -> 376)
+(barrier 125 124 126)
+(code_label 126 125 127 16 15 (nil) [1 uses])
+(note 127 126 128 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 128 127 129 16 (set (reg/f:DI 87 [ optarg.3_6 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":88:5 -1
+     (nil))
+(insn 129 128 130 16 (parallel [
+            (set (reg:DI 217)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -528 [0xfffffffffffffdf0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":88:5 -1
+     (nil))
+(insn 130 129 131 16 (set (reg:DI 4 si)
+        (reg/f:DI 87 [ optarg.3_6 ])) "/home/faysal/gol/main.c":88:5 -1
+     (nil))
+(insn 131 130 132 16 (set (reg:DI 5 di)
+        (reg:DI 217)) "/home/faysal/gol/main.c":88:5 -1
+     (nil))
+(call_insn 132 131 133 16 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("strcpy") [flags 0x41]  <function_decl 0x7f613a2b4f00 strcpy>) [0 __builtin_strcpy S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":88:5 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (set (reg:DI 0 ax)
+            (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+(insn 133 132 134 16 (set (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000743 [0xffffffffff0bd919])) [3 LoadFile+0 S1 A8])
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":89:14 -1
+     (nil))
+(jump_insn 134 133 135 16 (set (pc)
+        (label_ref 376)) "/home/faysal/gol/main.c":90:5 -1
+     (nil)
+ -> 376)
+(barrier 135 134 136)
+(code_label 136 135 137 17 14 (nil) [1 uses])
+(note 137 136 138 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 138 137 139 17 (set (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000742 [0xffffffffff0bd91a])) [3 SaveFile+0 S1 A16])
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":92:13 -1
+     (nil))
+(insn 139 138 140 17 (set (reg/f:DI 88 [ optarg.4_7 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":93:5 -1
+     (nil))
+(insn 140 139 141 17 (parallel [
+            (set (reg:DI 218)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -272 [0xfffffffffffffef0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":93:5 -1
+     (nil))
+(insn 141 140 142 17 (set (reg:DI 4 si)
+        (reg/f:DI 88 [ optarg.4_7 ])) "/home/faysal/gol/main.c":93:5 -1
+     (nil))
+(insn 142 141 143 17 (set (reg:DI 5 di)
+        (reg:DI 218)) "/home/faysal/gol/main.c":93:5 -1
+     (nil))
+(call_insn 143 142 144 17 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("strcpy") [flags 0x41]  <function_decl 0x7f613a2b4f00 strcpy>) [0 __builtin_strcpy S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":93:5 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (set (reg:DI 0 ax)
+            (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+(insn 144 143 145 17 (set (reg/f:DI 89 [ optarg.5_8 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":94:5 -1
+     (nil))
+(insn 145 144 146 17 (set (reg:DI 4 si)
+        (reg/f:DI 89 [ optarg.5_8 ])) "/home/faysal/gol/main.c":94:5 -1
+     (nil))
+(insn 146 145 147 17 (set (reg:DI 219)
+        (symbol_ref/f:DI ("*.LC14") [flags 0x2]  <var_decl 0x7f6137351090 *.LC14>)) "/home/faysal/gol/main.c":94:5 -1
+     (nil))
+(insn 147 146 148 17 (set (reg:DI 5 di)
+        (reg:DI 219)) "/home/faysal/gol/main.c":94:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC14") [flags 0x2]  <var_decl 0x7f6137351090 *.LC14>)
+        (nil)))
+(insn 148 147 149 17 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":94:5 -1
+     (nil))
+(call_insn 149 148 150 17 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f613a2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":94:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+(jump_insn 150 149 151 17 (set (pc)
+        (label_ref 376)) "/home/faysal/gol/main.c":95:5 -1
+     (nil)
+ -> 376)
+(barrier 151 150 152)
+(code_label 152 151 153 18 11 (nil) [1 uses])
+(note 153 152 154 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 154 153 155 18 (set (reg/f:DI 90 [ optarg.6_9 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":97:22 -1
+     (nil))
+(insn 155 154 156 18 (set (reg:DI 5 di)
+        (reg/f:DI 90 [ optarg.6_9 ])) "/home/faysal/gol/main.c":97:22 -1
+     (nil))
+(call_insn/i 156 155 157 18 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("atoi") [flags 0x41]  <function_decl 0x7f613a373b00 atoi>) [0 atoi S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":97:22 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 157 156 158 18 (set (reg:SI 91 [ _10 ])
+        (reg:SI 0 ax)) "/home/faysal/gol/main.c":97:22 -1
+     (nil))
+(insn 158 157 159 18 (set (reg/f:DI 220)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":97:20 -1
+     (nil))
+(insn 159 158 160 18 (set (mem:SI (plus:DI (reg/f:DI 220)
+                (const_int 16000004 [0xf42404])) [2 board_149->COL_NUM+0 S4 A32])
+        (reg:SI 91 [ _10 ])) "/home/faysal/gol/main.c":97:20 -1
+     (nil))
+(insn 160 159 161 18 (set (reg/f:DI 221)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":98:5 -1
+     (nil))
+(insn 161 160 162 18 (set (reg:SI 92 [ _11 ])
+        (mem:SI (plus:DI (reg/f:DI 221)
+                (const_int 16000004 [0xf42404])) [2 board_149->COL_NUM+0 S4 A32])) "/home/faysal/gol/main.c":98:5 -1
+     (nil))
+(insn 162 161 163 18 (set (reg:SI 4 si)
+        (reg:SI 92 [ _11 ])) "/home/faysal/gol/main.c":98:5 -1
+     (nil))
+(insn 163 162 164 18 (set (reg:DI 222)
+        (symbol_ref/f:DI ("*.LC15") [flags 0x2]  <var_decl 0x7f6137351120 *.LC15>)) "/home/faysal/gol/main.c":98:5 -1
+     (nil))
+(insn 164 163 165 18 (set (reg:DI 5 di)
+        (reg:DI 222)) "/home/faysal/gol/main.c":98:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC15") [flags 0x2]  <var_decl 0x7f6137351120 *.LC15>)
+        (nil)))
+(insn 165 164 166 18 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":98:5 -1
+     (nil))
+(call_insn 166 165 167 18 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f613a2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":98:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+(jump_insn 167 166 168 18 (set (pc)
+        (label_ref 376)) "/home/faysal/gol/main.c":99:5 -1
+     (nil)
+ -> 376)
+(barrier 168 167 169)
+(code_label 169 168 170 19 16 (nil) [1 uses])
+(note 170 169 171 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 171 170 172 19 (set (reg/f:DI 93 [ optarg.7_12 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":101:22 -1
+     (nil))
+(insn 172 171 173 19 (set (reg:DI 5 di)
+        (reg/f:DI 93 [ optarg.7_12 ])) "/home/faysal/gol/main.c":101:22 -1
+     (nil))
+(call_insn/i 173 172 174 19 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("atoi") [flags 0x41]  <function_decl 0x7f613a373b00 atoi>) [0 atoi S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":101:22 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 174 173 175 19 (set (reg:SI 94 [ _13 ])
+        (reg:SI 0 ax)) "/home/faysal/gol/main.c":101:22 -1
+     (nil))
+(insn 175 174 176 19 (set (reg/f:DI 223)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":101:20 -1
+     (nil))
+(insn 176 175 177 19 (set (mem:SI (plus:DI (reg/f:DI 223)
+                (const_int 16000008 [0xf42408])) [2 board_149->ROW_NUM+0 S4 A32])
+        (reg:SI 94 [ _13 ])) "/home/faysal/gol/main.c":101:20 -1
+     (nil))
+(insn 177 176 178 19 (set (reg/f:DI 224)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":102:5 -1
+     (nil))
+(insn 178 177 179 19 (set (reg:SI 95 [ _14 ])
+        (mem:SI (plus:DI (reg/f:DI 224)
+                (const_int 16000008 [0xf42408])) [2 board_149->ROW_NUM+0 S4 A32])) "/home/faysal/gol/main.c":102:5 -1
+     (nil))
+(insn 179 178 180 19 (set (reg:SI 4 si)
+        (reg:SI 95 [ _14 ])) "/home/faysal/gol/main.c":102:5 -1
+     (nil))
+(insn 180 179 181 19 (set (reg:DI 225)
+        (symbol_ref/f:DI ("*.LC16") [flags 0x2]  <var_decl 0x7f61373511b0 *.LC16>)) "/home/faysal/gol/main.c":102:5 -1
+     (nil))
+(insn 181 180 182 19 (set (reg:DI 5 di)
+        (reg:DI 225)) "/home/faysal/gol/main.c":102:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC16") [flags 0x2]  <var_decl 0x7f61373511b0 *.LC16>)
+        (nil)))
+(insn 182 181 183 19 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":102:5 -1
+     (nil))
+(call_insn 183 182 184 19 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f613a2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":102:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+(jump_insn 184 183 185 19 (set (pc)
+        (label_ref 376)) "/home/faysal/gol/main.c":103:5 -1
+     (nil)
+ -> 376)
+(barrier 185 184 186)
+(code_label 186 185 187 20 18 (nil) [1 uses])
+(note 187 186 188 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(insn 188 187 189 20 (set (reg/f:DI 96 [ optarg.8_15 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":105:5 -1
+     (nil))
+(insn 189 188 190 20 (set (reg:DI 4 si)
+        (reg/f:DI 96 [ optarg.8_15 ])) "/home/faysal/gol/main.c":105:5 -1
+     (nil))
+(insn 190 189 191 20 (set (reg:DI 226)
+        (symbol_ref/f:DI ("*.LC17") [flags 0x2]  <var_decl 0x7f6137351240 *.LC17>)) "/home/faysal/gol/main.c":105:5 -1
+     (nil))
+(insn 191 190 192 20 (set (reg:DI 5 di)
+        (reg:DI 226)) "/home/faysal/gol/main.c":105:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC17") [flags 0x2]  <var_decl 0x7f6137351240 *.LC17>)
+        (nil)))
+(insn 192 191 193 20 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":105:5 -1
+     (nil))
+(call_insn 193 192 194 20 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f613a2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":105:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+(insn 194 193 195 20 (set (reg/f:DI 97 [ optarg.9_16 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":106:15 -1
+     (nil))
+(insn 195 194 196 20 (set (reg:DI 5 di)
+        (reg/f:DI 97 [ optarg.9_16 ])) "/home/faysal/gol/main.c":106:15 -1
+     (nil))
+(call_insn/i 196 195 197 20 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("atoi") [flags 0x41]  <function_decl 0x7f613a373b00 atoi>) [0 atoi S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":106:15 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 197 196 198 20 (set (reg:SI 227)
+        (reg:SI 0 ax)) "/home/faysal/gol/main.c":106:15 -1
+     (nil))
+(insn 198 197 199 20 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000728 [0xffffffffff0bd928])) [2 EndTime+0 S4 A64])
+        (reg:SI 227)) "/home/faysal/gol/main.c":106:15 -1
+     (nil))
+(jump_insn 199 198 200 20 (set (pc)
+        (label_ref 376)) "/home/faysal/gol/main.c":107:5 -1
+     (nil)
+ -> 376)
+(barrier 200 199 201)
+(code_label 201 200 202 21 17 (nil) [1 uses])
+(note 202 201 203 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+(insn 203 202 204 21 (set (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x40]  <var_decl 0x7f61375a9f30 Graphical_Mode>) [3 Graphical_Mode+0 S1 A8])
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":109:20 -1
+     (nil))
+(jump_insn 204 203 205 21 (set (pc)
+        (label_ref 376)) "/home/faysal/gol/main.c":110:5 -1
+     (nil)
+ -> 376)
+(barrier 205 204 206)
+(code_label 206 205 207 22 19 (nil) [1 uses])
+(note 207 206 208 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(insn 208 207 209 22 (set (reg/f:DI 98 [ optarg.10_17 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":112:9 -1
+     (nil))
+(insn 209 208 210 22 (set (reg:DI 228)
+        (symbol_ref/f:DI ("*.LC18") [flags 0x2]  <var_decl 0x7f61373512d0 *.LC18>)) "/home/faysal/gol/main.c":112:9 -1
+     (nil))
+(insn 210 209 211 22 (set (reg:DI 4 si)
+        (reg:DI 228)) "/home/faysal/gol/main.c":112:9 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC18") [flags 0x2]  <var_decl 0x7f61373512d0 *.LC18>)
+        (nil)))
+(insn 211 210 212 22 (set (reg:DI 5 di)
+        (reg/f:DI 98 [ optarg.10_17 ])) "/home/faysal/gol/main.c":112:9 -1
+     (nil))
+(call_insn/i 212 211 213 22 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("strcmp") [flags 0x41]  <function_decl 0x7f613a2b4d00 strcmp>) [0 __builtin_strcmp S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":112:9 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 213 212 214 22 (set (reg:SI 99 [ _18 ])
+        (reg:SI 0 ax)) "/home/faysal/gol/main.c":112:9 -1
+     (nil))
+(insn 214 213 215 22 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 99 [ _18 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":112:8 -1
+     (nil))
+(jump_insn 215 214 216 22 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 223)
+            (pc))) "/home/faysal/gol/main.c":112:8 -1
+     (nil)
+ -> 223)
+(note 216 215 217 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+(insn 217 216 218 23 (set (reg/f:DI 229)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":113:23 -1
+     (nil))
+(insn 218 217 219 23 (set (mem:SI (plus:DI (reg/f:DI 229)
+                (const_int 16000012 [0xf4240c])) [2 board_149->CELL_WIDTH+0 S4 A32])
+        (const_int 2 [0x2])) "/home/faysal/gol/main.c":113:23 -1
+     (nil))
+(insn 219 218 220 23 (set (reg/f:DI 230)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":114:24 -1
+     (nil))
+(insn 220 219 221 23 (set (mem:SI (plus:DI (reg/f:DI 230)
+                (const_int 16000016 [0xf42410])) [2 board_149->CELL_HEIGHT+0 S4 A32])
+        (const_int 2 [0x2])) "/home/faysal/gol/main.c":114:24 -1
+     (nil))
+(jump_insn 221 220 222 23 (set (pc)
+        (label_ref 272)) -1
+     (nil)
+ -> 272)
+(barrier 222 221 223)
+(code_label 223 222 224 24 22 (nil) [1 uses])
+(note 224 223 225 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
+(insn 225 224 226 24 (set (reg/f:DI 100 [ optarg.11_19 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":116:14 -1
+     (nil))
+(insn 226 225 227 24 (set (reg:DI 231)
+        (symbol_ref/f:DI ("*.LC19") [flags 0x2]  <var_decl 0x7f6137351360 *.LC19>)) "/home/faysal/gol/main.c":116:14 -1
+     (nil))
+(insn 227 226 228 24 (set (reg:DI 4 si)
+        (reg:DI 231)) "/home/faysal/gol/main.c":116:14 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC19") [flags 0x2]  <var_decl 0x7f6137351360 *.LC19>)
+        (nil)))
+(insn 228 227 229 24 (set (reg:DI 5 di)
+        (reg/f:DI 100 [ optarg.11_19 ])) "/home/faysal/gol/main.c":116:14 -1
+     (nil))
+(call_insn/i 229 228 230 24 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("strcmp") [flags 0x41]  <function_decl 0x7f613a2b4d00 strcmp>) [0 __builtin_strcmp S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":116:14 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 230 229 231 24 (set (reg:SI 101 [ _20 ])
+        (reg:SI 0 ax)) "/home/faysal/gol/main.c":116:14 -1
+     (nil))
+(insn 231 230 232 24 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 101 [ _20 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":116:13 -1
+     (nil))
+(jump_insn 232 231 233 24 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 240)
+            (pc))) "/home/faysal/gol/main.c":116:13 -1
+     (nil)
+ -> 240)
+(note 233 232 234 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+(insn 234 233 235 25 (set (reg/f:DI 232)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":117:23 -1
+     (nil))
+(insn 235 234 236 25 (set (mem:SI (plus:DI (reg/f:DI 232)
+                (const_int 16000012 [0xf4240c])) [2 board_149->CELL_WIDTH+0 S4 A32])
+        (const_int 5 [0x5])) "/home/faysal/gol/main.c":117:23 -1
+     (nil))
+(insn 236 235 237 25 (set (reg/f:DI 233)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":118:24 -1
+     (nil))
+(insn 237 236 238 25 (set (mem:SI (plus:DI (reg/f:DI 233)
+                (const_int 16000016 [0xf42410])) [2 board_149->CELL_HEIGHT+0 S4 A32])
+        (const_int 5 [0x5])) "/home/faysal/gol/main.c":118:24 -1
+     (nil))
+(jump_insn 238 237 239 25 (set (pc)
+        (label_ref 272)) -1
+     (nil)
+ -> 272)
+(barrier 239 238 240)
+(code_label 240 239 241 26 24 (nil) [1 uses])
+(note 241 240 242 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
+(insn 242 241 243 26 (set (reg/f:DI 102 [ optarg.12_21 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":120:14 -1
+     (nil))
+(insn 243 242 244 26 (set (reg:DI 234)
+        (symbol_ref/f:DI ("*.LC20") [flags 0x2]  <var_decl 0x7f61373513f0 *.LC20>)) "/home/faysal/gol/main.c":120:14 -1
+     (nil))
+(insn 244 243 245 26 (set (reg:DI 4 si)
+        (reg:DI 234)) "/home/faysal/gol/main.c":120:14 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC20") [flags 0x2]  <var_decl 0x7f61373513f0 *.LC20>)
+        (nil)))
+(insn 245 244 246 26 (set (reg:DI 5 di)
+        (reg/f:DI 102 [ optarg.12_21 ])) "/home/faysal/gol/main.c":120:14 -1
+     (nil))
+(call_insn/i 246 245 247 26 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("strcmp") [flags 0x41]  <function_decl 0x7f613a2b4d00 strcmp>) [0 __builtin_strcmp S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":120:14 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 247 246 248 26 (set (reg:SI 103 [ _22 ])
+        (reg:SI 0 ax)) "/home/faysal/gol/main.c":120:14 -1
+     (nil))
+(insn 248 247 249 26 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 103 [ _22 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":120:13 -1
+     (nil))
+(jump_insn 249 248 250 26 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 257)
+            (pc))) "/home/faysal/gol/main.c":120:13 -1
+     (nil)
+ -> 257)
+(note 250 249 251 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
+(insn 251 250 252 27 (set (reg/f:DI 235)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":121:23 -1
+     (nil))
+(insn 252 251 253 27 (set (mem:SI (plus:DI (reg/f:DI 235)
+                (const_int 16000012 [0xf4240c])) [2 board_149->CELL_WIDTH+0 S4 A32])
+        (const_int 10 [0xa])) "/home/faysal/gol/main.c":121:23 -1
+     (nil))
+(insn 253 252 254 27 (set (reg/f:DI 236)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":122:24 -1
+     (nil))
+(insn 254 253 255 27 (set (mem:SI (plus:DI (reg/f:DI 236)
+                (const_int 16000016 [0xf42410])) [2 board_149->CELL_HEIGHT+0 S4 A32])
+        (const_int 10 [0xa])) "/home/faysal/gol/main.c":122:24 -1
+     (nil))
+(jump_insn 255 254 256 27 (set (pc)
+        (label_ref 272)) -1
+     (nil)
+ -> 272)
+(barrier 256 255 257)
+(code_label 257 256 258 28 25 (nil) [1 uses])
+(note 258 257 259 28 [bb 28] NOTE_INSN_BASIC_BLOCK)
+(insn 259 258 260 28 (set (reg/f:DI 104 [ optarg.13_23 ])
+        (mem/f/c:DI (symbol_ref:DI ("optarg") [flags 0x40]  <var_decl 0x7f613bc51ea0 optarg>) [39 optarg+0 S8 A64])) "/home/faysal/gol/main.c":124:14 -1
+     (nil))
+(insn 260 259 261 28 (set (reg:DI 237)
+        (symbol_ref/f:DI ("*.LC21") [flags 0x2]  <var_decl 0x7f6137351480 *.LC21>)) "/home/faysal/gol/main.c":124:14 -1
+     (nil))
+(insn 261 260 262 28 (set (reg:DI 4 si)
+        (reg:DI 237)) "/home/faysal/gol/main.c":124:14 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC21") [flags 0x2]  <var_decl 0x7f6137351480 *.LC21>)
+        (nil)))
+(insn 262 261 263 28 (set (reg:DI 5 di)
+        (reg/f:DI 104 [ optarg.13_23 ])) "/home/faysal/gol/main.c":124:14 -1
+     (nil))
+(call_insn/i 263 262 264 28 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("strcmp") [flags 0x41]  <function_decl 0x7f613a2b4d00 strcmp>) [0 __builtin_strcmp S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":124:14 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 264 263 265 28 (set (reg:SI 105 [ _24 ])
+        (reg:SI 0 ax)) "/home/faysal/gol/main.c":124:14 -1
+     (nil))
+(insn 265 264 266 28 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 105 [ _24 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":124:13 -1
+     (nil))
+(jump_insn 266 265 267 28 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 272)
+            (pc))) "/home/faysal/gol/main.c":124:13 -1
+     (nil)
+ -> 272)
+(note 267 266 268 29 [bb 29] NOTE_INSN_BASIC_BLOCK)
+(insn 268 267 269 29 (set (reg/f:DI 238)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":125:23 -1
+     (nil))
+(insn 269 268 270 29 (set (mem:SI (plus:DI (reg/f:DI 238)
+                (const_int 16000012 [0xf4240c])) [2 board_149->CELL_WIDTH+0 S4 A32])
+        (const_int 25 [0x19])) "/home/faysal/gol/main.c":125:23 -1
+     (nil))
+(insn 270 269 271 29 (set (reg/f:DI 239)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":126:24 -1
+     (nil))
+(insn 271 270 272 29 (set (mem:SI (plus:DI (reg/f:DI 239)
+                (const_int 16000016 [0xf42410])) [2 board_149->CELL_HEIGHT+0 S4 A32])
+        (const_int 25 [0x19])) "/home/faysal/gol/main.c":126:24 -1
+     (nil))
+(code_label 272 271 273 30 23 (nil) [4 uses])
+(note 273 272 274 30 [bb 30] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 274 273 275 30 (set (pc)
+        (label_ref 376)) "/home/faysal/gol/main.c":128:5 -1
+     (nil)
+ -> 376)
+(barrier 275 274 276)
+(code_label 276 275 277 31 20 (nil) [1 uses])
+(note 277 276 278 31 [bb 31] NOTE_INSN_BASIC_BLOCK)
+(call_insn 278 277 279 31 (call (mem:QI (symbol_ref:DI ("usage") [flags 0x3]  <function_decl 0x7f61376efd00 usage>) [0 usage S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":130:5 -1
+     (nil)
+    (nil))
+(insn 279 278 280 31 (set (reg:SI 5 di)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":131:5 -1
+     (nil))
+(call_insn 280 279 281 31 (call (mem:QI (symbol_ref:DI ("exit") [flags 0x41]  <function_decl 0x7f613a2d3b00 exit>) [0 __builtin_exit S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":131:5 -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(barrier 281 280 282)
+(code_label 282 281 283 32 21 (nil) [1 uses])
+(note 283 282 284 32 [bb 32] NOTE_INSN_BASIC_BLOCK)
+(insn 284 283 285 32 (set (reg:SI 106 [ optopt.14_25 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":134:16 -1
+     (nil))
+(insn 285 284 286 32 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 106 [ optopt.14_25 ])
+            (const_int 116 [0x74]))) "/home/faysal/gol/main.c":134:8 -1
+     (nil))
+(jump_insn 286 285 287 32 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 315)
+            (pc))) "/home/faysal/gol/main.c":134:8 -1
+     (nil)
+ -> 315)
+(note 287 286 288 33 [bb 33] NOTE_INSN_BASIC_BLOCK)
+(insn 288 287 289 33 (set (reg:SI 107 [ optopt.15_26 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":134:33 -1
+     (nil))
+(insn 289 288 290 33 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 107 [ optopt.15_26 ])
+            (const_int 115 [0x73]))) "/home/faysal/gol/main.c":134:23 -1
+     (nil))
+(jump_insn 290 289 291 33 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 315)
+            (pc))) "/home/faysal/gol/main.c":134:23 -1
+     (nil)
+ -> 315)
+(note 291 290 292 34 [bb 34] NOTE_INSN_BASIC_BLOCK)
+(insn 292 291 293 34 (set (reg:SI 108 [ optopt.16_27 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":134:50 -1
+     (nil))
+(insn 293 292 294 34 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 108 [ optopt.16_27 ])
+            (const_int 99 [0x63]))) "/home/faysal/gol/main.c":134:40 -1
+     (nil))
+(jump_insn 294 293 295 34 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 315)
+            (pc))) "/home/faysal/gol/main.c":134:40 -1
+     (nil)
+ -> 315)
+(note 295 294 296 35 [bb 35] NOTE_INSN_BASIC_BLOCK)
+(insn 296 295 297 35 (set (reg:SI 109 [ optopt.17_28 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":134:67 -1
+     (nil))
+(insn 297 296 298 35 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 109 [ optopt.17_28 ])
+            (const_int 105 [0x69]))) "/home/faysal/gol/main.c":134:57 -1
+     (nil))
+(jump_insn 298 297 299 35 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 315)
+            (pc))) "/home/faysal/gol/main.c":134:57 -1
+     (nil)
+ -> 315)
+(note 299 298 300 36 [bb 36] NOTE_INSN_BASIC_BLOCK)
+(insn 300 299 301 36 (set (reg:SI 110 [ optopt.18_29 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":134:84 -1
+     (nil))
+(insn 301 300 302 36 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 110 [ optopt.18_29 ])
+            (const_int 111 [0x6f]))) "/home/faysal/gol/main.c":134:74 -1
+     (nil))
+(jump_insn 302 301 303 36 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 315)
+            (pc))) "/home/faysal/gol/main.c":134:74 -1
+     (nil)
+ -> 315)
+(note 303 302 304 37 [bb 37] NOTE_INSN_BASIC_BLOCK)
+(insn 304 303 305 37 (set (reg:SI 111 [ optopt.19_30 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":134:101 -1
+     (nil))
+(insn 305 304 306 37 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 111 [ optopt.19_30 ])
+            (const_int 119 [0x77]))) "/home/faysal/gol/main.c":134:91 -1
+     (nil))
+(jump_insn 306 305 307 37 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 315)
+            (pc))) "/home/faysal/gol/main.c":134:91 -1
+     (nil)
+ -> 315)
+(note 307 306 308 38 [bb 38] NOTE_INSN_BASIC_BLOCK)
+(insn 308 307 309 38 (set (reg:SI 112 [ optopt.20_31 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":134:118 -1
+     (nil))
+(insn 309 308 310 38 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 112 [ optopt.20_31 ])
+            (const_int 104 [0x68]))) "/home/faysal/gol/main.c":134:108 -1
+     (nil))
+(jump_insn 310 309 311 38 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 315)
+            (pc))) "/home/faysal/gol/main.c":134:108 -1
+     (nil)
+ -> 315)
+(note 311 310 312 39 [bb 39] NOTE_INSN_BASIC_BLOCK)
+(insn 312 311 313 39 (set (reg:SI 113 [ optopt.21_32 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":134:135 -1
+     (nil))
+(insn 313 312 314 39 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 113 [ optopt.21_32 ])
+            (const_int 101 [0x65]))) "/home/faysal/gol/main.c":134:125 -1
+     (nil))
+(jump_insn 314 313 315 39 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 327)
+            (pc))) "/home/faysal/gol/main.c":134:125 -1
+     (nil)
+ -> 327)
+(code_label 315 314 316 40 26 (nil) [7 uses])
+(note 316 315 317 40 [bb 40] NOTE_INSN_BASIC_BLOCK)
+(insn 317 316 318 40 (set (reg:SI 114 [ optopt.22_33 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":135:5 -1
+     (nil))
+(insn 318 317 319 40 (set (reg/f:DI 115 [ stderr.23_34 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f613bc51d80 stderr>) [47 stderr+0 S8 A64])) "/home/faysal/gol/main.c":135:5 -1
+     (nil))
+(insn 319 318 320 40 (set (reg:SI 1 dx)
+        (reg:SI 114 [ optopt.22_33 ])) "/home/faysal/gol/main.c":135:5 -1
+     (nil))
+(insn 320 319 321 40 (set (reg:DI 240)
+        (symbol_ref/f:DI ("*.LC22") [flags 0x2]  <var_decl 0x7f6137351510 *.LC22>)) "/home/faysal/gol/main.c":135:5 -1
+     (nil))
+(insn 321 320 322 40 (set (reg:DI 4 si)
+        (reg:DI 240)) "/home/faysal/gol/main.c":135:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC22") [flags 0x2]  <var_decl 0x7f6137351510 *.LC22>)
+        (nil)))
+(insn 322 321 323 40 (set (reg:DI 5 di)
+        (reg/f:DI 115 [ stderr.23_34 ])) "/home/faysal/gol/main.c":135:5 -1
+     (nil))
+(insn 323 322 324 40 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":135:5 -1
+     (nil))
+(call_insn 324 323 325 40 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f613a2bab00 fprintf>) [0 __builtin_fprintf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":135:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(jump_insn 325 324 326 40 (set (pc)
+        (label_ref 362)) "/home/faysal/gol/main.c":135:5 -1
+     (nil)
+ -> 362)
+(barrier 326 325 327)
+(code_label 327 326 328 41 27 (nil) [1 uses])
+(note 328 327 329 41 [bb 41] NOTE_INSN_BASIC_BLOCK)
+(call_insn/u 329 328 330 41 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("__ctype_b_loc") [flags 0x41]  <function_decl 0x7f613a08c100 __ctype_b_loc>) [0 __ctype_b_loc S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":136:14 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (nil))
+(insn 330 329 331 41 (set (reg/f:DI 116 [ _35 ])
+        (reg:DI 0 ax)) "/home/faysal/gol/main.c":136:14 -1
+     (nil))
+(insn 331 330 332 41 (set (reg/f:DI 117 [ _36 ])
+        (mem/f:DI (reg/f:DI 116 [ _35 ]) [48 *_35+0 S8 A64])) "/home/faysal/gol/main.c":136:14 -1
+     (nil))
+(insn 332 331 333 41 (set (reg:SI 118 [ optopt.24_37 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":136:14 -1
+     (nil))
+(insn 333 332 334 41 (set (reg:DI 119 [ _38 ])
+        (sign_extend:DI (reg:SI 118 [ optopt.24_37 ]))) "/home/faysal/gol/main.c":136:14 -1
+     (nil))
+(insn 334 333 335 41 (parallel [
+            (set (reg:DI 120 [ _39 ])
+                (ashift:DI (reg:DI 119 [ _38 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":136:14 -1
+     (nil))
+(insn 335 334 336 41 (parallel [
+            (set (reg/f:DI 121 [ _40 ])
+                (plus:DI (reg/f:DI 117 [ _36 ])
+                    (reg:DI 120 [ _39 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":136:14 -1
+     (nil))
+(insn 336 335 337 41 (set (reg:HI 122 [ _41 ])
+        (mem:HI (reg/f:DI 121 [ _40 ]) [11 *_40+0 S2 A16])) "/home/faysal/gol/main.c":136:14 -1
+     (nil))
+(insn 337 336 338 41 (set (reg:SI 123 [ _42 ])
+        (zero_extend:SI (reg:HI 122 [ _41 ]))) "/home/faysal/gol/main.c":136:14 -1
+     (nil))
+(insn 338 337 339 41 (parallel [
+            (set (reg:SI 124 [ _43 ])
+                (and:SI (reg:SI 123 [ _42 ])
+                    (const_int 16384 [0x4000])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":136:14 -1
+     (nil))
+(insn 339 338 340 41 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 124 [ _43 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":136:13 -1
+     (nil))
+(jump_insn 340 339 341 41 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 352)
+            (pc))) "/home/faysal/gol/main.c":136:13 -1
+     (nil)
+ -> 352)
+(note 341 340 342 42 [bb 42] NOTE_INSN_BASIC_BLOCK)
+(insn 342 341 343 42 (set (reg:SI 125 [ optopt.25_44 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":137:5 -1
+     (nil))
+(insn 343 342 344 42 (set (reg/f:DI 126 [ stderr.26_45 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f613bc51d80 stderr>) [47 stderr+0 S8 A64])) "/home/faysal/gol/main.c":137:5 -1
+     (nil))
+(insn 344 343 345 42 (set (reg:SI 1 dx)
+        (reg:SI 125 [ optopt.25_44 ])) "/home/faysal/gol/main.c":137:5 -1
+     (nil))
+(insn 345 344 346 42 (set (reg:DI 241)
+        (symbol_ref/f:DI ("*.LC23") [flags 0x2]  <var_decl 0x7f61373515a0 *.LC23>)) "/home/faysal/gol/main.c":137:5 -1
+     (nil))
+(insn 346 345 347 42 (set (reg:DI 4 si)
+        (reg:DI 241)) "/home/faysal/gol/main.c":137:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC23") [flags 0x2]  <var_decl 0x7f61373515a0 *.LC23>)
+        (nil)))
+(insn 347 346 348 42 (set (reg:DI 5 di)
+        (reg/f:DI 126 [ stderr.26_45 ])) "/home/faysal/gol/main.c":137:5 -1
+     (nil))
+(insn 348 347 349 42 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":137:5 -1
+     (nil))
+(call_insn 349 348 350 42 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f613a2bab00 fprintf>) [0 __builtin_fprintf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":137:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(jump_insn 350 349 351 42 (set (pc)
+        (label_ref 362)) -1
+     (nil)
+ -> 362)
+(barrier 351 350 352)
+(code_label 352 351 353 43 29 (nil) [1 uses])
+(note 353 352 354 43 [bb 43] NOTE_INSN_BASIC_BLOCK)
+(insn 354 353 355 43 (set (reg:SI 127 [ optopt.27_46 ])
+        (mem/c:SI (symbol_ref:DI ("optopt") [flags 0x40]  <var_decl 0x7f613a02c090 optopt>) [2 optopt+0 S4 A32])) "/home/faysal/gol/main.c":139:5 -1
+     (nil))
+(insn 355 354 356 43 (set (reg/f:DI 128 [ stderr.28_47 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f613bc51d80 stderr>) [47 stderr+0 S8 A64])) "/home/faysal/gol/main.c":139:5 -1
+     (nil))
+(insn 356 355 357 43 (set (reg:SI 1 dx)
+        (reg:SI 127 [ optopt.27_46 ])) "/home/faysal/gol/main.c":139:5 -1
+     (nil))
+(insn 357 356 358 43 (set (reg:DI 242)
+        (symbol_ref/f:DI ("*.LC24") [flags 0x2]  <var_decl 0x7f6137351630 *.LC24>)) "/home/faysal/gol/main.c":139:5 -1
+     (nil))
+(insn 358 357 359 43 (set (reg:DI 4 si)
+        (reg:DI 242)) "/home/faysal/gol/main.c":139:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC24") [flags 0x2]  <var_decl 0x7f6137351630 *.LC24>)
+        (nil)))
+(insn 359 358 360 43 (set (reg:DI 5 di)
+        (reg/f:DI 128 [ stderr.28_47 ])) "/home/faysal/gol/main.c":139:5 -1
+     (nil))
+(insn 360 359 361 43 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":139:5 -1
+     (nil))
+(call_insn 361 360 362 43 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f613a2bab00 fprintf>) [0 __builtin_fprintf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":139:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(code_label 362 361 363 44 28 (nil) [2 uses])
+(note 363 362 364 44 [bb 44] NOTE_INSN_BASIC_BLOCK)
+(insn 364 363 365 44 (set (reg:DI 243)
+        (symbol_ref/f:DI ("*.LC25") [flags 0x2]  <var_decl 0x7f61373516c0 *.LC25>)) "/home/faysal/gol/main.c":140:5 -1
+     (nil))
+(insn 365 364 366 44 (set (reg:DI 5 di)
+        (reg:DI 243)) "/home/faysal/gol/main.c":140:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC25") [flags 0x2]  <var_decl 0x7f61373516c0 *.LC25>)
+        (nil)))
+(call_insn 366 365 367 44 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":140:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(call_insn 367 366 368 44 (call (mem:QI (symbol_ref:DI ("usage") [flags 0x3]  <function_decl 0x7f61376efd00 usage>) [0 usage S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":141:5 -1
+     (nil)
+    (nil))
+(jump_insn 368 367 369 44 (set (pc)
+        (label_ref 376)) "/home/faysal/gol/main.c":142:5 -1
+     (nil)
+ -> 376)
+(barrier 369 368 370)
+(code_label 370 369 371 45 10 (nil) [48 uses])
+(note 371 370 372 45 [bb 45] NOTE_INSN_BASIC_BLOCK)
+(insn 372 371 373 45 (set (reg:DI 244)
+        (symbol_ref/f:DI ("*.LC25") [flags 0x2]  <var_decl 0x7f61373516c0 *.LC25>)) "/home/faysal/gol/main.c":144:5 -1
+     (nil))
+(insn 373 372 374 45 (set (reg:DI 5 di)
+        (reg:DI 244)) "/home/faysal/gol/main.c":144:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC25") [flags 0x2]  <var_decl 0x7f61373516c0 *.LC25>)
+        (nil)))
+(call_insn 374 373 375 45 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":144:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(call_insn 375 374 376 45 (call (mem:QI (symbol_ref:DI ("usage") [flags 0x3]  <function_decl 0x7f61376efd00 usage>) [0 usage S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":145:5 -1
+     (nil)
+    (nil))
+(code_label 376 375 377 46 9 (nil) [10 uses])
+(note 377 376 378 46 [bb 46] NOTE_INSN_BASIC_BLOCK)
+(insn 378 377 379 46 (set (reg:DI 245)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000768 [0xffffffffff0bd900])) [46 argv+0 S8 A64])) "/home/faysal/gol/main.c":82:16 -1
+     (nil))
+(insn 379 378 380 46 (set (reg:SI 246)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000756 [0xffffffffff0bd90c])) [2 argc+0 S4 A32])) "/home/faysal/gol/main.c":82:16 -1
+     (nil))
+(insn 380 379 381 46 (set (reg:DI 247)
+        (symbol_ref/f:DI ("*.LC26") [flags 0x2]  <var_decl 0x7f6137351750 *.LC26>)) "/home/faysal/gol/main.c":82:16 -1
+     (nil))
+(insn 381 380 382 46 (set (reg:DI 1 dx)
+        (reg:DI 247)) "/home/faysal/gol/main.c":82:16 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC26") [flags 0x2]  <var_decl 0x7f6137351750 *.LC26>)
+        (nil)))
+(insn 382 381 383 46 (set (reg:DI 4 si)
+        (reg:DI 245)) "/home/faysal/gol/main.c":82:16 -1
+     (nil))
+(insn 383 382 384 46 (set (reg:SI 5 di)
+        (reg:SI 246)) "/home/faysal/gol/main.c":82:16 -1
+     (nil))
+(call_insn 384 383 385 46 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("getopt") [flags 0x41]  <function_decl 0x7f613a026d00 getopt>) [0 getopt S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":82:16 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (reg:SI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 385 384 386 46 (set (reg:SI 248)
+        (reg:SI 0 ax)) "/home/faysal/gol/main.c":82:16 -1
+     (nil))
+(insn 386 385 388 46 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000692 [0xffffffffff0bd94c])) [2 opt+0 S4 A32])
+        (reg:SI 248)) "/home/faysal/gol/main.c":82:16 -1
+     (nil))
+(insn 388 386 389 46 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000692 [0xffffffffff0bd94c])) [2 opt+0 S4 A32])
+            (const_int -1 [0xffffffffffffffff]))) "/home/faysal/gol/main.c":82:57 -1
+     (nil))
+(jump_insn 389 388 390 46 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 387)
+            (pc))) "/home/faysal/gol/main.c":82:57 -1
+     (nil)
+ -> 387)
+(note 390 389 391 47 [bb 47] NOTE_INSN_BASIC_BLOCK)
+(insn 391 390 392 47 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000743 [0xffffffffff0bd919])) [3 LoadFile+0 S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":150:6 -1
+     (nil))
+(jump_insn 392 391 393 47 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 407)
+            (pc))) "/home/faysal/gol/main.c":150:6 -1
+     (nil)
+ -> 407)
+(note 393 392 394 48 [bb 48] NOTE_INSN_BASIC_BLOCK)
+(insn 394 393 395 48 (parallel [
+            (set (reg:DI 249)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -528 [0xfffffffffffffdf0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":152:4 -1
+     (nil))
+(insn 395 394 396 48 (set (reg:DI 4 si)
+        (reg:DI 249)) "/home/faysal/gol/main.c":152:4 -1
+     (nil))
+(insn 396 395 397 48 (set (reg:DI 250)
+        (symbol_ref/f:DI ("*.LC27") [flags 0x2]  <var_decl 0x7f61373517e0 *.LC27>)) "/home/faysal/gol/main.c":152:4 -1
+     (nil))
+(insn 397 396 398 48 (set (reg:DI 5 di)
+        (reg:DI 250)) "/home/faysal/gol/main.c":152:4 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC27") [flags 0x2]  <var_decl 0x7f61373517e0 *.LC27>)
+        (nil)))
+(insn 398 397 399 48 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":152:4 -1
+     (nil))
+(call_insn 399 398 400 48 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f613a2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":152:4 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+(insn 400 399 401 48 (set (reg:DI 251)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":153:4 -1
+     (nil))
+(insn 401 400 402 48 (parallel [
+            (set (reg:DI 252)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -528 [0xfffffffffffffdf0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":153:4 -1
+     (nil))
+(insn 402 401 403 48 (set (reg:DI 4 si)
+        (reg:DI 251)) "/home/faysal/gol/main.c":153:4 -1
+     (nil))
+(insn 403 402 404 48 (set (reg:DI 5 di)
+        (reg:DI 252)) "/home/faysal/gol/main.c":153:4 -1
+     (nil))
+(call_insn 404 403 405 48 (call (mem:QI (symbol_ref:DI ("life_read") [flags 0x41]  <function_decl 0x7f61376ef400 life_read>) [0 life_read S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":153:4 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(jump_insn 405 404 406 48 (set (pc)
+        (label_ref 425)) -1
+     (nil)
+ -> 425)
+(barrier 406 405 407)
+(code_label 407 406 408 49 31 (nil) [1 uses])
+(note 408 407 409 49 [bb 49] NOTE_INSN_BASIC_BLOCK)
+(insn 409 408 410 49 (set (reg:DI 253)
+        (symbol_ref/f:DI ("*.LC28") [flags 0x2]  <var_decl 0x7f6137351870 *.LC28>)) "/home/faysal/gol/main.c":157:4 -1
+     (nil))
+(insn 410 409 411 49 (set (reg:DI 5 di)
+        (reg:DI 253)) "/home/faysal/gol/main.c":157:4 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC28") [flags 0x2]  <var_decl 0x7f6137351870 *.LC28>)
+        (nil)))
+(call_insn 411 410 412 49 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":157:4 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 412 411 413 49 (set (reg/f:DI 129 [ stdout.29_48 ])
+        (mem/f/c:DI (symbol_ref:DI ("stdout") [flags 0x40]  <var_decl 0x7f613bc51cf0 stdout>) [47 stdout+0 S8 A64])) "/home/faysal/gol/main.c":157:27 -1
+     (nil))
+(insn 413 412 414 49 (set (reg:DI 5 di)
+        (reg/f:DI 129 [ stdout.29_48 ])) "/home/faysal/gol/main.c":157:27 -1
+     (nil))
+(call_insn 414 413 415 49 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fflush") [flags 0x41]  <function_decl 0x7f613a3c7d00 fflush>) [0 fflush S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":157:27 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 415 414 416 49 (set (reg:DF 254)
+        (mem/u/c:DF (symbol_ref/u:DI ("*.LC29") [flags 0x2]) [0  S8 A64])) "/home/faysal/gol/main.c":158:11 -1
+     (nil))
+(insn 416 415 417 49 (set (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000632 [0xffffffffff0bd988])) [42 prob+0 S8 A64])
+        (reg:DF 254)) "/home/faysal/gol/main.c":158:11 -1
+     (nil))
+(insn 417 416 418 49 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000624 [0xffffffffff0bd990])) [2 MEM[(int *)_294]+0 S4 A128])
+        (const_int 123456789 [0x75bcd15])) "/home/faysal/gol/main.c":159:8 -1
+     (nil))
+(insn 418 417 419 49 (parallel [
+            (set (reg:DI 255)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000624 [0xffffffffff0bd990])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":160:4 -1
+     (nil))
+(insn 419 418 420 49 (set (reg:DF 256)
+        (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000632 [0xffffffffff0bd988])) [42 prob+0 S8 A64])) "/home/faysal/gol/main.c":160:4 -1
+     (nil))
+(insn 420 419 421 49 (set (reg:DI 257)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":160:4 -1
+     (nil))
+(insn 421 420 422 49 (set (reg:DI 4 si)
+        (reg:DI 255)) "/home/faysal/gol/main.c":160:4 -1
+     (nil))
+(insn 422 421 423 49 (set (reg:DF 20 xmm0)
+        (reg:DF 256)) "/home/faysal/gol/main.c":160:4 -1
+     (nil))
+(insn 423 422 424 49 (set (reg:DI 5 di)
+        (reg:DI 257)) "/home/faysal/gol/main.c":160:4 -1
+     (nil))
+(call_insn 424 423 425 49 (call (mem:QI (symbol_ref:DI ("life_init") [flags 0x41]  <function_decl 0x7f61376ef700 life_init>) [0 life_init S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":160:4 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DF (use (reg:DF 20 xmm0))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+(code_label 425 424 426 50 32 (nil) [1 uses])
+(note 426 425 427 50 [bb 50] NOTE_INSN_BASIC_BLOCK)
+(insn 427 426 428 50 (set (reg:QI 130 [ Graphical_Mode.30_49 ])
+        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x40]  <var_decl 0x7f61375a9f30 Graphical_Mode>) [3 Graphical_Mode+0 S1 A8])) "/home/faysal/gol/main.c":163:7 -1
+     (nil))
+(insn 428 427 429 50 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 130 [ Graphical_Mode.30_49 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":163:6 -1
+     (nil))
+(jump_insn 429 428 430 50 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 561)
+            (pc))) "/home/faysal/gol/main.c":163:6 -1
+     (nil)
+ -> 561)
+(note 430 429 431 51 [bb 51] NOTE_INSN_BASIC_BLOCK)
+(insn 431 430 432 51 (set (reg:SI 5 di)
+        (const_int 32 [0x20])) "/home/faysal/gol/main.c":166:8 -1
+     (nil))
+(call_insn 432 431 433 51 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_Init") [flags 0x41]  <function_decl 0x7f61376e6a00 SDL_Init>) [0 SDL_Init S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":166:8 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(insn 433 432 434 51 (set (reg:SI 131 [ _50 ])
+        (reg:SI 0 ax)) "/home/faysal/gol/main.c":166:8 -1
+     (nil))
+(insn 434 433 435 51 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 131 [ _50 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":166:7 -1
+     (nil))
+(jump_insn 435 434 436 51 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 449)
+            (pc))) "/home/faysal/gol/main.c":166:7 -1
+     (nil)
+ -> 449)
+(note 436 435 437 52 [bb 52] NOTE_INSN_BASIC_BLOCK)
+(call_insn 437 436 438 52 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7f613a1b8c00 SDL_GetError>) [0 SDL_GetError S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":167:5 -1
+     (nil)
+    (nil))
+(insn 438 437 439 52 (set (reg/f:DI 132 [ _51 ])
+        (reg:DI 0 ax)) "/home/faysal/gol/main.c":167:5 -1
+     (nil))
+(insn 439 438 440 52 (set (reg/f:DI 133 [ stderr.31_52 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f613bc51d80 stderr>) [47 stderr+0 S8 A64])) "/home/faysal/gol/main.c":167:5 -1
+     (nil))
+(insn 440 439 441 52 (set (reg:DI 1 dx)
+        (reg/f:DI 132 [ _51 ])) "/home/faysal/gol/main.c":167:5 -1
+     (nil))
+(insn 441 440 442 52 (set (reg:DI 258)
+        (symbol_ref/f:DI ("*.LC30") [flags 0x2]  <var_decl 0x7f6137351900 *.LC30>)) "/home/faysal/gol/main.c":167:5 -1
+     (nil))
+(insn 442 441 443 52 (set (reg:DI 4 si)
+        (reg:DI 258)) "/home/faysal/gol/main.c":167:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC30") [flags 0x2]  <var_decl 0x7f6137351900 *.LC30>)
+        (nil)))
+(insn 443 442 444 52 (set (reg:DI 5 di)
+        (reg/f:DI 133 [ stderr.31_52 ])) "/home/faysal/gol/main.c":167:5 -1
+     (nil))
+(insn 444 443 445 52 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":167:5 -1
+     (nil))
+(call_insn 445 444 446 52 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f613a2bab00 fprintf>) [0 __builtin_fprintf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":167:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:DI (use (reg:DI 1 dx))
+                    (nil))))))
+(insn 446 445 447 52 (set (reg:SI 181 [ _116 ])
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":168:12 -1
+     (nil))
+(jump_insn 447 446 448 52 (set (pc)
+        (label_ref:DI 925)) "/home/faysal/gol/main.c":168:12 807 {jump}
+     (nil)
+ -> 925)
+(barrier 448 447 449)
+(code_label 449 448 450 53 34 (nil) [1 uses])
+(note 450 449 451 53 [bb 53] NOTE_INSN_BASIC_BLOCK)
+(insn 451 450 452 53 (parallel [
+            (set (reg:DI 259)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000624 [0xffffffffff0bd990])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":173:4 -1
+     (nil))
+(insn 452 451 453 53 (set (reg:DI 4 si)
+        (reg:DI 259)) "/home/faysal/gol/main.c":173:4 -1
+     (nil))
+(insn 453 452 454 53 (set (reg:SI 5 di)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":173:4 -1
+     (nil))
+(call_insn 454 453 455 53 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_GetCurrentDisplayMode") [flags 0x41]  <function_decl 0x7f61375e2700 SDL_GetCurrentDisplayMode>) [0 SDL_GetCurrentDisplayMode S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":173:4 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 455 454 456 53 (set (reg:SI 260)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000620 [0xffffffffff0bd994])) [2 MEM[(struct  *)_294].w+0 S4 A32])) "/home/faysal/gol/main.c":176:17 -1
+     (nil))
+(insn 456 455 457 53 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000688 [0xffffffffff0bd950])) [2 SCREEN_WIDTH+0 S4 A128])
+        (reg:SI 260)) "/home/faysal/gol/main.c":176:17 -1
+     (nil))
+(insn 457 456 458 53 (set (reg:SI 261)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000616 [0xffffffffff0bd998])) [2 MEM[(struct  *)_294].h+0 S4 A64])) "/home/faysal/gol/main.c":177:18 -1
+     (nil))
+(insn 458 457 459 53 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000684 [0xffffffffff0bd954])) [2 SCREEN_HEIGHT+0 S4 A32])
+        (reg:SI 261)) "/home/faysal/gol/main.c":177:18 -1
+     (nil))
+(insn 459 458 460 53 (set (reg:SF 134 [ _53 ])
+        (float:SF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000688 [0xffffffffff0bd950])) [2 SCREEN_WIDTH+0 S4 A128]))) "/home/faysal/gol/main.c":178:32 -1
+     (nil))
+(insn 460 459 461 53 (set (reg:SF 135 [ _54 ])
+        (mult:SF (reg:SF 134 [ _53 ])
+            (mem/c:SF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000696 [0xffffffffff0bd948])) [17 SCALE+0 S4 A64]))) "/home/faysal/gol/main.c":178:32 -1
+     (nil))
+(insn 461 460 462 53 (set (reg:SI 262)
+        (fix:SI (reg:SF 135 [ _54 ]))) "/home/faysal/gol/main.c":178:17 -1
+     (nil))
+(insn 462 461 463 53 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000688 [0xffffffffff0bd950])) [2 SCREEN_WIDTH+0 S4 A128])
+        (reg:SI 262)) "/home/faysal/gol/main.c":178:17 -1
+     (nil))
+(insn 463 462 464 53 (set (reg:SF 136 [ _55 ])
+        (float:SF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000684 [0xffffffffff0bd954])) [2 SCREEN_HEIGHT+0 S4 A32]))) "/home/faysal/gol/main.c":179:34 -1
+     (nil))
+(insn 464 463 465 53 (set (reg:SF 137 [ _56 ])
+        (mult:SF (reg:SF 136 [ _55 ])
+            (mem/c:SF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000696 [0xffffffffff0bd948])) [17 SCALE+0 S4 A64]))) "/home/faysal/gol/main.c":179:34 -1
+     (nil))
+(insn 465 464 466 53 (set (reg:SI 263)
+        (fix:SI (reg:SF 137 [ _56 ]))) "/home/faysal/gol/main.c":179:18 -1
+     (nil))
+(insn 466 465 467 53 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000684 [0xffffffffff0bd954])) [2 SCREEN_HEIGHT+0 S4 A32])
+        (reg:SI 263)) "/home/faysal/gol/main.c":179:18 -1
+     (nil))
+(insn 467 466 468 53 (set (reg:SI 264)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000688 [0xffffffffff0bd950])) [2 SCREEN_WIDTH+0 S4 A128])) "/home/faysal/gol/main.c":185:16 -1
+     (nil))
+(insn 468 467 469 53 (set (reg:SI 265)
+        (reg:SI 264)) "/home/faysal/gol/main.c":185:16 -1
+     (nil))
+(insn 469 468 470 53 (parallel [
+            (set (reg:SI 265)
+                (ashift:SI (reg:SI 265)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":185:16 -1
+     (nil))
+(insn 470 469 471 53 (parallel [
+            (set (reg:SI 265)
+                (plus:SI (reg:SI 265)
+                    (reg:SI 264)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":185:16 -1
+     (expr_list:REG_EQUAL (mult:SI (reg:SI 264)
+            (const_int 5 [0x5]))
+        (nil)))
+(insn 471 470 472 53 (parallel [
+            (set (reg:SI 266)
+                (ashift:SI (reg:SI 265)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":185:16 -1
+     (nil))
+(insn 472 471 473 53 (set (reg:SI 265)
+        (reg:SI 266)) "/home/faysal/gol/main.c":185:16 -1
+     (expr_list:REG_EQUAL (mult:SI (reg:SI 264)
+            (const_int 10 [0xa]))
+        (nil)))
+(insn 473 472 474 53 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000724 [0xffffffffff0bd92c])) [2 PEEPER_SIZE+0 S4 A32])
+        (reg:SI 265)) "/home/faysal/gol/main.c":185:16 -1
+     (nil))
+(insn 474 473 475 53 (set (reg:SI 268)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000724 [0xffffffffff0bd92c])) [2 PEEPER_SIZE+0 S4 A32])) "/home/faysal/gol/main.c":186:18 -1
+     (nil))
+(insn 475 474 476 53 (set (reg:SI 269)
+        (reg:SI 268)) "/home/faysal/gol/main.c":186:18 -1
+     (nil))
+(insn 476 475 479 53 (parallel [
+            (set (reg:SI 270)
+                (plus:SI (reg:SI 269)
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":186:18 -1
+     (nil))
+(insn 479 476 480 53 (set (reg:CCGOC 17 flags)
+        (compare:CCGOC (reg:SI 269)
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":186:18 -1
+     (nil))
+(insn 480 479 481 53 (set (reg:SI 269)
+        (if_then_else:SI (lt (reg:CCGOC 17 flags)
+                (const_int 0 [0]))
+            (reg:SI 270)
+            (reg:SI 269))) "/home/faysal/gol/main.c":186:18 -1
+     (nil))
+(insn 481 480 482 53 (parallel [
+            (set (reg:SI 271)
+                (ashiftrt:SI (reg:SI 269)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":186:18 -1
+     (expr_list:REG_EQUAL (div:SI (reg:SI 268)
+            (const_int 4 [0x4]))
+        (nil)))
+(insn 482 481 483 53 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128])
+        (reg:SI 271)) "/home/faysal/gol/main.c":186:18 -1
+     (nil))
+(insn 483 482 484 53 (set (reg:SI 272)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000688 [0xffffffffff0bd950])) [2 SCREEN_WIDTH+0 S4 A128])) "/home/faysal/gol/main.c":188:16 -1
+     (nil))
+(insn 484 483 485 53 (set (reg:SI 273)
+        (reg:SI 272)) "/home/faysal/gol/main.c":188:16 -1
+     (nil))
+(insn 485 484 486 53 (parallel [
+            (set (reg:SI 273)
+                (ashift:SI (reg:SI 273)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":188:16 -1
+     (nil))
+(insn 486 485 487 53 (parallel [
+            (set (reg:SI 273)
+                (plus:SI (reg:SI 273)
+                    (reg:SI 272)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":188:16 -1
+     (expr_list:REG_EQUAL (mult:SI (reg:SI 272)
+            (const_int 5 [0x5]))
+        (nil)))
+(insn 487 486 488 53 (parallel [
+            (set (reg:SI 274)
+                (ashift:SI (reg:SI 273)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":188:16 -1
+     (nil))
+(insn 488 487 489 53 (set (reg:SI 273)
+        (reg:SI 274)) "/home/faysal/gol/main.c":188:16 -1
+     (expr_list:REG_EQUAL (mult:SI (reg:SI 272)
+            (const_int 10 [0xa]))
+        (nil)))
+(insn 489 488 490 53 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000724 [0xffffffffff0bd92c])) [2 PEEPER_SIZE+0 S4 A32])
+        (reg:SI 273)) "/home/faysal/gol/main.c":188:16 -1
+     (nil))
+(insn 490 489 491 53 (set (reg:SI 276)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000724 [0xffffffffff0bd92c])) [2 PEEPER_SIZE+0 S4 A32])) "/home/faysal/gol/main.c":189:18 -1
+     (nil))
+(insn 491 490 492 53 (set (reg:SI 277)
+        (reg:SI 276)) "/home/faysal/gol/main.c":189:18 -1
+     (nil))
+(insn 492 491 495 53 (parallel [
+            (set (reg:SI 278)
+                (plus:SI (reg:SI 277)
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":189:18 -1
+     (nil))
+(insn 495 492 496 53 (set (reg:CCGOC 17 flags)
+        (compare:CCGOC (reg:SI 277)
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":189:18 -1
+     (nil))
+(insn 496 495 497 53 (set (reg:SI 277)
+        (if_then_else:SI (lt (reg:CCGOC 17 flags)
+                (const_int 0 [0]))
+            (reg:SI 278)
+            (reg:SI 277))) "/home/faysal/gol/main.c":189:18 -1
+     (nil))
+(insn 497 496 498 53 (parallel [
+            (set (reg:SI 279)
+                (ashiftrt:SI (reg:SI 277)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":189:18 -1
+     (expr_list:REG_EQUAL (div:SI (reg:SI 276)
+            (const_int 4 [0x4]))
+        (nil)))
+(insn 498 497 499 53 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128])
+        (reg:SI 279)) "/home/faysal/gol/main.c":189:18 -1
+     (nil))
+(insn 499 498 500 53 (set (reg:SI 280)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000684 [0xffffffffff0bd954])) [2 SCREEN_HEIGHT+0 S4 A32])) "/home/faysal/gol/main.c":192:13 -1
+     (nil))
+(insn 500 499 501 53 (set (reg:SI 281)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000688 [0xffffffffff0bd950])) [2 SCREEN_WIDTH+0 S4 A128])) "/home/faysal/gol/main.c":192:13 -1
+     (nil))
+(insn 501 500 502 53 (set (reg:SI 37 r9)
+        (const_int 4 [0x4])) "/home/faysal/gol/main.c":192:13 -1
+     (nil))
+(insn 502 501 503 53 (set (reg:SI 36 r8)
+        (reg:SI 280)) "/home/faysal/gol/main.c":192:13 -1
+     (nil))
+(insn 503 502 504 53 (set (reg:SI 2 cx)
+        (reg:SI 281)) "/home/faysal/gol/main.c":192:13 -1
+     (nil))
+(insn 504 503 505 53 (set (reg:SI 1 dx)
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":192:13 -1
+     (nil))
+(insn 505 504 506 53 (set (reg:SI 4 si)
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":192:13 -1
+     (nil))
+(insn 506 505 507 53 (set (reg:DI 282)
+        (symbol_ref/f:DI ("*.LC31") [flags 0x2]  <var_decl 0x7f6137351990 *.LC31>)) "/home/faysal/gol/main.c":192:13 -1
+     (nil))
+(insn 507 506 508 53 (set (reg:DI 5 di)
+        (reg:DI 282)) "/home/faysal/gol/main.c":192:13 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC31") [flags 0x2]  <var_decl 0x7f6137351990 *.LC31>)
+        (nil)))
+(call_insn 508 507 509 53 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_CreateWindow") [flags 0x41]  <function_decl 0x7f61375e2e00 SDL_CreateWindow>) [0 SDL_CreateWindow S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":192:13 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:SI (use (reg:SI 36 r8))
+                        (expr_list:SI (use (reg:SI 37 r9))
+                            (nil))))))))
+(insn 509 508 510 53 (set (reg:DI 283)
+        (reg:DI 0 ax)) "/home/faysal/gol/main.c":192:13 -1
+     (nil))
+(insn 510 509 511 53 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000656 [0xffffffffff0bd970])) [45 window+0 S8 A128])
+        (reg:DI 283)) "/home/faysal/gol/main.c":192:13 -1
+     (nil))
+(insn 511 510 512 53 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000656 [0xffffffffff0bd970])) [45 window+0 S8 A128])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":196:7 -1
+     (nil))
+(jump_insn 512 511 513 53 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 526)
+            (pc))) "/home/faysal/gol/main.c":196:7 -1
+     (nil)
+ -> 526)
+(note 513 512 514 54 [bb 54] NOTE_INSN_BASIC_BLOCK)
+(call_insn 514 513 515 54 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7f613a1b8c00 SDL_GetError>) [0 SDL_GetError S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":197:5 -1
+     (nil)
+    (nil))
+(insn 515 514 516 54 (set (reg/f:DI 138 [ _57 ])
+        (reg:DI 0 ax)) "/home/faysal/gol/main.c":197:5 -1
+     (nil))
+(insn 516 515 517 54 (set (reg/f:DI 139 [ stderr.32_58 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f613bc51d80 stderr>) [47 stderr+0 S8 A64])) "/home/faysal/gol/main.c":197:5 -1
+     (nil))
+(insn 517 516 518 54 (set (reg:DI 1 dx)
+        (reg/f:DI 138 [ _57 ])) "/home/faysal/gol/main.c":197:5 -1
+     (nil))
+(insn 518 517 519 54 (set (reg:DI 284)
+        (symbol_ref/f:DI ("*.LC32") [flags 0x2]  <var_decl 0x7f6137351a20 *.LC32>)) "/home/faysal/gol/main.c":197:5 -1
+     (nil))
+(insn 519 518 520 54 (set (reg:DI 4 si)
+        (reg:DI 284)) "/home/faysal/gol/main.c":197:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC32") [flags 0x2]  <var_decl 0x7f6137351a20 *.LC32>)
+        (nil)))
+(insn 520 519 521 54 (set (reg:DI 5 di)
+        (reg/f:DI 139 [ stderr.32_58 ])) "/home/faysal/gol/main.c":197:5 -1
+     (nil))
+(insn 521 520 522 54 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":197:5 -1
+     (nil))
+(call_insn 522 521 523 54 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f613a2bab00 fprintf>) [0 __builtin_fprintf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":197:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:DI (use (reg:DI 1 dx))
+                    (nil))))))
+(insn 523 522 524 54 (set (reg:SI 181 [ _116 ])
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":198:12 -1
+     (nil))
+(jump_insn 524 523 525 54 (set (pc)
+        (label_ref 557)) "/home/faysal/gol/main.c":198:12 -1
+     (nil)
+ -> 557)
+(barrier 525 524 526)
+(code_label 526 525 527 55 36 (nil) [1 uses])
+(note 527 526 528 55 [bb 55] NOTE_INSN_BASIC_BLOCK)
+(insn 528 527 529 55 (set (reg:DI 285)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000656 [0xffffffffff0bd970])) [45 window+0 S8 A128])) "/home/faysal/gol/main.c":202:15 -1
+     (nil))
+(insn 529 528 530 55 (set (reg:SI 1 dx)
+        (const_int 6 [0x6])) "/home/faysal/gol/main.c":202:15 -1
+     (nil))
+(insn 530 529 531 55 (set (reg:SI 4 si)
+        (const_int -1 [0xffffffffffffffff])) "/home/faysal/gol/main.c":202:15 -1
+     (nil))
+(insn 531 530 532 55 (set (reg:DI 5 di)
+        (reg:DI 285)) "/home/faysal/gol/main.c":202:15 -1
+     (nil))
+(call_insn 532 531 533 55 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_CreateRenderer") [flags 0x41]  <function_decl 0x7f61376bc300 SDL_CreateRenderer>) [0 SDL_CreateRenderer S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":202:15 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (nil)))))
+(insn 533 532 534 55 (set (reg:DI 286)
+        (reg:DI 0 ax)) "/home/faysal/gol/main.c":202:15 -1
+     (nil))
+(insn 534 533 535 55 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000648 [0xffffffffff0bd978])) [44 renderer+0 S8 A64])
+        (reg:DI 286)) "/home/faysal/gol/main.c":202:15 -1
+     (nil))
+(insn 535 534 536 55 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000648 [0xffffffffff0bd978])) [44 renderer+0 S8 A64])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":205:7 -1
+     (nil))
+(jump_insn 536 535 537 55 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 561)
+            (pc))) "/home/faysal/gol/main.c":205:7 806 {*jcc}
+     (nil)
+ -> 561)
+(note 537 536 538 56 [bb 56] NOTE_INSN_BASIC_BLOCK)
+(insn 538 537 539 56 (set (reg:DI 287)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000656 [0xffffffffff0bd970])) [45 window+0 S8 A128])) "/home/faysal/gol/main.c":206:5 -1
+     (nil))
+(insn 539 538 540 56 (set (reg:DI 5 di)
+        (reg:DI 287)) "/home/faysal/gol/main.c":206:5 -1
+     (nil))
+(call_insn 540 539 541 56 (call (mem:QI (symbol_ref:DI ("SDL_DestroyWindow") [flags 0x41]  <function_decl 0x7f61375f9100 SDL_DestroyWindow>) [0 SDL_DestroyWindow S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":206:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(call_insn 541 540 542 56 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7f613a1b8c00 SDL_GetError>) [0 SDL_GetError S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":207:5 -1
+     (nil)
+    (nil))
+(insn 542 541 543 56 (set (reg/f:DI 140 [ _59 ])
+        (reg:DI 0 ax)) "/home/faysal/gol/main.c":207:5 -1
+     (nil))
+(insn 543 542 544 56 (set (reg/f:DI 141 [ stderr.33_60 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f613bc51d80 stderr>) [47 stderr+0 S8 A64])) "/home/faysal/gol/main.c":207:5 -1
+     (nil))
+(insn 544 543 545 56 (set (reg:DI 1 dx)
+        (reg/f:DI 140 [ _59 ])) "/home/faysal/gol/main.c":207:5 -1
+     (nil))
+(insn 545 544 546 56 (set (reg:DI 288)
+        (symbol_ref/f:DI ("*.LC33") [flags 0x2]  <var_decl 0x7f6137351ab0 *.LC33>)) "/home/faysal/gol/main.c":207:5 -1
+     (nil))
+(insn 546 545 547 56 (set (reg:DI 4 si)
+        (reg:DI 288)) "/home/faysal/gol/main.c":207:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC33") [flags 0x2]  <var_decl 0x7f6137351ab0 *.LC33>)
+        (nil)))
+(insn 547 546 548 56 (set (reg:DI 5 di)
+        (reg/f:DI 141 [ stderr.33_60 ])) "/home/faysal/gol/main.c":207:5 -1
+     (nil))
+(insn 548 547 549 56 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":207:5 -1
+     (nil))
+(call_insn 549 548 550 56 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f613a2bab00 fprintf>) [0 __builtin_fprintf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":207:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:DI (use (reg:DI 1 dx))
+                    (nil))))))
+(insn 550 549 557 56 (set (reg:SI 181 [ _116 ])
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":208:12 -1
+     (nil))
+(code_label 557 550 558 58 35 (nil) [1 uses])
+(note 558 557 559 58 [bb 58] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 559 558 560 58 (set (pc)
+        (label_ref:DI 925)) "/home/faysal/gol/main.c":168:12 807 {jump}
+     (nil)
+ -> 925)
+(barrier 560 559 561)
+(code_label 561 560 562 59 33 (nil) [2 uses])
+(note 562 561 563 59 [bb 59] NOTE_INSN_BASIC_BLOCK)
+(insn 563 562 564 59 (set (reg:DI 289)
+        (symbol_ref/f:DI ("*.LC34") [flags 0x2]  <var_decl 0x7f6137351b40 *.LC34>)) "/home/faysal/gol/main.c":212:3 -1
+     (nil))
+(insn 564 563 565 59 (set (reg:DI 5 di)
+        (reg:DI 289)) "/home/faysal/gol/main.c":212:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC34") [flags 0x2]  <var_decl 0x7f6137351b40 *.LC34>)
+        (nil)))
+(call_insn 565 564 566 59 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":212:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 566 565 567 59 (set (reg/f:DI 142 [ stdout.34_61 ])
+        (mem/f/c:DI (symbol_ref:DI ("stdout") [flags 0x40]  <var_decl 0x7f613bc51cf0 stdout>) [47 stdout+0 S8 A64])) "/home/faysal/gol/main.c":212:33 -1
+     (nil))
+(insn 567 566 568 59 (set (reg:DI 5 di)
+        (reg/f:DI 142 [ stdout.34_61 ])) "/home/faysal/gol/main.c":212:33 -1
+     (nil))
+(call_insn 568 567 569 59 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fflush") [flags 0x41]  <function_decl 0x7f613a3c7d00 fflush>) [0 fflush S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":212:33 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 569 568 570 59 (set (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000741 [0xffffffffff0bd91b])) [3 quit+0 S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":213:8 -1
+     (nil))
+(insn 570 569 571 59 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000708 [0xffffffffff0bd93c])) [2 Iteration+0 S4 A32])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":214:7 -1
+     (nil))
+(jump_insn 571 570 572 59 (set (pc)
+        (label_ref 867)) "/home/faysal/gol/main.c":215:9 -1
+     (nil)
+ -> 867)
+(barrier 572 571 874)
+(code_label 874 572 573 60 58 (nil) [2 uses])
+(note 573 874 574 60 [bb 60] NOTE_INSN_BASIC_BLOCK)
+(insn 574 573 575 60 (set (reg:QI 143 [ Graphical_Mode.35_62 ])
+        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x40]  <var_decl 0x7f61375a9f30 Graphical_Mode>) [3 Graphical_Mode+0 S1 A8])) "/home/faysal/gol/main.c":218:8 -1
+     (nil))
+(insn 575 574 576 60 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 143 [ Graphical_Mode.35_62 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":218:7 -1
+     (nil))
+(jump_insn 576 575 577 60 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 836)
+            (pc))) "/home/faysal/gol/main.c":218:7 -1
+     (nil)
+ -> 836)
+(note 577 576 578 61 [bb 61] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 578 577 579 61 (set (pc)
+        (label_ref 720)) "/home/faysal/gol/main.c":221:11 -1
+     (nil)
+ -> 720)
+(barrier 579 578 726)
+(code_label 726 579 580 62 53 (nil) [1 uses])
+(note 580 726 581 62 [bb 62] NOTE_INSN_BASIC_BLOCK)
+(insn 581 580 582 62 (set (reg:SI 144 [ _63 ])
+        (mem/j/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000592 [0xffffffffff0bd9b0])) [5 e.type+0 S4 A128])) "/home/faysal/gol/main.c":222:14 -1
+     (nil))
+(insn 582 581 583 62 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 144 [ _63 ])
+            (const_int 1025 [0x401]))) "/home/faysal/gol/main.c":222:5 -1
+     (nil))
+(jump_insn 583 582 584 62 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 691)
+            (pc))) "/home/faysal/gol/main.c":222:5 -1
+     (nil)
+ -> 691)
+(note 584 583 587 63 [bb 63] NOTE_INSN_BASIC_BLOCK)
+(insn 587 584 588 63 (set (reg:CC 17 flags)
+        (compare:CC (reg:SI 144 [ _63 ])
+            (const_int 1025 [0x401]))) "/home/faysal/gol/main.c":222:5 -1
+     (nil))
+(jump_insn 588 587 589 63 (set (pc)
+        (if_then_else (gtu (reg:CC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 720)
+            (pc))) "/home/faysal/gol/main.c":222:5 -1
+     (nil)
+ -> 720)
+(note 589 588 590 64 [bb 64] NOTE_INSN_BASIC_BLOCK)
+(insn 590 589 591 64 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 144 [ _63 ])
+            (const_int 256 [0x100]))) "/home/faysal/gol/main.c":222:5 -1
+     (nil))
+(jump_insn 591 590 592 64 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 598)
+            (pc))) "/home/faysal/gol/main.c":222:5 -1
+     (nil)
+ -> 598)
+(note 592 591 593 65 [bb 65] NOTE_INSN_BASIC_BLOCK)
+(insn 593 592 594 65 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 144 [ _63 ])
+            (const_int 768 [0x300]))) "/home/faysal/gol/main.c":222:5 -1
+     (nil))
+(jump_insn 594 593 597 65 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 603)
+            (pc))) "/home/faysal/gol/main.c":222:5 -1
+     (nil)
+ -> 603)
+(note 597 594 595 66 [bb 66] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 595 597 596 66 (set (pc)
+        (label_ref 720)) "/home/faysal/gol/main.c":222:5 -1
+     (nil)
+ -> 720)
+(barrier 596 595 598)
+(code_label 598 596 599 67 43 (nil) [1 uses])
+(note 599 598 600 67 [bb 67] NOTE_INSN_BASIC_BLOCK)
+(insn 600 599 601 67 (set (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000741 [0xffffffffff0bd91b])) [3 quit+0 S1 A8])
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":224:11 -1
+     (nil))
+(jump_insn 601 600 602 67 (set (pc)
+        (label_ref 720)) "/home/faysal/gol/main.c":225:6 -1
+     (nil)
+ -> 720)
+(barrier 602 601 603)
+(code_label 603 602 604 68 44 (nil) [1 uses])
+(note 604 603 605 68 [bb 68] NOTE_INSN_BASIC_BLOCK)
+(insn 605 604 606 68 (set (reg:SI 145 [ _64 ])
+        (mem/j/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000572 [0xffffffffff0bd9c4])) [5 e.key.keysym.sym+0 S4 A32])) "/home/faysal/gol/main.c":228:22 -1
+     (nil))
+(insn 606 605 607 68 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 145 [ _64 ])
+            (const_int 27 [0x1b]))) "/home/faysal/gol/main.c":228:9 -1
+     (nil))
+(jump_insn 607 606 608 68 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 612)
+            (pc))) "/home/faysal/gol/main.c":228:9 -1
+     (nil)
+ -> 612)
+(note 608 607 609 69 [bb 69] NOTE_INSN_BASIC_BLOCK)
+(insn 609 608 610 69 (set (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000741 [0xffffffffff0bd91b])) [3 quit+0 S1 A8])
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":229:12 -1
+     (nil))
+(jump_insn 610 609 611 69 (set (pc)
+        (label_ref 720)) "/home/faysal/gol/main.c":230:7 -1
+     (nil)
+ -> 720)
+(barrier 611 610 612)
+(code_label 612 611 613 70 45 (nil) [1 uses])
+(note 613 612 614 70 [bb 70] NOTE_INSN_BASIC_BLOCK)
+(insn 614 613 615 70 (set (reg:SI 146 [ _65 ])
+        (mem/j/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000572 [0xffffffffff0bd9c4])) [5 e.key.keysym.sym+0 S4 A32])) "/home/faysal/gol/main.c":232:22 -1
+     (nil))
+(insn 615 614 616 70 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 146 [ _65 ])
+            (const_int 32 [0x20]))) "/home/faysal/gol/main.c":232:9 -1
+     (nil))
+(jump_insn 616 615 617 70 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 644)
+            (pc))) "/home/faysal/gol/main.c":232:9 -1
+     (nil)
+ -> 644)
+(note 617 616 618 71 [bb 71] NOTE_INSN_BASIC_BLOCK)
+(insn 618 617 619 71 (set (reg/f:DI 290)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":233:16 -1
+     (nil))
+(insn 619 618 620 71 (set (reg:SI 147 [ _66 ])
+        (mem:SI (plus:DI (reg/f:DI 290)
+                (const_int 16000000 [0xf42400])) [2 board_149->game_state+0 S4 A32])) "/home/faysal/gol/main.c":233:16 -1
+     (nil))
+(insn 620 619 621 71 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 147 [ _66 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":233:10 -1
+     (nil))
+(jump_insn 621 620 622 71 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 630)
+            (pc))) "/home/faysal/gol/main.c":233:10 -1
+     (nil)
+ -> 630)
+(note 622 621 623 72 [bb 72] NOTE_INSN_BASIC_BLOCK)
+(insn 623 622 624 72 (set (reg/f:DI 291)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":234:25 -1
+     (nil))
+(insn 624 623 625 72 (set (mem:SI (plus:DI (reg/f:DI 291)
+                (const_int 16000000 [0xf42400])) [2 board_149->game_state+0 S4 A32])
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":234:25 -1
+     (nil))
+(insn 625 624 626 72 (set (reg:DI 292)
+        (symbol_ref/f:DI ("*.LC35") [flags 0x2]  <var_decl 0x7f6137351bd0 *.LC35>)) "/home/faysal/gol/main.c":235:7 -1
+     (nil))
+(insn 626 625 627 72 (set (reg:DI 5 di)
+        (reg:DI 292)) "/home/faysal/gol/main.c":235:7 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC35") [flags 0x2]  <var_decl 0x7f6137351bd0 *.LC35>)
+        (nil)))
+(call_insn 627 626 628 72 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":235:7 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(jump_insn 628 627 629 72 (set (pc)
+        (label_ref 720)) "/home/faysal/gol/main.c":236:7 -1
+     (nil)
+ -> 720)
+(barrier 629 628 630)
+(code_label 630 629 631 73 47 (nil) [1 uses])
+(note 631 630 632 73 [bb 73] NOTE_INSN_BASIC_BLOCK)
+(insn 632 631 633 73 (set (reg/f:DI 293)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":238:21 -1
+     (nil))
+(insn 633 632 634 73 (set (reg:SI 148 [ _67 ])
+        (mem:SI (plus:DI (reg/f:DI 293)
+                (const_int 16000000 [0xf42400])) [2 board_149->game_state+0 S4 A32])) "/home/faysal/gol/main.c":238:21 -1
+     (nil))
+(insn 634 633 635 73 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 148 [ _67 ])
+            (const_int 1 [0x1]))) "/home/faysal/gol/main.c":238:15 -1
+     (nil))
+(jump_insn 635 634 636 73 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 644)
+            (pc))) "/home/faysal/gol/main.c":238:15 -1
+     (nil)
+ -> 644)
+(note 636 635 637 74 [bb 74] NOTE_INSN_BASIC_BLOCK)
+(insn 637 636 638 74 (set (reg/f:DI 294)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":239:25 -1
+     (nil))
+(insn 638 637 639 74 (set (mem:SI (plus:DI (reg/f:DI 294)
+                (const_int 16000000 [0xf42400])) [2 board_149->game_state+0 S4 A32])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":239:25 -1
+     (nil))
+(insn 639 638 640 74 (set (reg:DI 295)
+        (symbol_ref/f:DI ("*.LC36") [flags 0x2]  <var_decl 0x7f6137351c60 *.LC36>)) "/home/faysal/gol/main.c":240:7 -1
+     (nil))
+(insn 640 639 641 74 (set (reg:DI 5 di)
+        (reg:DI 295)) "/home/faysal/gol/main.c":240:7 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC36") [flags 0x2]  <var_decl 0x7f6137351c60 *.LC36>)
+        (nil)))
+(call_insn 641 640 642 74 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":240:7 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(jump_insn 642 641 643 74 (set (pc)
+        (label_ref 720)) "/home/faysal/gol/main.c":241:7 -1
+     (nil)
+ -> 720)
+(barrier 643 642 644)
+(code_label 644 643 645 75 46 (nil) [2 uses])
+(note 645 644 646 75 [bb 75] NOTE_INSN_BASIC_BLOCK)
+(insn 646 645 647 75 (set (reg:SI 149 [ _68 ])
+        (mem/j/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000572 [0xffffffffff0bd9c4])) [5 e.key.keysym.sym+0 S4 A32])) "/home/faysal/gol/main.c":244:22 -1
+     (nil))
+(insn 647 646 648 75 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 149 [ _68 ])
+            (const_int 8 [0x8]))) "/home/faysal/gol/main.c":244:9 -1
+     (nil))
+(jump_insn 648 647 649 75 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 687)
+            (pc))) "/home/faysal/gol/main.c":244:9 -1
+     (nil)
+ -> 687)
+(note 649 648 650 76 [bb 76] NOTE_INSN_BASIC_BLOCK)
+(insn 650 649 651 76 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000704 [0xffffffffff0bd940])) [2 i+0 S4 A128])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":245:16 -1
+     (nil))
+(jump_insn 651 650 652 76 (set (pc)
+        (label_ref 677)) "/home/faysal/gol/main.c":245:7 -1
+     (nil)
+ -> 677)
+(barrier 652 651 681)
+(code_label 681 652 653 77 52 (nil) [1 uses])
+(note 653 681 654 77 [bb 77] NOTE_INSN_BASIC_BLOCK)
+(insn 654 653 655 77 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000700 [0xffffffffff0bd944])) [2 j+0 S4 A32])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":246:16 -1
+     (nil))
+(jump_insn 655 654 656 77 (set (pc)
+        (label_ref 668)) "/home/faysal/gol/main.c":246:7 -1
+     (nil)
+ -> 668)
+(barrier 656 655 672)
+(code_label 672 656 657 78 51 (nil) [1 uses])
+(note 657 672 658 78 [bb 78] NOTE_INSN_BASIC_BLOCK)
+(insn 658 657 659 78 (set (reg/f:DI 296)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":247:32 -1
+     (nil))
+(insn 659 658 660 78 (set (reg:SI 298)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000700 [0xffffffffff0bd944])) [2 j+0 S4 A32])) "/home/faysal/gol/main.c":247:32 -1
+     (nil))
+(insn 660 659 661 78 (set (reg:DI 297)
+        (sign_extend:DI (reg:SI 298))) "/home/faysal/gol/main.c":247:32 -1
+     (nil))
+(insn 661 660 662 78 (set (reg:SI 300)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000704 [0xffffffffff0bd940])) [2 i+0 S4 A128])) "/home/faysal/gol/main.c":247:32 -1
+     (nil))
+(insn 662 661 663 78 (set (reg:DI 299)
+        (sign_extend:DI (reg:SI 300))) "/home/faysal/gol/main.c":247:32 -1
+     (nil))
+(insn 663 662 664 78 (parallel [
+            (set (reg:DI 301)
+                (mult:DI (reg:DI 299)
+                    (const_int 4000 [0xfa0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":247:32 -1
+     (nil))
+(insn 664 663 665 78 (parallel [
+            (set (reg:DI 301)
+                (plus:DI (reg:DI 301)
+                    (reg/f:DI 296)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":247:32 -1
+     (nil))
+(insn 665 664 666 78 (parallel [
+            (set (reg/f:DI 302)
+                (plus:DI (reg:DI 301)
+                    (reg:DI 297)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":247:32 -1
+     (nil))
+(insn 666 665 667 78 (set (mem:QI (reg/f:DI 302) [0 board_149->cell_state[i_114][j_115]+0 S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":247:32 -1
+     (nil))
+(insn 667 666 668 78 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -16000700 [0xffffffffff0bd944])) [2 j+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16000700 [0xffffffffff0bd944])) [2 j+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":246:44 -1
+     (nil))
+(code_label 668 667 669 79 50 (nil) [1 uses])
+(note 669 668 670 79 [bb 79] NOTE_INSN_BASIC_BLOCK)
+(insn 670 669 671 79 (set (reg/f:DI 303)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":246:32 -1
+     (nil))
+(insn 671 670 673 79 (set (reg:SI 150 [ _69 ])
+        (mem:SI (plus:DI (reg/f:DI 303)
+                (const_int 16000008 [0xf42408])) [2 board_149->ROW_NUM+0 S4 A32])) "/home/faysal/gol/main.c":246:32 -1
+     (nil))
+(insn 673 671 674 79 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000700 [0xffffffffff0bd944])) [2 j+0 S4 A32])
+            (reg:SI 150 [ _69 ]))) "/home/faysal/gol/main.c":246:25 -1
+     (nil))
+(jump_insn 674 673 675 79 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 672)
+            (pc))) "/home/faysal/gol/main.c":246:25 -1
+     (nil)
+ -> 672)
+(note 675 674 676 80 [bb 80] NOTE_INSN_BASIC_BLOCK)
+(insn 676 675 677 80 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -16000704 [0xffffffffff0bd940])) [2 i+0 S4 A128])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16000704 [0xffffffffff0bd940])) [2 i+0 S4 A128])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":245:44 -1
+     (nil))
+(code_label 677 676 678 81 49 (nil) [1 uses])
+(note 678 677 679 81 [bb 81] NOTE_INSN_BASIC_BLOCK)
+(insn 679 678 680 81 (set (reg/f:DI 304)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":245:32 -1
+     (nil))
+(insn 680 679 682 81 (set (reg:SI 151 [ _70 ])
+        (mem:SI (plus:DI (reg/f:DI 304)
+                (const_int 16000004 [0xf42404])) [2 board_149->COL_NUM+0 S4 A32])) "/home/faysal/gol/main.c":245:32 -1
+     (nil))
+(insn 682 680 683 81 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000704 [0xffffffffff0bd940])) [2 i+0 S4 A128])
+            (reg:SI 151 [ _70 ]))) "/home/faysal/gol/main.c":245:25 -1
+     (nil))
+(jump_insn 683 682 684 81 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 681)
+            (pc))) "/home/faysal/gol/main.c":245:25 -1
+     (nil)
+ -> 681)
+(note 684 683 685 82 [bb 82] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 685 684 686 82 (set (pc)
+        (label_ref 720)) "/home/faysal/gol/main.c":249:7 -1
+     (nil)
+ -> 720)
+(barrier 686 685 687)
+(code_label 687 686 688 83 48 (nil) [1 uses])
+(note 688 687 689 83 [bb 83] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 689 688 690 83 (set (pc)
+        (label_ref 720)) "/home/faysal/gol/main.c":251:6 -1
+     (nil)
+ -> 720)
+(barrier 690 689 691)
+(code_label 691 690 692 84 42 (nil) [1 uses])
+(note 692 691 693 84 [bb 84] NOTE_INSN_BASIC_BLOCK)
+(insn 693 692 694 84 (set (reg:SI 152 [ _71 ])
+        (mem/j/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000572 [0xffffffffff0bd9c4])) [5 e.button.x+0 S4 A32])) "/home/faysal/gol/main.c":255:19 -1
+     (nil))
+(insn 694 693 695 84 (set (reg:SI 305)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128])) "/home/faysal/gol/main.c":255:22 -1
+     (nil))
+(insn 695 694 696 84 (parallel [
+            (set (reg:SI 153 [ _72 ])
+                (plus:SI (reg:SI 152 [ _71 ])
+                    (reg:SI 305)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":255:22 -1
+     (expr_list:REG_EQUAL (plus:SI (reg:SI 152 [ _71 ])
+            (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128]))
+        (nil)))
+(insn 696 695 697 84 (set (reg/f:DI 306)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":255:46 -1
+     (nil))
+(insn 697 696 698 84 (set (reg:SI 154 [ _73 ])
+        (mem:SI (plus:DI (reg/f:DI 306)
+                (const_int 16000012 [0xf4240c])) [2 board_149->CELL_WIDTH+0 S4 A32])) "/home/faysal/gol/main.c":255:46 -1
+     (nil))
+(insn 698 697 699 84 (parallel [
+            (set (reg:SI 307)
+                (div:SI (reg:SI 153 [ _72 ])
+                    (reg:SI 154 [ _73 ])))
+            (set (reg:SI 308)
+                (mod:SI (reg:SI 153 [ _72 ])
+                    (reg:SI 154 [ _73 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":253:6 -1
+     (nil))
+(insn 699 698 700 84 (set (reg:SI 155 [ _74 ])
+        (reg:SI 307)) "/home/faysal/gol/main.c":253:6 -1
+     (nil))
+(insn 700 699 701 84 (set (reg:SI 156 [ _75 ])
+        (mem/j/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000568 [0xffffffffff0bd9c8])) [5 e.button.y+0 S4 A64])) "/home/faysal/gol/main.c":254:19 -1
+     (nil))
+(insn 701 700 702 84 (set (reg:SI 309)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128])) "/home/faysal/gol/main.c":254:22 -1
+     (nil))
+(insn 702 701 703 84 (parallel [
+            (set (reg:SI 157 [ _76 ])
+                (plus:SI (reg:SI 156 [ _75 ])
+                    (reg:SI 309)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":254:22 -1
+     (expr_list:REG_EQUAL (plus:SI (reg:SI 156 [ _75 ])
+            (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128]))
+        (nil)))
+(insn 703 702 704 84 (set (reg/f:DI 310)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":254:46 -1
+     (nil))
+(insn 704 703 705 84 (set (reg:SI 158 [ _77 ])
+        (mem:SI (plus:DI (reg/f:DI 310)
+                (const_int 16000016 [0xf42410])) [2 board_149->CELL_HEIGHT+0 S4 A32])) "/home/faysal/gol/main.c":254:46 -1
+     (nil))
+(insn 705 704 706 84 (parallel [
+            (set (reg:SI 311)
+                (div:SI (reg:SI 157 [ _76 ])
+                    (reg:SI 158 [ _77 ])))
+            (set (reg:SI 312)
+                (mod:SI (reg:SI 157 [ _76 ])
+                    (reg:SI 158 [ _77 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":253:6 -1
+     (nil))
+(insn 706 705 707 84 (set (reg:SI 159 [ _78 ])
+        (reg:SI 311)) "/home/faysal/gol/main.c":253:6 -1
+     (nil))
+(insn 707 706 708 84 (set (reg:DI 313)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":253:6 -1
+     (nil))
+(insn 708 707 709 84 (set (reg:SI 1 dx)
+        (reg:SI 155 [ _74 ])) "/home/faysal/gol/main.c":253:6 -1
+     (nil))
+(insn 709 708 710 84 (set (reg:SI 4 si)
+        (reg:SI 159 [ _78 ])) "/home/faysal/gol/main.c":253:6 -1
+     (nil))
+(insn 710 709 711 84 (set (reg:DI 5 di)
+        (reg:DI 313)) "/home/faysal/gol/main.c":253:6 -1
+     (nil))
+(call_insn 711 710 712 84 (call (mem:QI (symbol_ref:DI ("click_on_cell") [flags 0x41]  <function_decl 0x7f61376e6f00 click_on_cell>) [0 click_on_cell S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":253:6 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (nil)))))
+(insn 712 711 713 84 (set (reg:SI 160 [ _79 ])
+        (mem/j/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000568 [0xffffffffff0bd9c8])) [5 e.button.y+0 S4 A64])) "/home/faysal/gol/main.c":256:6 -1
+     (nil))
+(insn 713 712 714 84 (set (reg:SI 161 [ _80 ])
+        (mem/j/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000572 [0xffffffffff0bd9c4])) [5 e.button.x+0 S4 A32])) "/home/faysal/gol/main.c":256:6 -1
+     (nil))
+(insn 714 713 715 84 (set (reg:SI 1 dx)
+        (reg:SI 160 [ _79 ])) "/home/faysal/gol/main.c":256:6 -1
+     (nil))
+(insn 715 714 716 84 (set (reg:SI 4 si)
+        (reg:SI 161 [ _80 ])) "/home/faysal/gol/main.c":256:6 -1
+     (nil))
+(insn 716 715 717 84 (set (reg:DI 314)
+        (symbol_ref/f:DI ("*.LC37") [flags 0x2]  <var_decl 0x7f6137351cf0 *.LC37>)) "/home/faysal/gol/main.c":256:6 -1
+     (nil))
+(insn 717 716 718 84 (set (reg:DI 5 di)
+        (reg:DI 314)) "/home/faysal/gol/main.c":256:6 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC37") [flags 0x2]  <var_decl 0x7f6137351cf0 *.LC37>)
+        (nil)))
+(insn 718 717 719 84 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":256:6 -1
+     (nil))
+(call_insn 719 718 720 84 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f613a2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":256:6 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(code_label 720 719 721 85 41 (nil) [9 uses])
+(note 721 720 722 85 [bb 85] NOTE_INSN_BASIC_BLOCK)
+(insn 722 721 723 85 (parallel [
+            (set (reg:DI 315)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000592 [0xffffffffff0bd9b0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":221:12 -1
+     (nil))
+(insn 723 722 724 85 (set (reg:DI 5 di)
+        (reg:DI 315)) "/home/faysal/gol/main.c":221:12 -1
+     (nil))
+(call_insn 724 723 725 85 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_PollEvent") [flags 0x41]  <function_decl 0x7f6137683200 SDL_PollEvent>) [0 SDL_PollEvent S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":221:12 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 725 724 727 85 (set (reg:SI 162 [ _81 ])
+        (reg:SI 0 ax)) "/home/faysal/gol/main.c":221:12 -1
+     (nil))
+(insn 727 725 728 85 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 162 [ _81 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":221:12 -1
+     (nil))
+(jump_insn 728 727 729 85 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 726)
+            (pc))) "/home/faysal/gol/main.c":221:12 -1
+     (nil)
+ -> 726)
+(note 729 728 730 86 [bb 86] NOTE_INSN_BASIC_BLOCK)
+(insn 730 729 731 86 (set (reg:SI 316)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128])) "/home/faysal/gol/main.c":263:16 -1
+     (nil))
+(insn 731 730 732 86 (parallel [
+            (set (reg:SI 163 [ _82 ])
+                (neg:SI (reg:SI 316)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":263:16 -1
+     (expr_list:REG_EQUAL (neg:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128]))
+        (nil)))
+(insn 732 731 733 86 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000624 [0xffffffffff0bd990])) [2 MEM[(struct SDL_Rect *)_294].x+0 S4 A128])
+        (reg:SI 163 [ _82 ])) "/home/faysal/gol/main.c":263:14 -1
+     (nil))
+(insn 733 732 734 86 (set (reg:SI 317)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128])) "/home/faysal/gol/main.c":264:16 -1
+     (nil))
+(insn 734 733 735 86 (parallel [
+            (set (reg:SI 164 [ _83 ])
+                (neg:SI (reg:SI 317)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":264:16 -1
+     (expr_list:REG_EQUAL (neg:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128]))
+        (nil)))
+(insn 735 734 736 86 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000620 [0xffffffffff0bd994])) [2 MEM[(struct SDL_Rect *)_294].y+0 S4 A32])
+        (reg:SI 164 [ _83 ])) "/home/faysal/gol/main.c":264:14 -1
+     (nil))
+(insn 736 735 737 86 (set (reg:SI 318)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000724 [0xffffffffff0bd92c])) [2 PEEPER_SIZE+0 S4 A32])) "/home/faysal/gol/main.c":265:14 -1
+     (nil))
+(insn 737 736 738 86 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000616 [0xffffffffff0bd998])) [2 MEM[(struct SDL_Rect *)_294].w+0 S4 A64])
+        (reg:SI 318)) "/home/faysal/gol/main.c":265:14 -1
+     (nil))
+(insn 738 737 739 86 (set (reg:SI 319)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000724 [0xffffffffff0bd92c])) [2 PEEPER_SIZE+0 S4 A32])) "/home/faysal/gol/main.c":266:14 -1
+     (nil))
+(insn 739 738 740 86 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000612 [0xffffffffff0bd99c])) [2 MEM[(struct SDL_Rect *)_294].h+0 S4 A32])
+        (reg:SI 319)) "/home/faysal/gol/main.c":266:14 -1
+     (nil))
+(insn 740 739 741 86 (parallel [
+            (set (reg:DI 320)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000624 [0xffffffffff0bd990])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":267:5 -1
+     (nil))
+(insn 741 740 742 86 (set (reg:DI 321)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000648 [0xffffffffff0bd978])) [44 renderer+0 S8 A64])) "/home/faysal/gol/main.c":267:5 -1
+     (nil))
+(insn 742 741 743 86 (set (reg:DI 4 si)
+        (reg:DI 320)) "/home/faysal/gol/main.c":267:5 -1
+     (nil))
+(insn 743 742 744 86 (set (reg:DI 5 di)
+        (reg:DI 321)) "/home/faysal/gol/main.c":267:5 -1
+     (nil))
+(call_insn 744 743 745 86 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_RenderSetViewport") [flags 0x41]  <function_decl 0x7f61376cc200 SDL_RenderSetViewport>) [0 SDL_RenderSetViewport S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":267:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 745 744 746 86 (set (reg/f:DI 322)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":274:47 -1
+     (nil))
+(insn 746 745 747 86 (set (reg:SI 165 [ _84 ])
+        (mem:SI (plus:DI (reg/f:DI 322)
+                (const_int 16000012 [0xf4240c])) [2 board_149->CELL_WIDTH+0 S4 A32])) "/home/faysal/gol/main.c":274:47 -1
+     (nil))
+(insn 747 746 748 86 (set (reg:SI 325)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128])) "/home/faysal/gol/main.c":274:15 -1
+     (nil))
+(insn 748 747 749 86 (parallel [
+            (set (reg:SI 323)
+                (div:SI (reg:SI 325)
+                    (reg:SI 165 [ _84 ])))
+            (set (reg:SI 324)
+                (mod:SI (reg:SI 325)
+                    (reg:SI 165 [ _84 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":274:15 -1
+     (nil))
+(insn 749 748 750 86 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000680 [0xffffffffff0bd958])) [2 origin_x+0 S4 A64])
+        (reg:SI 323)) "/home/faysal/gol/main.c":274:15 -1
+     (nil))
+(insn 750 749 751 86 (set (reg/f:DI 326)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":275:47 -1
+     (nil))
+(insn 751 750 752 86 (set (reg:SI 166 [ _85 ])
+        (mem:SI (plus:DI (reg/f:DI 326)
+                (const_int 16000016 [0xf42410])) [2 board_149->CELL_HEIGHT+0 S4 A32])) "/home/faysal/gol/main.c":275:47 -1
+     (nil))
+(insn 752 751 753 86 (set (reg:SI 329)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000720 [0xffffffffff0bd930])) [2 PEEPER_OFFSET+0 S4 A128])) "/home/faysal/gol/main.c":275:15 -1
+     (nil))
+(insn 753 752 754 86 (parallel [
+            (set (reg:SI 327)
+                (div:SI (reg:SI 329)
+                    (reg:SI 166 [ _85 ])))
+            (set (reg:SI 328)
+                (mod:SI (reg:SI 329)
+                    (reg:SI 166 [ _85 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":275:15 -1
+     (nil))
+(insn 754 753 758 86 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000676 [0xffffffffff0bd95c])) [2 origin_y+0 S4 A32])
+        (reg:SI 327)) "/home/faysal/gol/main.c":275:15 -1
+     (nil))
+(insn 758 754 759 86 (set (reg:SI 333)
+        (const_int 4000 [0xfa0])) "/home/faysal/gol/main.c":276:15 -1
+     (nil))
+(insn 759 758 760 86 (parallel [
+            (set (reg:SI 332)
+                (minus:SI (reg:SI 333)
+                    (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16000680 [0xffffffffff0bd958])) [2 origin_x+0 S4 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":276:15 -1
+     (nil))
+(insn 760 759 764 86 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000672 [0xffffffffff0bd960])) [2 domain_x+0 S4 A128])
+        (reg:SI 332)) "/home/faysal/gol/main.c":276:15 -1
+     (nil))
+(insn 764 760 765 86 (set (reg:SI 337)
+        (const_int 4000 [0xfa0])) "/home/faysal/gol/main.c":277:15 -1
+     (nil))
+(insn 765 764 766 86 (parallel [
+            (set (reg:SI 336)
+                (minus:SI (reg:SI 337)
+                    (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16000676 [0xffffffffff0bd95c])) [2 origin_y+0 S4 A32])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":277:15 -1
+     (nil))
+(insn 766 765 767 86 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000668 [0xffffffffff0bd964])) [2 domain_y+0 S4 A32])
+        (reg:SI 336)) "/home/faysal/gol/main.c":277:15 -1
+     (nil))
+(insn 767 766 768 86 (set (reg/f:DI 338)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":285:47 -1
+     (nil))
+(insn 768 767 769 86 (set (reg:SI 167 [ _86 ])
+        (mem:SI (plus:DI (reg/f:DI 338)
+                (const_int 16000012 [0xf4240c])) [2 board_149->CELL_WIDTH+0 S4 A32])) "/home/faysal/gol/main.c":285:47 -1
+     (nil))
+(insn 769 768 770 86 (set (reg:SI 340)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000672 [0xffffffffff0bd960])) [2 domain_x+0 S4 A128])) "/home/faysal/gol/main.c":285:15 -1
+     (nil))
+(insn 770 769 771 86 (parallel [
+            (set (reg:SI 339)
+                (mult:SI (reg:SI 340)
+                    (reg:SI 167 [ _86 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":285:15 -1
+     (nil))
+(insn 771 770 772 86 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000664 [0xffffffffff0bd968])) [2 maximum_width+0 S4 A64])
+        (reg:SI 339)) "/home/faysal/gol/main.c":285:15 -1
+     (nil))
+(insn 772 771 773 86 (set (reg/f:DI 341)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":286:48 -1
+     (nil))
+(insn 773 772 774 86 (set (reg:SI 168 [ _87 ])
+        (mem:SI (plus:DI (reg/f:DI 341)
+                (const_int 16000016 [0xf42410])) [2 board_149->CELL_HEIGHT+0 S4 A32])) "/home/faysal/gol/main.c":286:48 -1
+     (nil))
+(insn 774 773 775 86 (set (reg:SI 343)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000668 [0xffffffffff0bd964])) [2 domain_y+0 S4 A32])) "/home/faysal/gol/main.c":286:15 -1
+     (nil))
+(insn 775 774 776 86 (parallel [
+            (set (reg:SI 342)
+                (mult:SI (reg:SI 343)
+                    (reg:SI 168 [ _87 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":286:15 -1
+     (nil))
+(insn 776 775 777 86 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000660 [0xffffffffff0bd96c])) [2 maximum_height+0 S4 A32])
+        (reg:SI 342)) "/home/faysal/gol/main.c":286:15 -1
+     (nil))
+(insn 777 776 778 86 (parallel [
+            (set (reg:DI 344)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000736 [0xffffffffff0bd920])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":290:5 -1
+     (nil))
+(insn 778 777 779 86 (parallel [
+            (set (reg:DI 345)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000740 [0xffffffffff0bd91c])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":290:5 -1
+     (nil))
+(insn 779 778 780 86 (set (reg:DI 346)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000656 [0xffffffffff0bd970])) [45 window+0 S8 A128])) "/home/faysal/gol/main.c":290:5 -1
+     (nil))
+(insn 780 779 781 86 (set (reg:DI 1 dx)
+        (reg:DI 344)) "/home/faysal/gol/main.c":290:5 -1
+     (nil))
+(insn 781 780 782 86 (set (reg:DI 4 si)
+        (reg:DI 345)) "/home/faysal/gol/main.c":290:5 -1
+     (nil))
+(insn 782 781 783 86 (set (reg:DI 5 di)
+        (reg:DI 346)) "/home/faysal/gol/main.c":290:5 -1
+     (nil))
+(call_insn 783 782 784 86 (call (mem:QI (symbol_ref:DI ("SDL_GetWindowSize") [flags 0x41]  <function_decl 0x7f61375e9b00 SDL_GetWindowSize>) [0 SDL_GetWindowSize S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":290:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 784 783 785 86 (set (reg:SI 169 [ window_width.36_88 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000740 [0xffffffffff0bd91c])) [2 window_width+0 S4 A32])) "/home/faysal/gol/main.c":296:22 -1
+     (nil))
+(insn 785 784 786 86 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000664 [0xffffffffff0bd968])) [2 maximum_width+0 S4 A64])
+            (reg:SI 169 [ window_width.36_88 ]))) "/home/faysal/gol/main.c":296:8 -1
+     (nil))
+(jump_insn 786 785 787 86 (set (pc)
+        (if_then_else (ge (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 803)
+            (pc))) "/home/faysal/gol/main.c":296:8 -1
+     (nil)
+ -> 803)
+(note 787 786 788 87 [bb 87] NOTE_INSN_BASIC_BLOCK)
+(insn 788 787 789 87 (set (reg:SI 170 [ window_width.37_89 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000740 [0xffffffffff0bd91c])) [2 window_width+0 S4 A32])) "/home/faysal/gol/main.c":297:5 -1
+     (nil))
+(insn 789 788 790 87 (set (reg:SI 347)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000664 [0xffffffffff0bd968])) [2 maximum_width+0 S4 A64])) "/home/faysal/gol/main.c":297:5 -1
+     (nil))
+(insn 790 789 791 87 (set (reg:SI 1 dx)
+        (reg:SI 347)) "/home/faysal/gol/main.c":297:5 -1
+     (nil))
+(insn 791 790 792 87 (set (reg:SI 4 si)
+        (reg:SI 170 [ window_width.37_89 ])) "/home/faysal/gol/main.c":297:5 -1
+     (nil))
+(insn 792 791 793 87 (set (reg:DI 348)
+        (symbol_ref/f:DI ("*.LC38") [flags 0x2]  <var_decl 0x7f6137351d80 *.LC38>)) "/home/faysal/gol/main.c":297:5 -1
+     (nil))
+(insn 793 792 794 87 (set (reg:DI 5 di)
+        (reg:DI 348)) "/home/faysal/gol/main.c":297:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC38") [flags 0x2]  <var_decl 0x7f6137351d80 *.LC38>)
+        (nil)))
+(insn 794 793 795 87 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":297:5 -1
+     (nil))
+(call_insn 795 794 796 87 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f613a2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":297:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 796 795 797 87 (set (reg:SI 171 [ window_height.38_90 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000736 [0xffffffffff0bd920])) [2 window_height+0 S4 A128])) "/home/faysal/gol/main.c":298:5 -1
+     (nil))
+(insn 797 796 798 87 (set (reg:SI 349)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000664 [0xffffffffff0bd968])) [2 maximum_width+0 S4 A64])) "/home/faysal/gol/main.c":298:5 -1
+     (nil))
+(insn 798 797 799 87 (set (reg:DI 350)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000656 [0xffffffffff0bd970])) [45 window+0 S8 A128])) "/home/faysal/gol/main.c":298:5 -1
+     (nil))
+(insn 799 798 800 87 (set (reg:SI 1 dx)
+        (reg:SI 171 [ window_height.38_90 ])) "/home/faysal/gol/main.c":298:5 -1
+     (nil))
+(insn 800 799 801 87 (set (reg:SI 4 si)
+        (reg:SI 349)) "/home/faysal/gol/main.c":298:5 -1
+     (nil))
+(insn 801 800 802 87 (set (reg:DI 5 di)
+        (reg:DI 350)) "/home/faysal/gol/main.c":298:5 -1
+     (nil))
+(call_insn 802 801 803 87 (call (mem:QI (symbol_ref:DI ("SDL_SetWindowSize") [flags 0x41]  <function_decl 0x7f61375e9a00 SDL_SetWindowSize>) [0 SDL_SetWindowSize S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":298:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (nil)))))
+(code_label 803 802 804 88 54 (nil) [1 uses])
+(note 804 803 805 88 [bb 88] NOTE_INSN_BASIC_BLOCK)
+(insn 805 804 806 88 (set (reg:SI 172 [ window_height.39_91 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000736 [0xffffffffff0bd920])) [2 window_height+0 S4 A128])) "/home/faysal/gol/main.c":300:23 -1
+     (nil))
+(insn 806 805 807 88 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000660 [0xffffffffff0bd96c])) [2 maximum_height+0 S4 A32])
+            (reg:SI 172 [ window_height.39_91 ]))) "/home/faysal/gol/main.c":300:8 -1
+     (nil))
+(jump_insn 807 806 808 88 (set (pc)
+        (if_then_else (ge (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 824)
+            (pc))) "/home/faysal/gol/main.c":300:8 -1
+     (nil)
+ -> 824)
+(note 808 807 809 89 [bb 89] NOTE_INSN_BASIC_BLOCK)
+(insn 809 808 810 89 (set (reg:SI 173 [ window_height.40_92 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000736 [0xffffffffff0bd920])) [2 window_height+0 S4 A128])) "/home/faysal/gol/main.c":301:5 -1
+     (nil))
+(insn 810 809 811 89 (set (reg:SI 351)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000660 [0xffffffffff0bd96c])) [2 maximum_height+0 S4 A32])) "/home/faysal/gol/main.c":301:5 -1
+     (nil))
+(insn 811 810 812 89 (set (reg:SI 1 dx)
+        (reg:SI 351)) "/home/faysal/gol/main.c":301:5 -1
+     (nil))
+(insn 812 811 813 89 (set (reg:SI 4 si)
+        (reg:SI 173 [ window_height.40_92 ])) "/home/faysal/gol/main.c":301:5 -1
+     (nil))
+(insn 813 812 814 89 (set (reg:DI 352)
+        (symbol_ref/f:DI ("*.LC39") [flags 0x2]  <var_decl 0x7f6137351e10 *.LC39>)) "/home/faysal/gol/main.c":301:5 -1
+     (nil))
+(insn 814 813 815 89 (set (reg:DI 5 di)
+        (reg:DI 352)) "/home/faysal/gol/main.c":301:5 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC39") [flags 0x2]  <var_decl 0x7f6137351e10 *.LC39>)
+        (nil)))
+(insn 815 814 816 89 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":301:5 -1
+     (nil))
+(call_insn 816 815 817 89 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f613a2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":301:5 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (expr_list:SI (use (reg:SI 1 dx))
+                    (nil))))))
+(insn 817 816 818 89 (set (reg:SI 174 [ window_width.41_93 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000740 [0xffffffffff0bd91c])) [2 window_width+0 S4 A32])) "/home/faysal/gol/main.c":302:5 -1
+     (nil))
+(insn 818 817 819 89 (set (reg:SI 353)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000660 [0xffffffffff0bd96c])) [2 maximum_height+0 S4 A32])) "/home/faysal/gol/main.c":302:5 -1
+     (nil))
+(insn 819 818 820 89 (set (reg:DI 354)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000656 [0xffffffffff0bd970])) [45 window+0 S8 A128])) "/home/faysal/gol/main.c":302:5 -1
+     (nil))
+(insn 820 819 821 89 (set (reg:SI 1 dx)
+        (reg:SI 353)) "/home/faysal/gol/main.c":302:5 -1
+     (nil))
+(insn 821 820 822 89 (set (reg:SI 4 si)
+        (reg:SI 174 [ window_width.41_93 ])) "/home/faysal/gol/main.c":302:5 -1
+     (nil))
+(insn 822 821 823 89 (set (reg:DI 5 di)
+        (reg:DI 354)) "/home/faysal/gol/main.c":302:5 -1
+     (nil))
+(call_insn 823 822 824 89 (call (mem:QI (symbol_ref:DI ("SDL_SetWindowSize") [flags 0x41]  <function_decl 0x7f61375e9a00 SDL_SetWindowSize>) [0 SDL_SetWindowSize S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":302:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (nil)))))
+(code_label 824 823 825 90 55 (nil) [1 uses])
+(note 825 824 826 90 [bb 90] NOTE_INSN_BASIC_BLOCK)
+(insn 826 825 827 90 (set (reg:DI 355)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000648 [0xffffffffff0bd978])) [44 renderer+0 S8 A64])) "/home/faysal/gol/main.c":306:5 -1
+     (nil))
+(insn 827 826 828 90 (set (reg:SI 36 r8)
+        (const_int 1 [0x1])) "/home/faysal/gol/main.c":306:5 -1
+     (nil))
+(insn 828 827 829 90 (set (reg:SI 2 cx)
+        (const_int 40 [0x28])) "/home/faysal/gol/main.c":306:5 -1
+     (nil))
+(insn 829 828 830 90 (set (reg:SI 1 dx)
+        (const_int 40 [0x28])) "/home/faysal/gol/main.c":306:5 -1
+     (nil))
+(insn 830 829 831 90 (set (reg:SI 4 si)
+        (const_int 40 [0x28])) "/home/faysal/gol/main.c":306:5 -1
+     (nil))
+(insn 831 830 832 90 (set (reg:DI 5 di)
+        (reg:DI 355)) "/home/faysal/gol/main.c":306:5 -1
+     (nil))
+(call_insn 832 831 833 90 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7f61376ccb00 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":306:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:SI (use (reg:SI 36 r8))
+                        (nil)))))))
+(insn 833 832 834 90 (set (reg:DI 356)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000648 [0xffffffffff0bd978])) [44 renderer+0 S8 A64])) "/home/faysal/gol/main.c":307:5 -1
+     (nil))
+(insn 834 833 835 90 (set (reg:DI 5 di)
+        (reg:DI 356)) "/home/faysal/gol/main.c":307:5 -1
+     (nil))
+(call_insn 835 834 836 90 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_RenderClear") [flags 0x41]  <function_decl 0x7f61376ccf00 SDL_RenderClear>) [0 SDL_RenderClear S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":307:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(code_label 836 835 837 91 40 (nil) [1 uses])
+(note 837 836 838 91 [bb 91] NOTE_INSN_BASIC_BLOCK)
+(insn 838 837 839 91 (parallel [
+            (set (reg:DI 357)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000528 [0xffffffffff0bd9f0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":310:4 -1
+     (nil))
+(insn 839 838 840 91 (set (reg:DI 358)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":310:4 -1
+     (nil))
+(insn 840 839 841 91 (set (reg:DI 359)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000648 [0xffffffffff0bd978])) [44 renderer+0 S8 A64])) "/home/faysal/gol/main.c":310:4 -1
+     (nil))
+(insn 841 840 842 91 (set (reg:DI 1 dx)
+        (reg:DI 357)) "/home/faysal/gol/main.c":310:4 -1
+     (nil))
+(insn 842 841 843 91 (set (reg:DI 4 si)
+        (reg:DI 358)) "/home/faysal/gol/main.c":310:4 -1
+     (nil))
+(insn 843 842 844 91 (set (reg:DI 5 di)
+        (reg:DI 359)) "/home/faysal/gol/main.c":310:4 -1
+     (nil))
+(call_insn 844 843 845 91 (call (mem:QI (symbol_ref:DI ("render_board") [flags 0x41]  <function_decl 0x7f61376ef800 render_board>) [0 render_board S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":310:4 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 845 844 846 91 (set (reg:QI 175 [ Graphical_Mode.42_94 ])
+        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x40]  <var_decl 0x7f61375a9f30 Graphical_Mode>) [3 Graphical_Mode+0 S1 A8])) "/home/faysal/gol/main.c":312:8 -1
+     (nil))
+(insn 846 845 847 91 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 175 [ Graphical_Mode.42_94 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":312:7 -1
+     (nil))
+(jump_insn 847 846 848 91 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 855)
+            (pc))) "/home/faysal/gol/main.c":312:7 -1
+     (nil)
+ -> 855)
+(note 848 847 849 92 [bb 92] NOTE_INSN_BASIC_BLOCK)
+(insn 849 848 850 92 (set (reg:DI 360)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000648 [0xffffffffff0bd978])) [44 renderer+0 S8 A64])) "/home/faysal/gol/main.c":314:5 -1
+     (nil))
+(insn 850 849 851 92 (set (reg:DI 5 di)
+        (reg:DI 360)) "/home/faysal/gol/main.c":314:5 -1
+     (nil))
+(call_insn 851 850 852 92 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7f61376d6700 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":314:5 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 852 851 853 92 (set (reg:SI 176 [ TICKS.43_95 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000732 [0xffffffffff0bd924])) [2 TICKS+0 S4 A32])) "/home/faysal/gol/main.c":315:5 -1
+     (nil))
+(insn 853 852 854 92 (set (reg:SI 5 di)
+        (reg:SI 176 [ TICKS.43_95 ])) "/home/faysal/gol/main.c":315:5 -1
+     (nil))
+(call_insn 854 853 855 92 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("usleep") [flags 0x41]  <function_decl 0x7f613a3f9400 usleep>) [0 usleep S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":315:5 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(code_label 855 854 856 93 56 (nil) [1 uses])
+(note 856 855 857 93 [bb 93] NOTE_INSN_BASIC_BLOCK)
+(insn 857 856 858 93 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -16000708 [0xffffffffff0bd93c])) [2 Iteration+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16000708 [0xffffffffff0bd93c])) [2 Iteration+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":319:4 -1
+     (nil))
+(insn 858 857 859 93 (set (reg:SI 361)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000708 [0xffffffffff0bd93c])) [2 Iteration+0 S4 A32])) "/home/faysal/gol/main.c":319:4 -1
+     (nil))
+(insn 859 858 860 93 (set (reg:SI 4 si)
+        (reg:SI 361)) "/home/faysal/gol/main.c":319:4 -1
+     (nil))
+(insn 860 859 861 93 (set (reg:DI 362)
+        (symbol_ref/f:DI ("*.LC40") [flags 0x2]  <var_decl 0x7f6137351ea0 *.LC40>)) "/home/faysal/gol/main.c":319:4 -1
+     (nil))
+(insn 861 860 862 93 (set (reg:DI 5 di)
+        (reg:DI 362)) "/home/faysal/gol/main.c":319:4 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC40") [flags 0x2]  <var_decl 0x7f6137351ea0 *.LC40>)
+        (nil)))
+(insn 862 861 863 93 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":319:4 -1
+     (nil))
+(call_insn 863 862 864 93 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f613a2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":319:4 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+(insn 864 863 865 93 (set (reg/f:DI 177 [ stdout.44_96 ])
+        (mem/f/c:DI (symbol_ref:DI ("stdout") [flags 0x40]  <var_decl 0x7f613bc51cf0 stdout>) [47 stdout+0 S8 A64])) "/home/faysal/gol/main.c":319:63 -1
+     (nil))
+(insn 865 864 866 93 (set (reg:DI 5 di)
+        (reg/f:DI 177 [ stdout.44_96 ])) "/home/faysal/gol/main.c":319:63 -1
+     (nil))
+(call_insn 866 865 867 93 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fflush") [flags 0x41]  <function_decl 0x7f613a3c7d00 fflush>) [0 fflush S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":319:63 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(code_label 867 866 868 94 39 (nil) [1 uses])
+(note 868 867 869 94 [bb 94] NOTE_INSN_BASIC_BLOCK)
+(insn 869 868 870 94 (set (reg:QI 363)
+        (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000741 [0xffffffffff0bd91b])) [3 quit+0 S1 A8])) "/home/faysal/gol/main.c":215:14 -1
+     (nil))
+(insn 870 869 871 94 (parallel [
+            (set (reg:QI 178 [ _97 ])
+                (xor:QI (reg:QI 363)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":215:14 -1
+     (expr_list:REG_EQUAL (xor:QI (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000741 [0xffffffffff0bd91b])) [3 quit+0 S1 A8])
+            (const_int 1 [0x1]))
+        (nil)))
+(insn 871 870 872 94 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 178 [ _97 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":215:22 -1
+     (nil))
+(jump_insn 872 871 873 94 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 883)
+            (pc))) "/home/faysal/gol/main.c":215:22 -1
+     (nil)
+ -> 883)
+(note 873 872 877 95 [bb 95] NOTE_INSN_BASIC_BLOCK)
+(insn 877 873 878 95 (set (reg:CCGOC 17 flags)
+        (compare:CCGOC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000728 [0xffffffffff0bd928])) [2 EndTime+0 S4 A64])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":215:22 -1
+     (nil))
+(jump_insn 878 877 879 95 (set (pc)
+        (if_then_else (lt (reg:CCGOC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 874)
+            (pc))) "/home/faysal/gol/main.c":215:22 -1
+     (nil)
+ -> 874)
+(note 879 878 880 96 [bb 96] NOTE_INSN_BASIC_BLOCK)
+(insn 880 879 881 96 (set (reg:SI 364)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000708 [0xffffffffff0bd93c])) [2 Iteration+0 S4 A32])) "/home/faysal/gol/main.c":215:36 -1
+     (nil))
+(insn 881 880 882 96 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 364)
+            (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000728 [0xffffffffff0bd928])) [2 EndTime+0 S4 A64]))) "/home/faysal/gol/main.c":215:36 -1
+     (nil))
+(jump_insn 882 881 883 96 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 874)
+            (pc))) "/home/faysal/gol/main.c":215:36 -1
+     (nil)
+ -> 874)
+(code_label 883 882 884 97 57 (nil) [1 uses])
+(note 884 883 885 97 [bb 97] NOTE_INSN_BASIC_BLOCK)
+(insn 885 884 886 97 (set (reg:DI 365)
+        (symbol_ref/f:DI ("*.LC41") [flags 0x2]  <var_decl 0x7f6137351f30 *.LC41>)) "/home/faysal/gol/main.c":321:3 -1
+     (nil))
+(insn 886 885 887 97 (set (reg:DI 5 di)
+        (reg:DI 365)) "/home/faysal/gol/main.c":321:3 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC41") [flags 0x2]  <var_decl 0x7f6137351f30 *.LC41>)
+        (nil)))
+(call_insn 887 886 888 97 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f613a2be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":321:3 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 888 887 889 97 (set (reg:QI 179 [ Graphical_Mode.45_98 ])
+        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x40]  <var_decl 0x7f61375a9f30 Graphical_Mode>) [3 Graphical_Mode+0 S1 A8])) "/home/faysal/gol/main.c":323:7 -1
+     (nil))
+(insn 889 888 890 97 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 179 [ Graphical_Mode.45_98 ])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":323:6 -1
+     (nil))
+(jump_insn 890 889 891 97 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 896)
+            (pc))) "/home/faysal/gol/main.c":323:6 -1
+     (nil)
+ -> 896)
+(note 891 890 892 98 [bb 98] NOTE_INSN_BASIC_BLOCK)
+(insn 892 891 893 98 (set (reg:DI 366)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000656 [0xffffffffff0bd970])) [45 window+0 S8 A128])) "/home/faysal/gol/main.c":326:4 -1
+     (nil))
+(insn 893 892 894 98 (set (reg:DI 5 di)
+        (reg:DI 366)) "/home/faysal/gol/main.c":326:4 -1
+     (nil))
+(call_insn 894 893 895 98 (call (mem:QI (symbol_ref:DI ("SDL_DestroyWindow") [flags 0x41]  <function_decl 0x7f61375f9100 SDL_DestroyWindow>) [0 SDL_DestroyWindow S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":326:4 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(call_insn 895 894 896 98 (call (mem:QI (symbol_ref:DI ("SDL_Quit") [flags 0x41]  <function_decl 0x7f61376e6e00 SDL_Quit>) [0 SDL_Quit S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":327:4 -1
+     (nil)
+    (nil))
+(code_label 896 895 897 99 59 (nil) [1 uses])
+(note 897 896 898 99 [bb 99] NOTE_INSN_BASIC_BLOCK)
+(insn 898 897 899 99 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16000742 [0xffffffffff0bd91a])) [3 SaveFile+0 S1 A16])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":331:6 -1
+     (nil))
+(jump_insn 899 898 900 99 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 915)
+            (pc))) "/home/faysal/gol/main.c":331:6 -1
+     (nil)
+ -> 915)
+(note 900 899 901 100 [bb 100] NOTE_INSN_BASIC_BLOCK)
+(insn 901 900 902 100 (parallel [
+            (set (reg:DI 367)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -272 [0xfffffffffffffef0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":332:4 -1
+     (nil))
+(insn 902 901 903 100 (set (reg:DI 4 si)
+        (reg:DI 367)) "/home/faysal/gol/main.c":332:4 -1
+     (nil))
+(insn 903 902 904 100 (set (reg:DI 368)
+        (symbol_ref/f:DI ("*.LC42") [flags 0x2]  <var_decl 0x7f6137372000 *.LC42>)) "/home/faysal/gol/main.c":332:4 -1
+     (nil))
+(insn 904 903 905 100 (set (reg:DI 5 di)
+        (reg:DI 368)) "/home/faysal/gol/main.c":332:4 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC42") [flags 0x2]  <var_decl 0x7f6137372000 *.LC42>)
+        (nil)))
+(insn 905 904 906 100 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/faysal/gol/main.c":332:4 -1
+     (nil))
+(call_insn 906 905 907 100 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f613a2be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":332:4 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+(insn 907 906 908 100 (set (reg/f:DI 180 [ stdout.46_99 ])
+        (mem/f/c:DI (symbol_ref:DI ("stdout") [flags 0x40]  <var_decl 0x7f613bc51cf0 stdout>) [47 stdout+0 S8 A64])) "/home/faysal/gol/main.c":332:53 -1
+     (nil))
+(insn 908 907 909 100 (set (reg:DI 5 di)
+        (reg/f:DI 180 [ stdout.46_99 ])) "/home/faysal/gol/main.c":332:53 -1
+     (nil))
+(call_insn 909 908 910 100 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fflush") [flags 0x41]  <function_decl 0x7f613a3c7d00 fflush>) [0 fflush S1 A8])
+            (const_int 0 [0]))) "/home/faysal/gol/main.c":332:53 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 910 909 911 100 (set (reg:DI 369)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16000640 [0xffffffffff0bd980])) [43 board+0 S8 A128])) "/home/faysal/gol/main.c":333:4 -1
+     (nil))
+(insn 911 910 912 100 (parallel [
+            (set (reg:DI 370)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -272 [0xfffffffffffffef0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/faysal/gol/main.c":333:4 -1
+     (nil))
+(insn 912 911 913 100 (set (reg:DI 4 si)
+        (reg:DI 369)) "/home/faysal/gol/main.c":333:4 -1
+     (nil))
+(insn 913 912 914 100 (set (reg:DI 5 di)
+        (reg:DI 370)) "/home/faysal/gol/main.c":333:4 -1
+     (nil))
+(call_insn 914 913 915 100 (call (mem:QI (symbol_ref:DI ("life_write") [flags 0x41]  <function_decl 0x7f61376ef500 life_write>) [0 life_write S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":333:4 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(code_label 915 914 916 101 60 (nil) [1 uses])
+(note 916 915 917 101 [bb 101] NOTE_INSN_BASIC_BLOCK)
+(insn 917 916 920 101 (set (reg:SI 181 [ _116 ])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":336:10 -1
+     (nil))
+(jump_insn 920 917 921 101 (set (pc)
+        (label_ref 925)) -1
+     (nil)
+ -> 925)
+(barrier 921 920 922)
+(code_label 922 921 923 103 3 (nil) [1 uses])
+(note 923 922 924 103 [bb 103] NOTE_INSN_BASIC_BLOCK)
+(insn 924 923 925 103 (set (reg:SI 181 [ _116 ])
+        (const_int 0 [0])) "<built-in>":0:0 -1
+     (nil))
+(code_label 925 924 926 104 61 (nil) [3 uses])
+(note 926 925 927 104 [bb 104] NOTE_INSN_BASIC_BLOCK)
+(insn 927 926 931 104 (set (reg:SI 182 [ <retval> ])
+        (reg:SI 181 [ _116 ])) "/home/faysal/gol/main.c":338:1 -1
+     (nil))
+(insn 931 927 932 104 (parallel [
+            (set (reg:CCZ 17 flags)
+                (unspec:CCZ [
+                        (mem/v/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                                (const_int -8 [0xfffffffffffffff8])) [4 D.31956+0 S8 A64])
+                        (mem/v/f:DI (const_int 40 [0x28]) [0 MEM[(<address-space-1> long unsigned int *)40B]+0 S8 A64 AS1])
+                    ] UNSPEC_SP_TEST))
+            (clobber (scratch:DI))
+        ]) "/home/faysal/gol/main.c":338:1 -1
+     (nil))
+(jump_insn 932 931 940 104 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 935)
+            (pc))) "/home/faysal/gol/main.c":338:1 -1
+     (nil)
+ -> 935)
+(note 940 932 933 106 [bb 106] NOTE_INSN_BASIC_BLOCK)
+(call_insn 933 940 934 106 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7f6137331a00 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
+        (const_int 0 [0])) "/home/faysal/gol/main.c":338:1 -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (nil))
+(barrier 934 933 935)
+(code_label 935 934 941 107 62 (nil) [1 uses])
+(note 941 935 936 107 [bb 107] NOTE_INSN_BASIC_BLOCK)
+(insn 936 941 937 107 (set (reg/i:SI 0 ax)
+        (reg:SI 182 [ <retval> ])) "/home/faysal/gol/main.c":338:1 -1
+     (nil))
+(insn 937 936 0 107 (use (reg/i:SI 0 ax)) "/home/faysal/gol/main.c":338:1 -1
+     (nil))

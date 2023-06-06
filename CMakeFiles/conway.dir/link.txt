@@ -1,0 +1,1 @@
+/usr/bin/cc  -O0 -Wall -Werror -fdump-rtl-expand CMakeFiles/conway.dir/main.c.o CMakeFiles/conway.dir/logic.c.o CMakeFiles/conway.dir/render.c.o -o conway  /usr/lib/x86_64-linux-gnu/libSDL2main.a /usr/lib/x86_64-linux-gnu/libSDL2.so 
