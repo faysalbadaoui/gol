@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/faysal/gol/build",
+  "command": "/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -O0 -Wall -Werror -fdump-rtl-expand -g -o CMakeFiles/conway.dir/main.c.o -c /home/faysal/gol/main.c",
+  "file": "/home/faysal/gol/main.c"
+},
+{
+  "directory": "/home/faysal/gol/build",
+  "command": "/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -O0 -Wall -Werror -fdump-rtl-expand -g -o CMakeFiles/conway.dir/logic.c.o -c /home/faysal/gol/logic.c",
+  "file": "/home/faysal/gol/logic.c"
+},
+{
+  "directory": "/home/faysal/gol/build",
+  "command": "/usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -O0 -Wall -Werror -fdump-rtl-expand -g -o CMakeFiles/conway.dir/render.c.o -c /home/faysal/gol/render.c",
+  "file": "/home/faysal/gol/render.c"
+}
+]
