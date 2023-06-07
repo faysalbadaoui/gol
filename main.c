@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <mpi.h>
 #include <SDL2/SDL.h>
-
 #include "./game.h"
 #include "./logic.h"
 #include "./render.h"
@@ -31,6 +30,40 @@ int main(int argc, char** argv)
 	MPI_Init(&argc, &argv);  
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 	MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+		// Configuración inicial del juego
+	int COL_NUM = D_COL_NUM;
+	int ROW_NUM = D_ROW_NUM;
+
+	// Calcular el tamaño de la submatriz para cada proceso
+	int submatrix_cols = COL_NUM / size;
+	int extra_cols = COL_NUM % size;
+
+	int start_col = rank * submatrix_cols;
+	int end_col = start_col + submatrix_cols - 1;
+
+	if (rank < extra_cols) {
+		start_col += rank;
+		end_col += rank + 1;
+	} else {
+		start_col += extra_cols;
+		end_col += extra_cols;
+	}
+
+	// Crear submatriz local para cada proceso
+	int local_cols = end_col - start_col + 1;
+	int local_rows = ROW_NUM;
+
+	// Asegurar que la submatriz local tenga espacio suficiente para los bordes vecinos
+	if (start_col > 0) {
+		local_cols += 1;
+		start_col -= 1;
+	}
+	if (end_col < COL_NUM - 1) {
+		local_cols += 1;
+		end_col += 1;
+	}
+	
 	if(rank == 0){
 		printf("Hello from rank 0\n");
 	}else{
