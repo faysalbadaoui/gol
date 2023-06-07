@@ -22,6 +22,14 @@ void usage(void)
 	printf("Enter extremely low values at own peril.\n\tRecommended to stay in 30000-100000 range.\n\tDefaults to 50000.\n\n");
 	printf("\n -c\tSet cell size to tiny, small, medium or large.\n\tDefaults to small.\n\n");
 }
+unsigned char** create_board(int cols, int rows) {
+    unsigned char** board = (unsigned char**)malloc(cols * sizeof(unsigned char*));
+    for (int i = 0; i < cols; i++) {
+        board[i] = (unsigned char*)malloc(rows * sizeof(unsigned char));
+    }
+    return board;
+}
+
 
 int main(int argc, char** argv)
 {
@@ -54,6 +62,18 @@ int main(int argc, char** argv)
 	int local_cols = end_col - start_col + 1;
 	int local_rows = ROW_NUM;
 
+
+	unsigned char** local_board = create_board(local_cols, local_rows);
+	unsigned char** local_neighbors = create_board(local_cols, local_rows);
+
+	printf("local_cols: %d, local_rows: %d\n", local_cols, local_rows);
+	printf("start_col: %d, end_col: %d\n", start_col, end_col);
+	for(int i = 0; i < local_board[0][0]; i++){ //just so compiler doesn't complain
+		for(int j = 0; j < local_neighbors[0][1]; j++){
+
+		}
+	}
+
 	// Asegurar que la submatriz local tenga espacio suficiente para los bordes vecinos
 	if (start_col > 0) {
 		local_cols += 1;
@@ -63,7 +83,7 @@ int main(int argc, char** argv)
 		local_cols += 1;
 		end_col += 1;
 	}
-	
+
 	if(rank == 0){
 		printf("Hello from rank 0\n");
 	}else{
