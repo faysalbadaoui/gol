@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <mpi.h>
 #include "./game.h"
 #include "./logic.h"
 
@@ -326,6 +327,40 @@ void count_neighbors_flat_world(board_t* board, unsigned char neighbors[D_COL_NU
   if (board->cell_state[board->COL_NUM - 2][0] == ALIVE)
     neighbors[board->COL_NUM - 1][0]++;
 }
+//Added the communication of table to neighbours
+void communicate(board_t* local_board, int rank, int size, MPI_Comm comm)
+{
+    MPI_Status status;
+    int upper_proc = rank == 0 ? MPI_PROC_NULL : rank - 1; // handle top edge
+    int lower_proc = rank == size - 1 ? MPI_PROC_NULL : rank + 1; // handle bottom edge
+
+    // Assuming 1D decomposition. Modify as needed for 2D.
+    int* send_upper = local_board->cell_state[0]; // top row to send
+    int* send_lower = local_board->cell_state[local_board->ROW_NUM - 1]; // bottom row to send
+
+    int* recv_upper = new int[local_board->COL_NUM]; // top row to receive
+    int* recv_lower = new int[local_board->COL_NUM]; // bottom row to receive
+
+    // Send to upper process and receive from lower process
+    MPI_Sendrecv(send_upper, local_board->COL_NUM, MPI_INT, upper_proc, 0,
+                 recv_lower, local_board->COL_NUM, MPI_INT, lower_proc, 0,
+                 comm, &status);
+
+    // Send to lower process and receive from upper process
+    MPI_Sendrecv(send_lower, local_board->COL_NUM, MPI_INT, lower_proc, 0,
+                 recv_upper, local_board->COL_NUM, MPI_INT, upper_proc, 0,
+                 comm, &status);
+
+    // Merge received rows into local board (if not MPI_PROC_NULL)
+    if (upper_proc != MPI_PROC_NULL)
+        memcpy(local_board->cell_state[0], recv_upper, local_board->COL_NUM * sizeof(int));
+    if (lower_proc != MPI_PROC_NULL)
+        memcpy(local_board->cell_state[local_board->ROW_NUM - 1], recv_lower, local_board->COL_NUM * sizeof(int));
+
+    delete[] recv_upper;
+    delete[] recv_lower;
+}
+
 
 void evolve(board_t* board, const unsigned char neighbors[D_COL_NUM][D_ROW_NUM])
 {
