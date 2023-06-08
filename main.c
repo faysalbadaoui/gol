@@ -32,6 +32,7 @@ unsigned char** create_board(int cols, int rows) {
 
 
 int main(int argc, char** argv)
+
 {
 	// Set default rate of ticks.
 	int rank, size;
@@ -73,7 +74,6 @@ int main(int argc, char** argv)
 
 		}
 	}
-
 	// Asegurar que la submatriz local tenga espacio suficiente para los bordes vecinos
 	if (start_col > 0) {
 		local_cols += 1;
@@ -86,8 +86,6 @@ int main(int argc, char** argv)
 
 	if(rank == 0){
 		printf("Hello from rank 0\n");
-	}else{
-		printf("Hello from rank %d\n", rank);
 		int TICKS = 50000;
 		bool LoadFile = false, SaveFile = false; 
 		int EndTime=-1;
@@ -265,6 +263,7 @@ int main(int argc, char** argv)
 		printf("Start Simulatiom.\n");fflush(stdout);
 		bool quit = false;
 		int Iteration=0;
+		
 		while (quit==false && (EndTime<0 || Iteration<EndTime)) 
 		{
 		
@@ -387,6 +386,8 @@ int main(int argc, char** argv)
 		}
 
 		return EXIT_SUCCESS;
+	}else{
+
 	}
 
 	MPI_Finalize();
