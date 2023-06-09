@@ -10,11 +10,6 @@
 #include "./logic.h"
 #include "./render.h"
 
-typedef struct {
-    int rank;
-    int num_procs;
-    board_t *board;
-} board_data_t;
 
 void usage(void)
 {
@@ -28,11 +23,27 @@ void usage(void)
 	printf("Enter extremely low values at own peril.\n\tRecommended to stay in 30000-100000 range.\n\tDefaults to 50000.\n\n");
 	printf("\n -c\tSet cell size to tiny, small, medium or large.\n\tDefaults to small.\n\n");
 }
-unsigned char** create_board(int cols, int rows) {
-    unsigned char** board = (unsigned char**)malloc(cols * sizeof(unsigned char*));
-    for (int i = 0; i < cols; i++) {
-        board[i] = (unsigned char*)malloc(rows * sizeof(unsigned char));
+
+board_t* create_board(int col_num, int row_num) {
+
+    board_t* board = malloc(sizeof(board_t));
+
+    // Ensure successful memory allocation
+    if (board == NULL) {
+        printf("Error: Unable to allocate memory for the board.\n");
+        exit(1);
     }
+
+    board->COL_NUM = col_num;
+    board->ROW_NUM = row_num;
+    board->game_state = RUNNING_STATE;
+
+    for (int i = 0; i < D_ROW_NUM; i++) {
+        for (int j = 0; j < D_COL_NUM; j++) {
+            board->cell_state[i][j] = DEAD;
+        }
+    }
+
     return board;
 }
 
@@ -43,6 +54,46 @@ int compute_new_state(int current_state, int num_alive_neighbors) {
         return ALIVE;
     } else {
         return current_state;
+    }
+}
+
+board_t* distribute_board(board_t* global_board, int rank, int size)
+{
+    // Determine the stripe height for each process.
+    int stripe_height = global_board->ROW_NUM / size;
+    int start_row = rank * stripe_height;
+
+    // Handle the case where the rows cannot be evenly distributed among the processes.
+    if (rank == size - 1) {
+        stripe_height = global_board->ROW_NUM - start_row;  // Remaining rows
+    }
+
+    // Create a new local board for the current process.
+    board_t* local_board = create_board(global_board->COL_NUM, stripe_height);
+
+    // Copy the corresponding stripe from the global board to the local board.
+    for (int i = 0; i < stripe_height; i++) {
+        for (int j = 0; j < global_board->COL_NUM; j++) {
+            local_board->cell_state[i][j] = global_board->cell_state[start_row + i][j];
+        }
+    }
+
+    // Copy the common board settings.
+    local_board->game_state = global_board->game_state;
+    local_board->CELL_WIDTH = global_board->CELL_WIDTH;
+    local_board->CELL_HEIGHT = global_board->CELL_HEIGHT;
+
+    // Return the local board.
+    return local_board;
+}
+
+
+void print_local_board(board_t* local_board) {
+    for (int i = 0; i < local_board->ROW_NUM; ++i) {
+        for (int j = 0; j < local_board->COL_NUM; ++j) {
+            printf("%d ", local_board->cell_state[i][j]);
+        }
+        printf("\n");
     }
 }
 
@@ -78,16 +129,6 @@ int main(int argc, char** argv)
 	int local_cols = end_col - start_col + 1;
 	int local_rows = ROW_NUM;
 
-
-	unsigned char** local_board = create_board(local_cols, local_rows);
-	unsigned char** local_neighbors = create_board(local_cols, local_rows);
-
-
-	for(int i = 0; i < local_board[0][0]; i++){ //just so compiler doesn't complain
-		for(int j = 0; j < local_neighbors[0][1]; j++){
-
-		}
-	}
 	// Asegurar que la submatriz local tenga espacio suficiente para los bordes vecinos
 	if (start_col > 0) {
 		local_cols += 1;
@@ -276,13 +317,16 @@ int main(int argc, char** argv)
 		}
 		//Començar la part per a enviar feina als altres processos
 	}
-	
+
 	printf("Start Simulatiom.\n");fflush(stdout);
+
 	bool quit = false;
 	int Iteration=0;
-
+	board_t* local_board = distribute_board(board, rank, size);
+	printf("Rank: %d\n", rank);
+	print_local_board(local_board);
 	while (quit==false && (EndTime<0 || Iteration<EndTime)) 
-	{
+	{	
 		//Send work to workers
 		//workers need to send to neighbours
 		//Go with next iteration
@@ -290,44 +334,44 @@ int main(int argc, char** argv)
 		{  
 			//Poll event and provide event type to switch statement
 			while (SDL_PollEvent(&e)) {
-			switch (e.type) {
-				case SDL_QUIT:
-				quit = true;
-				break;
-				case SDL_KEYDOWN:
-				// For keydown events, test for keycode type. See Wiki SDL_Keycode.
-				if (e.key.keysym.sym == SDLK_ESCAPE) {
+				switch (e.type) {
+					case SDL_QUIT:
 					quit = true;
 					break;
-				}
-				if (e.key.keysym.sym == SDLK_SPACE) {
-					if (board->game_state == RUNNING_STATE) {
-					board->game_state = PAUSE_STATE;
-					printf("Game paused: editing enabled.\n");
-					break;
+					case SDL_KEYDOWN:
+					// For keydown events, test for keycode type. See Wiki SDL_Keycode.
+					if (e.key.keysym.sym == SDLK_ESCAPE) {
+						quit = true;
+						break;
 					}
-					else if (board->game_state == PAUSE_STATE) {
-					board->game_state = RUNNING_STATE;
-					printf("Game running.\n");
-					break;
+					if (e.key.keysym.sym == SDLK_SPACE) {
+						if (board->game_state == RUNNING_STATE) {
+						board->game_state = PAUSE_STATE;
+						printf("Game paused: editing enabled.\n");
+						break;
+						}
+						else if (board->game_state == PAUSE_STATE) {
+						board->game_state = RUNNING_STATE;
+						printf("Game running.\n");
+						break;
+						}
 					}
-				}
-				if (e.key.keysym.sym == SDLK_BACKSPACE) {
-					for (int i = 0; i < board->COL_NUM; i++) {
-					for (int j = 0; j < board->ROW_NUM; j++)
-						board->cell_state[i][j] = DEAD;
+					if (e.key.keysym.sym == SDLK_BACKSPACE) {
+						for (int i = 0; i < board->COL_NUM; i++) {
+						for (int j = 0; j < board->ROW_NUM; j++)
+							board->cell_state[i][j] = DEAD;
+						}
+						break;
 					}
 					break;
+					case SDL_MOUSEBUTTONDOWN:
+					click_on_cell(board,
+									(e.button.y + PEEPER_OFFSET) / board->CELL_HEIGHT,
+									(e.button.x + PEEPER_OFFSET) / board->CELL_WIDTH);
+					printf("%d, %d\n", e.button.x, e.button.y);
+					break;
+					default: {}
 				}
-				break;
-				case SDL_MOUSEBUTTONDOWN:
-				click_on_cell(board,
-								(e.button.y + PEEPER_OFFSET) / board->CELL_HEIGHT,
-								(e.button.x + PEEPER_OFFSET) / board->CELL_WIDTH);
-				printf("%d, %d\n", e.button.x, e.button.y);
-				break;
-				default: {}
-			}
 			}
 
 			// Assignment to viewport
@@ -355,8 +399,6 @@ int main(int argc, char** argv)
 			// There be dragons here.
 			const int maximum_width = domain_x * board->CELL_WIDTH;
 			const int maximum_height = domain_y * board->CELL_HEIGHT;
-
-		
 			// Get window measurements in real time.
 			SDL_GetWindowSize(window, &window_width, &window_height);
 		
@@ -372,13 +414,15 @@ int main(int argc, char** argv)
 			printf("WARNING: Attempting to exceed max window size in y (win height: %d - win max height: %d).\n", window_height, maximum_height);
 			SDL_SetWindowSize(window, window_width, maximum_height);
 			}
-
 			// Draw
 			SDL_SetRenderDrawColor(renderer, 40, 40, 40, 1);
 			SDL_RenderClear(renderer);
 		}
-		
-		render_board(renderer, board, neighbors);
+
+		printf("Process %d, Iteration %d\n", rank, Iteration);
+		render_board(renderer, local_board, neighbors);
+		evolve(local_board, neighbors);
+		communicate(local_board, rank, size, MPI_COMM_WORLD);
 		
 		if (Graphical_Mode) 
 		{ 
@@ -386,23 +430,25 @@ int main(int argc, char** argv)
 			usleep(TICKS);
 		}
 		
-		//Iteration++;
 		printf("[%05d] Life Game Simulation step.\r",++Iteration); fflush(stdout);   
 	}
+
 	printf("\nEnd Simulation.\n");
 
-	if (Graphical_Mode) 
-	{ 
-		// Clean up
-		SDL_DestroyWindow(window);
-		SDL_Quit();
+	if(rank == 0){
+		if (Graphical_Mode) 
+		{ 
+			// Clean up
+			SDL_DestroyWindow(window);
+			SDL_Quit();
+		}
+		// Save board
+		if (SaveFile) {
+			printf("Writting Board file %s.\n",output_file); fflush(stdout);      
+			life_write(output_file, board);
+		}
 	}
-	
-	// Save board
-	if (SaveFile) {
-		printf("Writting Board file %s.\n",output_file); fflush(stdout);      
-		life_write(output_file, board);
-	}
+
 
 	return EXIT_SUCCESS;
 

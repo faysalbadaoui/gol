@@ -1,6 +1,7 @@
+
 #ifndef LOGIC_H_
 #define LOGIC_H_
-
+#include <mpi.h>
 void click_on_cell(board_t* board, int row, int column);
 
 void count_neighbors(board_t* board, unsigned char neighbors[D_COL_NUM][D_ROW_NUM]);
@@ -18,5 +19,7 @@ void life_write ( char *output_filename, board_t* board);
 double r8_uniform_01 ( int *seed );
 
 void life_init (board_t* board, double prob, int *seed );
+
+void communicate(board_t* board, int rank, int size,  MPI_Comm comm);
 
 #endif // LOGIC_H_

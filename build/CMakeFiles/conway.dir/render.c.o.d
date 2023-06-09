@@ -186,4 +186,6 @@ CMakeFiles/conway.dir/render.c.o: /home/faysal/gol/render.c \
  /usr/local/include/SDL2/SDL_locale.h /usr/local/include/SDL2/SDL_misc.h \
  /home/faysal/gol/./game.h /home/faysal/gol/./render.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /home/faysal/gol/./logic.h
+ /home/faysal/gol/./logic.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h

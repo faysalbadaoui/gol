@@ -2,6 +2,8 @@
 #include <mpi.h>
 #include "./game.h"
 #include "./logic.h"
+#include <stdlib.h>  // for malloc and free
+#include <string.h>  // for memcpy
 
 void click_on_cell(board_t* board, int row, int column)
 {
@@ -331,35 +333,43 @@ void count_neighbors_flat_world(board_t* board, unsigned char neighbors[D_COL_NU
 void communicate(board_t* local_board, int rank, int size, MPI_Comm comm)
 {
     MPI_Status status;
-    int upper_proc = rank == 0 ? MPI_PROC_NULL : rank - 1; // handle top edge
-    int lower_proc = rank == size - 1 ? MPI_PROC_NULL : rank + 1; // handle bottom edge
+    int left_proc = rank == 0 ? MPI_PROC_NULL : rank - 1; // handle left edge
+    int right_proc = rank == size - 1 ? MPI_PROC_NULL : rank + 1; // handle right edge
 
-    // Assuming 1D decomposition. Modify as needed for 2D.
-    int* send_upper = local_board->cell_state[0]; // top row to send
-    int* send_lower = local_board->cell_state[local_board->ROW_NUM - 1]; // bottom row to send
+    // Assuming 1D horizontal decomposition
+    unsigned char* send_left = local_board->cell_state[0]; // left stripe to send
+    unsigned char* send_right = local_board->cell_state[local_board->ROW_NUM - 1]; // right stripe to send
 
-    int* recv_upper = new int[local_board->COL_NUM]; // top row to receive
-    int* recv_lower = new int[local_board->COL_NUM]; // bottom row to receive
+    unsigned char* recv_left = malloc(local_board->COL_NUM * sizeof(unsigned char)); // left stripe to receive
+    unsigned char* recv_right = malloc(local_board->COL_NUM * sizeof(unsigned char)); // right stripe to receive
 
-    // Send to upper process and receive from lower process
-    MPI_Sendrecv(send_upper, local_board->COL_NUM, MPI_INT, upper_proc, 0,
-                 recv_lower, local_board->COL_NUM, MPI_INT, lower_proc, 0,
-                 comm, &status);
+    // Send to left process
+    if (left_proc != MPI_PROC_NULL) {
+        MPI_Send(send_left, local_board->COL_NUM, MPI_UNSIGNED_CHAR, left_proc, 0, comm);
 
-    // Send to lower process and receive from upper process
-    MPI_Sendrecv(send_lower, local_board->COL_NUM, MPI_INT, lower_proc, 0,
-                 recv_upper, local_board->COL_NUM, MPI_INT, upper_proc, 0,
-                 comm, &status);
+    }
+    
+    // Send to right process
+    if (right_proc != MPI_PROC_NULL) {
+        MPI_Send(send_right, local_board->COL_NUM, MPI_UNSIGNED_CHAR, right_proc, 0, comm);
+    }
 
-    // Merge received rows into local board (if not MPI_PROC_NULL)
-    if (upper_proc != MPI_PROC_NULL)
-        memcpy(local_board->cell_state[0], recv_upper, local_board->COL_NUM * sizeof(int));
-    if (lower_proc != MPI_PROC_NULL)
-        memcpy(local_board->cell_state[local_board->ROW_NUM - 1], recv_lower, local_board->COL_NUM * sizeof(int));
+    // Receive from left process
+    if (left_proc != MPI_PROC_NULL) {
+        MPI_Recv(recv_left, local_board->COL_NUM, MPI_UNSIGNED_CHAR, left_proc, 0, comm, &status);
+        memcpy(local_board->cell_state[0], recv_left, local_board->COL_NUM * sizeof(unsigned char));
+    }
 
-    delete[] recv_upper;
-    delete[] recv_lower;
+    // Receive from right process
+    if (right_proc != MPI_PROC_NULL) {
+        MPI_Recv(recv_right, local_board->COL_NUM, MPI_UNSIGNED_CHAR, right_proc, 0, comm, &status);
+        memcpy(local_board->cell_state[local_board->ROW_NUM - 1], recv_right, local_board->COL_NUM * sizeof(unsigned char));
+    }
+
+    free(recv_left);
+    free(recv_right);
 }
+
 
 
 void evolve(board_t* board, const unsigned char neighbors[D_COL_NUM][D_ROW_NUM])
