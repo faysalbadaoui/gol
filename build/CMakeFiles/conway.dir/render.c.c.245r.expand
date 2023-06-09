@@ -96,7 +96,7 @@ try_optimize_cfg iteration 2
 (code_label 18 16 19 6 2 (nil) [1 uses])
 (note 19 18 20 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (insn 20 19 21 6 (set (reg:QI 83 [ Graphical_Mode.0_2 ])
-        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x2]  <var_decl 0x7fd9763fdd80 Graphical_Mode>) [4 Graphical_Mode+0 S1 A8])) "/home/faysal/gol/render.c":14:11 -1
+        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x2]  <var_decl 0x7f92f72bad80 Graphical_Mode>) [4 Graphical_Mode+0 S1 A8])) "/home/faysal/gol/render.c":14:11 -1
      (nil))
 (insn 21 20 22 6 (set (reg:CCZ 17 flags)
         (compare:CCZ (reg:QI 83 [ Graphical_Mode.0_2 ])
@@ -124,7 +124,7 @@ try_optimize_cfg iteration 2
 (insn 27 26 28 7 (set (reg:DI 5 di)
         (reg:DI 87)) "/home/faysal/gol/render.c":15:8 -1
      (nil))
-(call_insn 28 27 29 7 (call (mem:QI (symbol_ref:DI ("render_running_state") [flags 0x3]  <function_decl 0x7fd97620a300 render_running_state>) [0 render_running_state S1 A8])
+(call_insn 28 27 29 7 (call (mem:QI (symbol_ref:DI ("render_running_state") [flags 0x3]  <function_decl 0x7f92f70c7300 render_running_state>) [0 render_running_state S1 A8])
         (const_int 0 [0])) "/home/faysal/gol/render.c":15:8 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -146,7 +146,7 @@ try_optimize_cfg iteration 2
 (insn 34 33 35 8 (set (reg:DI 5 di)
         (reg:DI 89)) "/home/faysal/gol/render.c":16:7 -1
      (nil))
-(call_insn 35 34 36 8 (call (mem:QI (symbol_ref:DI ("count_neighbors") [flags 0x41]  <function_decl 0x7fd975fd9c00 count_neighbors>) [0 count_neighbors S1 A8])
+(call_insn 35 34 36 8 (call (mem:QI (symbol_ref:DI ("count_neighbors") [flags 0x41]  <function_decl 0x7f92f6e96c00 count_neighbors>) [0 count_neighbors S1 A8])
         (const_int 0 [0])) "/home/faysal/gol/render.c":16:7 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -166,7 +166,7 @@ try_optimize_cfg iteration 2
 (insn 39 38 40 8 (set (reg:DI 5 di)
         (reg:DI 91)) "/home/faysal/gol/render.c":17:7 -1
      (nil))
-(call_insn 40 39 41 8 (call (mem:QI (symbol_ref:DI ("evolve") [flags 0x41]  <function_decl 0x7fd975fd9f00 evolve>) [0 evolve S1 A8])
+(call_insn 40 39 41 8 (call (mem:QI (symbol_ref:DI ("evolve") [flags 0x41]  <function_decl 0x7f92f6e96f00 evolve>) [0 evolve S1 A8])
         (const_int 0 [0])) "/home/faysal/gol/render.c":17:7 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -180,7 +180,7 @@ try_optimize_cfg iteration 2
 (code_label 43 42 44 9 3 (nil) [1 uses])
 (note 44 43 45 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
 (insn 45 44 46 9 (set (reg:QI 84 [ Graphical_Mode.1_3 ])
-        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x2]  <var_decl 0x7fd9763fdd80 Graphical_Mode>) [4 Graphical_Mode+0 S1 A8])) "/home/faysal/gol/render.c":20:11 -1
+        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x2]  <var_decl 0x7f92f72bad80 Graphical_Mode>) [4 Graphical_Mode+0 S1 A8])) "/home/faysal/gol/render.c":20:11 -1
      (nil))
 (insn 46 45 47 9 (set (reg:CCZ 17 flags)
         (compare:CCZ (reg:QI 84 [ Graphical_Mode.1_3 ])
@@ -208,7 +208,7 @@ try_optimize_cfg iteration 2
 (insn 52 51 53 10 (set (reg:DI 5 di)
         (reg:DI 93)) "/home/faysal/gol/render.c":21:9 -1
      (nil))
-(call_insn 53 52 56 10 (call (mem:QI (symbol_ref:DI ("render_pause_state") [flags 0x3]  <function_decl 0x7fd97620a500 render_pause_state>) [0 render_pause_state S1 A8])
+(call_insn 53 52 56 10 (call (mem:QI (symbol_ref:DI ("render_pause_state") [flags 0x3]  <function_decl 0x7f92f70c7500 render_pause_state>) [0 render_pause_state S1 A8])
         (const_int 0 [0])) "/home/faysal/gol/render.c":21:9 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -436,7 +436,7 @@ try_optimize_cfg iteration 2
 (insn 46 45 47 6 (set (reg:DI 5 di)
         (reg:DI 103)) "/home/faysal/gol/render.c":37:9 -1
      (nil))
-(call_insn 47 46 48 6 (call (mem:QI (symbol_ref:DI ("render_square") [flags 0x3]  <function_decl 0x7fd97620a400 render_square>) [0 render_square S1 A8])
+(call_insn 47 46 48 6 (call (mem:QI (symbol_ref:DI ("render_square") [flags 0x3]  <function_decl 0x7f92f70c7400 render_square>) [0 render_square S1 A8])
         (const_int 0 [0])) "/home/faysal/gol/render.c":37:9 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -728,7 +728,7 @@ try_optimize_cfg iteration 2
 (insn 46 45 47 6 (set (reg:DI 5 di)
         (reg:DI 103)) "/home/faysal/gol/render.c":52:9 -1
      (nil))
-(call_insn 47 46 48 6 (call (mem:QI (symbol_ref:DI ("pause_square") [flags 0x3]  <function_decl 0x7fd97620a600 pause_square>) [0 pause_square S1 A8])
+(call_insn 47 46 48 6 (call (mem:QI (symbol_ref:DI ("pause_square") [flags 0x3]  <function_decl 0x7f92f70c7600 pause_square>) [0 pause_square S1 A8])
         (const_int 0 [0])) "/home/faysal/gol/render.c":52:9 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -932,7 +932,7 @@ try_optimize_cfg iteration 2
         (reg:DI 90)) "/home/faysal/gol/render.c":64:3 -1
      (nil))
 (call_insn 28 27 29 2 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7fd9761e2e00 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7f92f709fe00 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
             (const_int 0 [0]))) "/home/faysal/gol/render.c":64:3 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -959,7 +959,7 @@ try_optimize_cfg iteration 2
         (reg:DI 92)) "/home/faysal/gol/render.c":65:3 -1
      (nil))
 (call_insn 33 32 43 2 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_RenderFillRect") [flags 0x41]  <function_decl 0x7fd9761e9900 SDL_RenderFillRect>) [0 SDL_RenderFillRect S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_RenderFillRect") [flags 0x41]  <function_decl 0x7f92f70a6900 SDL_RenderFillRect>) [0 SDL_RenderFillRect S1 A8])
             (const_int 0 [0]))) "/home/faysal/gol/render.c":65:3 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -985,7 +985,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 39)
 (note 41 36 37 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
-(call_insn 37 41 38 5 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7fd976000f00 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
+(call_insn 37 41 38 5 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7f92f6ebdf00 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
         (const_int 0 [0])) "/home/faysal/gol/render.c":66:1 -1
      (expr_list:REG_ARGS_SIZE (const_int 0 [0])
         (expr_list:REG_NORETURN (const_int 0 [0])
@@ -1125,7 +1125,7 @@ try_optimize_cfg iteration 2
         (reg:DI 90)) "/home/faysal/gol/render.c":75:3 -1
      (nil))
 (call_insn 28 27 29 2 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7fd9761e2e00 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7f92f709fe00 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
             (const_int 0 [0]))) "/home/faysal/gol/render.c":75:3 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -1152,7 +1152,7 @@ try_optimize_cfg iteration 2
         (reg:DI 92)) "/home/faysal/gol/render.c":76:3 -1
      (nil))
 (call_insn 33 32 43 2 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_RenderFillRect") [flags 0x41]  <function_decl 0x7fd9761e9900 SDL_RenderFillRect>) [0 SDL_RenderFillRect S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_RenderFillRect") [flags 0x41]  <function_decl 0x7f92f70a6900 SDL_RenderFillRect>) [0 SDL_RenderFillRect S1 A8])
             (const_int 0 [0]))) "/home/faysal/gol/render.c":76:3 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -1178,7 +1178,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 39)
 (note 41 36 37 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
-(call_insn 37 41 38 5 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7fd976000f00 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
+(call_insn 37 41 38 5 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7f92f6ebdf00 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
         (const_int 0 [0])) "/home/faysal/gol/render.c":77:1 -1
      (expr_list:REG_ARGS_SIZE (const_int 0 [0])
         (expr_list:REG_NORETURN (const_int 0 [0])

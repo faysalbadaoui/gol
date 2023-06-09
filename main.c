@@ -56,35 +56,75 @@ int compute_new_state(int current_state, int num_alive_neighbors) {
         return current_state;
     }
 }
+void distribute_board(board_t* global_board, board_t* local_board, int rank, int size) {
+    // Calculate the number of rows per process.
+    int rows_per_process = global_board->ROW_NUM / size;
+    int total_cells_per_process = rows_per_process * global_board->COL_NUM;
+    unsigned char* flatten_board = NULL;
 
-board_t* distribute_board(board_t* global_board, int rank, int size)
-{
-    // Determine the stripe height for each process.
-    int stripe_height = global_board->ROW_NUM / size;
-    int start_row = rank * stripe_height;
-
-    // Handle the case where the rows cannot be evenly distributed among the processes.
-    if (rank == size - 1) {
-        stripe_height = global_board->ROW_NUM - start_row;  // Remaining rows
-    }
-
-    // Create a new local board for the current process.
-    board_t* local_board = create_board(global_board->COL_NUM, stripe_height);
-
-    // Copy the corresponding stripe from the global board to the local board.
-    for (int i = 0; i < stripe_height; i++) {
-        for (int j = 0; j < global_board->COL_NUM; j++) {
-            local_board->cell_state[i][j] = global_board->cell_state[start_row + i][j];
+    if (rank == 0) {
+        // Flatten the global board to a 1D array for scattering.
+        flatten_board = malloc(global_board->ROW_NUM * global_board->COL_NUM * sizeof(unsigned char));
+        for (int i = 0; i < global_board->ROW_NUM; i++) {
+            for (int j = 0; j < global_board->COL_NUM; j++) {
+                flatten_board[i * global_board->COL_NUM + j] = global_board->cell_state[i][j];
+            }
         }
     }
 
+    // Prepare receiving buffer
+    unsigned char* recv_buf = malloc(total_cells_per_process * sizeof(unsigned char));
+
+    // Scatter the flatten board to all processes.
+    MPI_Scatter(flatten_board, total_cells_per_process, MPI_UNSIGNED_CHAR,
+                recv_buf, total_cells_per_process, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
+
+    // Copy from recv_buf to local board cell_state
+    for (int i = 0; i < rows_per_process; i++) {
+        for (int j = 0; j < global_board->COL_NUM; j++) {
+            local_board->cell_state[i][j] = recv_buf[i * global_board->COL_NUM + j];
+        }
+    }
+
+
     // Copy the common board settings.
     local_board->game_state = global_board->game_state;
+    local_board->COL_NUM = global_board->COL_NUM;
+    local_board->ROW_NUM = rows_per_process;
     local_board->CELL_WIDTH = global_board->CELL_WIDTH;
     local_board->CELL_HEIGHT = global_board->CELL_HEIGHT;
 
-    // Return the local board.
-    return local_board;
+    // Clean up
+    if (rank == 0) {
+        free(flatten_board);
+    }
+    free(recv_buf);
+}
+
+
+
+void gather_board(board_t* local_board, board_t* global_board, int rank, int size, MPI_Comm comm)
+{
+    int stripe_height = local_board->ROW_NUM;
+    int total_cells = stripe_height * local_board->COL_NUM;
+    unsigned char *gathered_cells = NULL;
+
+    if (rank == 0) {
+        gathered_cells = malloc(total_cells * size * sizeof(unsigned char));
+    }
+
+    MPI_Gather(local_board->cell_state[0], total_cells, MPI_UNSIGNED_CHAR, 
+               gathered_cells, total_cells, MPI_UNSIGNED_CHAR, 0, comm);
+
+    // On rank 0, copy the gathered cells back into the global board.
+    if (rank == 0) {
+        for (int i = 0; i < global_board->ROW_NUM; i++) {
+            for (int j = 0; j < global_board->COL_NUM; j++) {
+                global_board->cell_state[i][j] = gathered_cells[i*global_board->COL_NUM + j];
+            }
+        }
+        free(gathered_cells);
+    }
 }
 
 
@@ -315,22 +355,39 @@ int main(int argc, char** argv)
 				return EXIT_FAILURE;
 			}
 		}
-		//Començar la part per a enviar feina als altres processos
 	}
 
 	printf("Start Simulatiom.\n");fflush(stdout);
 
 	bool quit = false;
 	int Iteration=0;
-	board_t* local_board = distribute_board(board, rank, size);
-	printf("Rank: %d\n", rank);
-	print_local_board(local_board);
+	if (rank == 0){
+		printf("Process %d has the following global board:\n", rank);
+		for(int i = 0; i < board->COL_NUM; i++) {
+			for(int j = 0; j < board->ROW_NUM; j++) {
+				printf("%d ", board->cell_state[i][j]);
+			}
+			printf("\n");
+		}
+	}
 	while (quit==false && (EndTime<0 || Iteration<EndTime)) 
 	{	
-		//Send work to workers
-		//workers need to send to neighbours
-		//Go with next iteration
-		if (Graphical_Mode) 
+		board_t* local_board = create_board(board->COL_NUM, board->ROW_NUM / size);
+		distribute_board(board, local_board, rank, size);
+		int rows_per_process = board->ROW_NUM / size;
+		// Print the local board of each process
+		printf("\nProcess %d has the following local board:\n", rank);
+		int x = 0;
+		for(int i = 0; i < rows_per_process; i++) {
+			for(int j = 0; j < board->COL_NUM; j++) {
+				printf("%d ", local_board->cell_state[i][j]);
+				x++;
+			}
+			printf("\n");
+		}
+		printf("Process %d cells: %d\n", rank, x);
+
+		if (Graphical_Mode && rank == 0)
 		{  
 			//Poll event and provide event type to switch statement
 			while (SDL_PollEvent(&e)) {
@@ -418,13 +475,12 @@ int main(int argc, char** argv)
 			SDL_SetRenderDrawColor(renderer, 40, 40, 40, 1);
 			SDL_RenderClear(renderer);
 		}
-
-		printf("Process %d, Iteration %d\n", rank, Iteration);
-		render_board(renderer, local_board, neighbors);
-		evolve(local_board, neighbors);
-		communicate(local_board, rank, size, MPI_COMM_WORLD);
-		
-		if (Graphical_Mode) 
+		gather_board(local_board, board, rank, size, MPI_COMM_WORLD);
+		if(rank == 0){
+			printf("Gathered all results\n");
+			render_board(renderer, local_board, neighbors);
+		}
+		if (Graphical_Mode && rank == 0)  // only the root process (rank 0) does the graphical work
 		{ 
 			SDL_RenderPresent(renderer);
 			usleep(TICKS);
@@ -432,9 +488,7 @@ int main(int argc, char** argv)
 		
 		printf("[%05d] Life Game Simulation step.\r",++Iteration); fflush(stdout);   
 	}
-
 	printf("\nEnd Simulation.\n");
-
 	if(rank == 0){
 		if (Graphical_Mode) 
 		{ 
