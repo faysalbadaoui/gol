@@ -64,36 +64,10 @@ void distribute_board(board_t* global_board, board_t* local_board, int rank, int
     // Each process gets base_rows_per_process rows, plus an extra one if it's in range of the remainder
     int rows_per_process = base_rows_per_process + (rank < remainder_rows ? 1 : 0);
 
-    int total_cells_per_process = rows_per_process * global_board->COL_NUM;
-    unsigned char* flatten_board = NULL;
-
-    if (rank == 0) {
-        flatten_board = malloc(global_board->ROW_NUM * global_board->COL_NUM * sizeof(unsigned char));
-        for (int i = 0; i < global_board->ROW_NUM; i++) {
-            for (int j = 0; j < global_board->COL_NUM; j++) {
-                flatten_board[i * global_board->COL_NUM + j] = global_board->cell_state[i][j];
-            }
-        }
-    }
-
-    // Calculate displacements and receive counts for MPI_Scatterv
-    int* recv_counts = malloc(size * sizeof(int));
-    int* displacements = malloc(size * sizeof(int));
-
-    for (int i = 0; i < size; i++) {
-        // Each process receives base_rows_per_process * columns cells, plus an extra row's worth if in range
-        recv_counts[i] = (base_rows_per_process + (i < remainder_rows ? 1 : 0)) * global_board->COL_NUM;
-        displacements[i] = (i * base_rows_per_process + (i < remainder_rows ? i : remainder_rows)) * global_board->COL_NUM;
-    }
-
-    unsigned char* recv_buf = malloc(total_cells_per_process * sizeof(unsigned char));
-
-    MPI_Scatterv(flatten_board, recv_counts, displacements, MPI_UNSIGNED_CHAR,
-                 recv_buf, total_cells_per_process, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
-
+    // Copy the corresponding part of the global board to the local board
     for (int i = 0; i < rows_per_process; i++) {
         for (int j = 0; j < global_board->COL_NUM; j++) {
-            local_board->cell_state[i][j] = recv_buf[i * global_board->COL_NUM + j];
+            local_board->cell_state[i][j] = global_board->cell_state[i + rank * base_rows_per_process][j];
         }
     }
 
@@ -103,12 +77,7 @@ void distribute_board(board_t* global_board, board_t* local_board, int rank, int
     local_board->CELL_WIDTH = global_board->CELL_WIDTH;
     local_board->CELL_HEIGHT = global_board->CELL_HEIGHT;
 
-    if (rank == 0) {
-        free(flatten_board);
-    }
-    free(recv_buf);
-    free(recv_counts);
-    free(displacements);
+    
 }
 
 void gather_board(board_t* local_board, board_t* global_board, int rank, int size, MPI_Comm comm)
@@ -117,24 +86,69 @@ void gather_board(board_t* local_board, board_t* global_board, int rank, int siz
     int total_cells = stripe_height * local_board->COL_NUM;
     unsigned char *gathered_cells = NULL;
 
-	if(rank == 0)
-		gathered_cells = malloc(total_cells * size * sizeof(unsigned char));
-    
+    // Allocate memory for the gathered cells on rank 0
+    if (rank == 0)
+        gathered_cells = malloc(total_cells * size * sizeof(unsigned char));
 
-    MPI_Gather(local_board, total_cells, MPI_UNSIGNED_CHAR, 
+    // Gather the local cells from all processes into the gathered_cells array on rank 0
+    MPI_Gather(local_board->cell_state, total_cells, MPI_UNSIGNED_CHAR, 
                gathered_cells, total_cells, MPI_UNSIGNED_CHAR, 0, comm);
 
     // On rank 0, copy the gathered cells back into the global board.
     if (rank == 0) {
-        for (int i = 0; i < global_board->ROW_NUM; i++) {
-            for (int j = 0; j < global_board->COL_NUM; j++) {
-                global_board->cell_state[i][j] = gathered_cells[i*global_board->COL_NUM + j];
+        int base_rows_per_process = global_board->ROW_NUM / size;
+        int remainder_rows = global_board->ROW_NUM % size;
+        int start_row = 0;
+
+        for (int i = 0; i < size; i++) {
+            int rows_per_process = base_rows_per_process + (i < remainder_rows ? 1 : 0);
+
+            for (int j = 0; j < rows_per_process; j++) {
+                for (int k = 0; k < global_board->COL_NUM; k++) {
+                    global_board->cell_state[start_row + j][k] = gathered_cells[i * total_cells + j * global_board->COL_NUM + k];
+                }
             }
+
+            start_row += rows_per_process;
         }
+
         free(gathered_cells);
     }
 }
+void broadcast_board(board_t* global_board, int rank, MPI_Comm comm) {
 
+    int ROW_NUM = global_board->ROW_NUM;
+    int COL_NUM = global_board->COL_NUM;
+    int total_cells = ROW_NUM * COL_NUM;
+
+    // Allocate memory for the send buffer on the root process
+    unsigned char* send_buffer = NULL;
+    if (rank == 0) {
+        send_buffer = malloc(total_cells * sizeof(unsigned char));
+        // Copy the global board cells into the send buffer
+        for (int i = 0; i < ROW_NUM; i++) {
+            for (int j = 0; j < COL_NUM; j++) {
+                send_buffer[i * COL_NUM + j] = global_board->cell_state[i][j];
+            }
+        }
+    }
+	if(rank == 0){
+    	// Broadcast the global board cells from the root process to all other processes
+    	MPI_Bcast(send_buffer, total_cells, MPI_UNSIGNED_CHAR, 0, comm);
+	}
+
+    // Copy the received cells into the global board for all processes
+    for (int i = 0; i < ROW_NUM; i++) {
+        for (int j = 0; j < COL_NUM; j++) {
+            global_board->cell_state[i][j] = send_buffer[i * COL_NUM + j];
+        }
+    }
+
+    // Free the memory allocated for the send buffer on the root process
+    if (rank == 0) {
+        free(send_buffer);
+    }
+}
 
 void print_local_board(board_t* local_board) {
     for (int i = 0; i < local_board->ROW_NUM; ++i) {
@@ -144,6 +158,107 @@ void print_local_board(board_t* local_board) {
         printf("\n");
     }
 }
+int get_local_cols(int rank, int size){
+	int COL_NUM = D_COL_NUM;
+
+	// Calcular el tamaño de la submatriz para cada proceso
+	int submatrix_cols = COL_NUM / size;
+	int extra_cols = COL_NUM % size;
+
+	int start_col = rank * submatrix_cols;
+	int end_col = start_col + submatrix_cols - 1;
+
+	if (rank < extra_cols) {
+		start_col += rank;
+		end_col += rank + 1;
+	} else {
+		start_col += extra_cols;
+		end_col += extra_cols;
+	}
+
+	// Crear submatriz local para cada proceso
+	int local_cols = end_col - start_col + 1;
+
+	// Asegurar que la submatriz local tenga espacio suficiente para los bordes vecinos
+	if (start_col > 0) {
+		local_cols += 1;
+		start_col -= 1;
+	}
+	if (end_col < COL_NUM - 1) {
+		local_cols += 1;
+		end_col += 1;
+	}
+	return start_col;
+}
+int get_local_rows(int rank, int size){
+	int COL_NUM = D_COL_NUM;
+
+	// Calcular el tamaño de la submatriz para cada proceso
+	int submatrix_cols = COL_NUM / size;
+	int extra_cols = COL_NUM % size;
+
+	int start_col = rank * submatrix_cols;
+	int end_col = start_col + submatrix_cols - 1;
+
+	if (rank < extra_cols) {
+		start_col += rank;
+		end_col += rank + 1;
+	} else {
+		start_col += extra_cols;
+		end_col += extra_cols;
+	}
+
+	// Crear submatriz local para cada proceso
+	int local_cols = end_col - start_col + 1;
+
+	// Asegurar que la submatriz local tenga espacio suficiente para los bordes vecinos
+	if (start_col > 0) {
+		local_cols += 1;
+		start_col -= 1;
+	}
+	if (end_col < COL_NUM - 1) {
+		local_cols += 1;
+		end_col += 1;
+	}
+	return end_col;
+}
+
+void exchange_boards(board_t* local_board, board_t* mixed_board, int rank, int size, MPI_Comm comm) {
+    int local_rows = local_board->ROW_NUM;
+    int local_cols = local_board->COL_NUM;
+    int total_cells = local_rows * local_cols;
+
+    int prev_rank = (rank - 1 + size) % size;  // Rank of the previous process
+    int next_rank = (rank + 1) % size;         // Rank of the next process
+
+    // Allocate memory for the send/receive buffers
+    unsigned char* send_buffer = malloc(total_cells * sizeof(unsigned char));
+    unsigned char* recv_buffer = malloc(total_cells * sizeof(unsigned char));
+
+    // Copy the local board cells into the send buffer
+    for (int i = 0; i < local_rows; i++) {
+        for (int j = 0; j < local_cols; j++) {
+            send_buffer[i * local_cols + j] = local_board->cell_state[i][j];
+        }
+    }
+
+    // Send the local board cells to the next process
+    MPI_Sendrecv(send_buffer, total_cells, MPI_UNSIGNED_CHAR, next_rank, 0,
+                 recv_buffer, total_cells, MPI_UNSIGNED_CHAR, prev_rank, 0, comm, MPI_STATUS_IGNORE);
+
+    // Copy the received cells into the mixed board
+    for (int i = 0; i < local_rows; i++) {
+        for (int j = get_local_cols(prev_rank, size); j < get_local_rows(prev_rank, size); j++) {
+            mixed_board->cell_state[i][j] = recv_buffer[i * local_cols + j];
+        }
+    }
+
+    // Free the memory allocated for the send/receive buffers
+    free(send_buffer);
+    free(recv_buffer);
+}
+
+
 
 int main(int argc, char** argv)
 
@@ -370,8 +485,10 @@ int main(int argc, char** argv)
 	bool quit = false;
 	int Iteration=0;
 	board_t* local_board = create_board(local_cols, local_rows);
+	//board_t* mixed_board = create_board(local_cols*2, local_rows*2);
 	while (quit==false && (EndTime<0 || Iteration<EndTime)) 
 	{	
+		MPI_Barrier(MPI_COMM_WORLD);
 		distribute_board(board, local_board, rank, size);
 		if (Graphical_Mode && rank == 0)
 		{  
@@ -461,14 +578,19 @@ int main(int argc, char** argv)
 			SDL_SetRenderDrawColor(renderer, 40, 40, 40, 1);
 			SDL_RenderClear(renderer);
 		}
-
-
+		
 		if(Graphical_Mode){
 			count_neighbors(local_board, neighbors);
       		evolve(local_board, neighbors);
 		}
-
 		gather_board(local_board, board, rank, size, MPI_COMM_WORLD);
+		
+		if (rank == 0) {
+			MPI_Bcast(board, sizeof(board_t), MPI_BYTE, 0, MPI_COMM_WORLD);
+		} else {
+			// Other processes receive the board from the master process
+			MPI_Bcast(board, sizeof(board_t), MPI_BYTE, 0, MPI_COMM_WORLD);
+		}
 
 		if(rank == 0){
 			render_board(renderer, board, neighbors);
