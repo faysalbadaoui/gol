@@ -583,16 +583,7 @@ int main(int argc, char** argv)
       		evolve(local_board, neighbors);
 		}
 		gather_board(local_board, board, rank, size, MPI_COMM_WORLD);
-		if (rank == 0) {
-        	// Master process (rank 0) sends the board to all other processes
-			for (int dest = 1; dest < size; dest++) {
-				MPI_Send(board, sizeof(board_t), MPI_BYTE, dest, 0, MPI_COMM_WORLD);
-			}
-		} else {
-			// Other processes receive the board from the master process
-			MPI_Recv(board, sizeof(board_t), MPI_BYTE, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-			
-		}
+		MPI_Bcast(board->cell_state[0], board->COL_NUM*board->ROW_NUM, MPI_UNSIGNED_CHAR, 0, MPI_COMM_WORLD);
 		if(rank == 0){
 			//printf("Rank %d gathered board\n", rank); fflush(stdout);
 			//print_local_board(board);

@@ -1,0 +1,1 @@
+/usr/bin/cc  -O0 -Wall -Werror -fdump-rtl-expand CMakeFiles/conway.dir/main.c.o CMakeFiles/conway.dir/logic.c.o CMakeFiles/conway.dir/render.c.o -o conway  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib: -lSDL2 /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 

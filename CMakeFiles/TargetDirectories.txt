@@ -1,0 +1,7 @@
+/home/faysal/gol/CMakeFiles/conway.dir
+/home/faysal/gol/CMakeFiles/edit_cache.dir
+/home/faysal/gol/CMakeFiles/rebuild_cache.dir
+/home/faysal/gol/CMakeFiles/list_install_components.dir
+/home/faysal/gol/CMakeFiles/install.dir
+/home/faysal/gol/CMakeFiles/install/local.dir
+/home/faysal/gol/CMakeFiles/install/strip.dir
