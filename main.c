@@ -61,24 +61,20 @@ void distribute_board(board_t* global_board, board_t* local_board, int rank, int
     int base_rows_per_process = global_board->ROW_NUM / size;
     int remainder_rows = global_board->ROW_NUM % size;
 
-    // Each process gets base_rows_per_process rows, plus an extra one if it's in range of the remainder
-    int rows_per_process = base_rows_per_process + (rank < remainder_rows ? 1 : 0);
+    // Calculate the starting and ending rows for the current process
+    int start_row = rank * base_rows_per_process + (rank < remainder_rows ? rank : remainder_rows);
+    int end_row = start_row + base_rows_per_process + (rank < remainder_rows ? 1 : 0);
 
     // Copy the corresponding part of the global board to the local board
-    for (int i = 0; i < rows_per_process; i++) {
+    int local_rows = end_row - start_row;
+    for (int i = 0; i < local_rows; i++) {
         for (int j = 0; j < global_board->COL_NUM; j++) {
-            local_board->cell_state[i][j] = global_board->cell_state[i + rank * base_rows_per_process][j];
+            local_board->cell_state[i][j] = global_board->cell_state[start_row + i][j];
         }
     }
-
-    local_board->game_state = global_board->game_state;
-    local_board->COL_NUM = global_board->COL_NUM;
-    local_board->ROW_NUM = rows_per_process;
-    local_board->CELL_WIDTH = global_board->CELL_WIDTH;
-    local_board->CELL_HEIGHT = global_board->CELL_HEIGHT;
-
-    
 }
+
+
 
 void gather_board(board_t* local_board, board_t* global_board, int rank, int size, MPI_Comm comm)
 {
@@ -489,7 +485,10 @@ int main(int argc, char** argv)
 	while (quit==false && (EndTime<0 || Iteration<EndTime)) 
 	{	
 		MPI_Barrier(MPI_COMM_WORLD);
+		//printf("Rank %d received board\n", rank); fflush(stdout);
+		//print_local_board(board);
 		distribute_board(board, local_board, rank, size);
+		
 		if (Graphical_Mode && rank == 0)
 		{  
 			//Poll event and provide event type to switch statement
@@ -584,15 +583,19 @@ int main(int argc, char** argv)
       		evolve(local_board, neighbors);
 		}
 		gather_board(local_board, board, rank, size, MPI_COMM_WORLD);
-		
 		if (rank == 0) {
-			MPI_Bcast(board, sizeof(board_t), MPI_BYTE, 0, MPI_COMM_WORLD);
+        	// Master process (rank 0) sends the board to all other processes
+			for (int dest = 1; dest < size; dest++) {
+				MPI_Send(board, sizeof(board_t), MPI_BYTE, dest, 0, MPI_COMM_WORLD);
+			}
 		} else {
 			// Other processes receive the board from the master process
-			MPI_Bcast(board, sizeof(board_t), MPI_BYTE, 0, MPI_COMM_WORLD);
+			MPI_Recv(board, sizeof(board_t), MPI_BYTE, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+			
 		}
-
 		if(rank == 0){
+			//printf("Rank %d gathered board\n", rank); fflush(stdout);
+			//print_local_board(board);
 			render_board(renderer, board, neighbors);
 		}
 		if (Graphical_Mode && rank == 0)  // only the root process (rank 0) does the graphical work
